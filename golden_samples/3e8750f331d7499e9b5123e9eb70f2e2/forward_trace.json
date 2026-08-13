@@ -1,0 +1,4308 @@
+{
+  "sample_token": "3e8750f331d7499e9b5123e9eb70f2e2",
+  "config": "projects/configs/bevformer/bevformer_tiny.py",
+  "checkpoint": "/data/bevformer/checkpoints/bevformer_tiny_epoch_24.pth",
+  "events": [
+    {
+      "name": "Golden Sample pipeline output",
+      "output": {
+        "shape": [
+          6,
+          3,
+          480,
+          800
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu"
+      },
+      "note": "Unbatched six-camera tensor before MMCV collate"
+    },
+    {
+      "name": "Golden Sample metadata",
+      "output": {
+        "dataset_index": 0,
+        "sample_token": "3e8750f331d7499e9b5123e9eb70f2e2",
+        "timestamp": 1533151603547590,
+        "camera_names": [
+          "CAM_BACK",
+          "CAM_BACK_LEFT",
+          "CAM_BACK_RIGHT",
+          "CAM_FRONT",
+          "CAM_FRONT_LEFT",
+          "CAM_FRONT_RIGHT"
+        ],
+        "lidar2img": [
+          {
+            "shape": [
+              4,
+              4
+            ],
+            "dtype": "float64"
+          },
+          {
+            "shape": [
+              4,
+              4
+            ],
+            "dtype": "float64"
+          },
+          {
+            "shape": [
+              4,
+              4
+            ],
+            "dtype": "float64"
+          },
+          {
+            "shape": [
+              4,
+              4
+            ],
+            "dtype": "float64"
+          },
+          {
+            "shape": [
+              4,
+              4
+            ],
+            "dtype": "float64"
+          },
+          {
+            "shape": [
+              4,
+              4
+            ],
+            "dtype": "float64"
+          }
+        ],
+        "can_bus": {
+          "shape": [
+            18
+          ],
+          "dtype": "float64"
+        },
+        "scene_token": "fcbccedd61424f1b85dcbf8f897f9754",
+        "prev_bev_before_forward_test": null
+      }
+    },
+    {
+      "name": "ResNet.forward",
+      "inputs": [
+        {
+          "shape": [
+            6,
+            3,
+            480,
+            800
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": [
+        {
+          "shape": [
+            6,
+            2048,
+            15,
+            25
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ]
+    },
+    {
+      "name": "FPN.forward",
+      "inputs": [
+        [
+          {
+            "shape": [
+              6,
+              2048,
+              15,
+              25
+            ],
+            "dtype": "torch.float32",
+            "device": "cuda:0"
+          }
+        ]
+      ],
+      "kwargs": {},
+      "output": [
+        {
+          "shape": [
+            6,
+            256,
+            15,
+            25
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ]
+    },
+    {
+      "name": "BEVFormer.extract_img_feat",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            6,
+            3,
+            480,
+            800
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        [
+          {
+            "filename": [
+              "./data/nuscenes/samples/CAM_FRONT/n008-2018-08-01-15-16-36-0400__CAM_FRONT__1533151603512404.jpg",
+              "./data/nuscenes/samples/CAM_FRONT_RIGHT/n008-2018-08-01-15-16-36-0400__CAM_FRONT_RIGHT__1533151603520482.jpg",
+              "./data/nuscenes/samples/CAM_FRONT_LEFT/n008-2018-08-01-15-16-36-0400__CAM_FRONT_LEFT__1533151603504799.jpg",
+              "./data/nuscenes/samples/CAM_BACK/n008-2018-08-01-15-16-36-0400__CAM_BACK__1533151603537558.jpg",
+              "./data/nuscenes/samples/CAM_BACK_LEFT/n008-2018-08-01-15-16-36-0400__CAM_BACK_LEFT__1533151603547405.jpg",
+              "./data/nuscenes/samples/CAM_BACK_RIGHT/n008-2018-08-01-15-16-36-0400__CAM_BACK_RIGHT__1533151603528113.jpg"
+            ],
+            "ori_shape": [
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ]
+            ],
+            "img_shape": [
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ]
+            ],
+            "lidar2img": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              }
+            ],
+            "lidar2cam": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              }
+            ],
+            "pad_shape": [
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ]
+            ],
+            "scale_factor": 1.0,
+            "flip": false,
+            "pcd_horizontal_flip": false,
+            "pcd_vertical_flip": false,
+            "box_mode_3d": 0,
+            "box_type_3d": {
+              "type": "type"
+            },
+            "img_norm_cfg": {
+              "mean": {
+                "shape": [
+                  3
+                ],
+                "dtype": "float32"
+              },
+              "std": {
+                "shape": [
+                  3
+                ],
+                "dtype": "float32"
+              },
+              "to_rgb": true
+            },
+            "sample_idx": "3e8750f331d7499e9b5123e9eb70f2e2",
+            "prev_idx": "",
+            "next_idx": "3950bd41f74548429c0f7700ff3d8269",
+            "pcd_scale_factor": 1.0,
+            "pts_filename": "./data/nuscenes/samples/LIDAR_TOP/n008-2018-08-01-15-16-36-0400__LIDAR_TOP__1533151603547590.pcd.bin",
+            "scene_token": "fcbccedd61424f1b85dcbf8f897f9754",
+            "can_bus": {
+              "shape": [
+                18
+              ],
+              "dtype": "float64"
+            }
+          }
+        ]
+      ],
+      "kwargs": {
+        "len_queue": null
+      },
+      "output": [
+        {
+          "shape": [
+            1,
+            6,
+            256,
+            15,
+            25
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ]
+    },
+    {
+      "name": "BEVFormer.extract_feat",
+      "inputs": [],
+      "kwargs": {
+        "img": {
+          "shape": [
+            1,
+            6,
+            3,
+            480,
+            800
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      },
+      "output": [
+        {
+          "shape": [
+            1,
+            6,
+            256,
+            15,
+            25
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ]
+    },
+    {
+      "name": "BEVFormerEncoder.get_reference_points",
+      "inputs": [
+        50,
+        50,
+        8.0,
+        4
+      ],
+      "kwargs": {
+        "dim": "3d",
+        "bs": 1,
+        "device": {
+          "type": "device"
+        },
+        "dtype": {
+          "type": "dtype"
+        }
+      },
+      "output": {
+        "shape": [
+          1,
+          4,
+          2500,
+          3
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "BEVFormerEncoder.get_reference_points",
+      "inputs": [
+        50,
+        50
+      ],
+      "kwargs": {
+        "dim": "2d",
+        "bs": 1,
+        "device": {
+          "type": "device"
+        },
+        "dtype": {
+          "type": "dtype"
+        }
+      },
+      "output": {
+        "shape": [
+          1,
+          2500,
+          1,
+          2
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "BEVFormerEncoder.point_sampling",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            4,
+            2500,
+            3
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        [
+          -51.2,
+          -51.2,
+          -5.0,
+          51.2,
+          51.2,
+          3.0
+        ],
+        [
+          {
+            "filename": [
+              "./data/nuscenes/samples/CAM_FRONT/n008-2018-08-01-15-16-36-0400__CAM_FRONT__1533151603512404.jpg",
+              "./data/nuscenes/samples/CAM_FRONT_RIGHT/n008-2018-08-01-15-16-36-0400__CAM_FRONT_RIGHT__1533151603520482.jpg",
+              "./data/nuscenes/samples/CAM_FRONT_LEFT/n008-2018-08-01-15-16-36-0400__CAM_FRONT_LEFT__1533151603504799.jpg",
+              "./data/nuscenes/samples/CAM_BACK/n008-2018-08-01-15-16-36-0400__CAM_BACK__1533151603537558.jpg",
+              "./data/nuscenes/samples/CAM_BACK_LEFT/n008-2018-08-01-15-16-36-0400__CAM_BACK_LEFT__1533151603547405.jpg",
+              "./data/nuscenes/samples/CAM_BACK_RIGHT/n008-2018-08-01-15-16-36-0400__CAM_BACK_RIGHT__1533151603528113.jpg"
+            ],
+            "ori_shape": [
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ]
+            ],
+            "img_shape": [
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ]
+            ],
+            "lidar2img": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              }
+            ],
+            "lidar2cam": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              }
+            ],
+            "pad_shape": [
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ]
+            ],
+            "scale_factor": 1.0,
+            "flip": false,
+            "pcd_horizontal_flip": false,
+            "pcd_vertical_flip": false,
+            "box_mode_3d": 0,
+            "box_type_3d": {
+              "type": "type"
+            },
+            "img_norm_cfg": {
+              "mean": {
+                "shape": [
+                  3
+                ],
+                "dtype": "float32"
+              },
+              "std": {
+                "shape": [
+                  3
+                ],
+                "dtype": "float32"
+              },
+              "to_rgb": true
+            },
+            "sample_idx": "3e8750f331d7499e9b5123e9eb70f2e2",
+            "prev_idx": "",
+            "next_idx": "3950bd41f74548429c0f7700ff3d8269",
+            "pcd_scale_factor": 1.0,
+            "pts_filename": "./data/nuscenes/samples/LIDAR_TOP/n008-2018-08-01-15-16-36-0400__LIDAR_TOP__1533151603547590.pcd.bin",
+            "scene_token": "fcbccedd61424f1b85dcbf8f897f9754",
+            "can_bus": {
+              "shape": [
+                18
+              ],
+              "dtype": "float64"
+            }
+          }
+        ]
+      ],
+      "kwargs": {},
+      "output": [
+        {
+          "shape": [
+            6,
+            1,
+            2500,
+            4,
+            2
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        {
+          "shape": [
+            6,
+            1,
+            2500,
+            4
+          ],
+          "dtype": "torch.bool",
+          "device": "cuda:0"
+        }
+      ]
+    },
+    {
+      "name": "TemporalSelfAttention[0].sampling_offsets",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            2500,
+            512
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          1,
+          2500,
+          128
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "TemporalSelfAttention[0].attention_weights",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            2500,
+            512
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          1,
+          2500,
+          64
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "TemporalSelfAttention[0].forward",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            2500,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        null,
+        null,
+        null
+      ],
+      "kwargs": {
+        "query_pos": {
+          "shape": [
+            1,
+            2500,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "key_pos": {
+          "shape": [
+            1,
+            2500,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "attn_mask": null,
+        "key_padding_mask": null,
+        "reference_points": {
+          "shape": [
+            2,
+            2500,
+            1,
+            2
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "spatial_shapes": {
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        },
+        "level_start_index": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        },
+        "bev_mask": {
+          "shape": [
+            6,
+            1,
+            2500,
+            4
+          ],
+          "dtype": "torch.bool",
+          "device": "cuda:0"
+        }
+      },
+      "output": {
+        "shape": [
+          1,
+          2500,
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "MSDeformableAttention3D[0].sampling_offsets",
+      "inputs": [
+        {
+          "shape": [
+            6,
+            604,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          6,
+          604,
+          128
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "MSDeformableAttention3D[0].attention_weights",
+      "inputs": [
+        {
+          "shape": [
+            6,
+            604,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          6,
+          604,
+          64
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "MSDeformableAttention3D[0].forward",
+      "inputs": [],
+      "kwargs": {
+        "query": {
+          "shape": [
+            6,
+            604,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "key": {
+          "shape": [
+            6,
+            375,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "value": {
+          "shape": [
+            6,
+            375,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "reference_points": {
+          "shape": [
+            6,
+            604,
+            4,
+            2
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "spatial_shapes": {
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        },
+        "level_start_index": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        }
+      },
+      "output": {
+        "shape": [
+          6,
+          604,
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "SpatialCrossAttention[0].forward",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            2500,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        {
+          "shape": [
+            6,
+            375,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        {
+          "shape": [
+            6,
+            375,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        null
+      ],
+      "kwargs": {
+        "query_pos": null,
+        "key_pos": null,
+        "reference_points": {
+          "shape": [
+            1,
+            4,
+            2500,
+            3
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "reference_points_cam": {
+          "shape": [
+            6,
+            1,
+            2500,
+            4,
+            2
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "mask": null,
+        "attn_mask": null,
+        "key_padding_mask": null,
+        "spatial_shapes": {
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        },
+        "level_start_index": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        },
+        "bev_mask": {
+          "shape": [
+            6,
+            1,
+            2500,
+            4
+          ],
+          "dtype": "torch.bool",
+          "device": "cuda:0"
+        }
+      },
+      "output": {
+        "shape": [
+          1,
+          2500,
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "BEVFormerLayer[0].forward",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            2500,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        {
+          "shape": [
+            6,
+            375,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        {
+          "shape": [
+            6,
+            375,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {
+        "bev_pos": {
+          "shape": [
+            1,
+            2500,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "ref_2d": {
+          "shape": [
+            2,
+            2500,
+            1,
+            2
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "ref_3d": {
+          "shape": [
+            1,
+            4,
+            2500,
+            3
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "bev_h": 50,
+        "bev_w": 50,
+        "spatial_shapes": {
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        },
+        "level_start_index": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        },
+        "reference_points_cam": {
+          "shape": [
+            6,
+            1,
+            2500,
+            4,
+            2
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "bev_mask": {
+          "shape": [
+            6,
+            1,
+            2500,
+            4
+          ],
+          "dtype": "torch.bool",
+          "device": "cuda:0"
+        },
+        "prev_bev": null
+      },
+      "output": {
+        "shape": [
+          1,
+          2500,
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "TemporalSelfAttention[1].sampling_offsets",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            2500,
+            512
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          1,
+          2500,
+          128
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "TemporalSelfAttention[1].attention_weights",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            2500,
+            512
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          1,
+          2500,
+          64
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "TemporalSelfAttention[1].forward",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            2500,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        null,
+        null,
+        null
+      ],
+      "kwargs": {
+        "query_pos": {
+          "shape": [
+            1,
+            2500,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "key_pos": {
+          "shape": [
+            1,
+            2500,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "attn_mask": null,
+        "key_padding_mask": null,
+        "reference_points": {
+          "shape": [
+            2,
+            2500,
+            1,
+            2
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "spatial_shapes": {
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        },
+        "level_start_index": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        },
+        "bev_mask": {
+          "shape": [
+            6,
+            1,
+            2500,
+            4
+          ],
+          "dtype": "torch.bool",
+          "device": "cuda:0"
+        }
+      },
+      "output": {
+        "shape": [
+          1,
+          2500,
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "MSDeformableAttention3D[1].sampling_offsets",
+      "inputs": [
+        {
+          "shape": [
+            6,
+            604,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          6,
+          604,
+          128
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "MSDeformableAttention3D[1].attention_weights",
+      "inputs": [
+        {
+          "shape": [
+            6,
+            604,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          6,
+          604,
+          64
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "MSDeformableAttention3D[1].forward",
+      "inputs": [],
+      "kwargs": {
+        "query": {
+          "shape": [
+            6,
+            604,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "key": {
+          "shape": [
+            6,
+            375,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "value": {
+          "shape": [
+            6,
+            375,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "reference_points": {
+          "shape": [
+            6,
+            604,
+            4,
+            2
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "spatial_shapes": {
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        },
+        "level_start_index": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        }
+      },
+      "output": {
+        "shape": [
+          6,
+          604,
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "SpatialCrossAttention[1].forward",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            2500,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        {
+          "shape": [
+            6,
+            375,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        {
+          "shape": [
+            6,
+            375,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        null
+      ],
+      "kwargs": {
+        "query_pos": null,
+        "key_pos": null,
+        "reference_points": {
+          "shape": [
+            1,
+            4,
+            2500,
+            3
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "reference_points_cam": {
+          "shape": [
+            6,
+            1,
+            2500,
+            4,
+            2
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "mask": null,
+        "attn_mask": null,
+        "key_padding_mask": null,
+        "spatial_shapes": {
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        },
+        "level_start_index": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        },
+        "bev_mask": {
+          "shape": [
+            6,
+            1,
+            2500,
+            4
+          ],
+          "dtype": "torch.bool",
+          "device": "cuda:0"
+        }
+      },
+      "output": {
+        "shape": [
+          1,
+          2500,
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "BEVFormerLayer[1].forward",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            2500,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        {
+          "shape": [
+            6,
+            375,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        {
+          "shape": [
+            6,
+            375,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {
+        "bev_pos": {
+          "shape": [
+            1,
+            2500,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "ref_2d": {
+          "shape": [
+            2,
+            2500,
+            1,
+            2
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "ref_3d": {
+          "shape": [
+            1,
+            4,
+            2500,
+            3
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "bev_h": 50,
+        "bev_w": 50,
+        "spatial_shapes": {
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        },
+        "level_start_index": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        },
+        "reference_points_cam": {
+          "shape": [
+            6,
+            1,
+            2500,
+            4,
+            2
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "bev_mask": {
+          "shape": [
+            6,
+            1,
+            2500,
+            4
+          ],
+          "dtype": "torch.bool",
+          "device": "cuda:0"
+        },
+        "prev_bev": null
+      },
+      "output": {
+        "shape": [
+          1,
+          2500,
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "TemporalSelfAttention[2].sampling_offsets",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            2500,
+            512
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          1,
+          2500,
+          128
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "TemporalSelfAttention[2].attention_weights",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            2500,
+            512
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          1,
+          2500,
+          64
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "TemporalSelfAttention[2].forward",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            2500,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        null,
+        null,
+        null
+      ],
+      "kwargs": {
+        "query_pos": {
+          "shape": [
+            1,
+            2500,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "key_pos": {
+          "shape": [
+            1,
+            2500,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "attn_mask": null,
+        "key_padding_mask": null,
+        "reference_points": {
+          "shape": [
+            2,
+            2500,
+            1,
+            2
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "spatial_shapes": {
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        },
+        "level_start_index": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        },
+        "bev_mask": {
+          "shape": [
+            6,
+            1,
+            2500,
+            4
+          ],
+          "dtype": "torch.bool",
+          "device": "cuda:0"
+        }
+      },
+      "output": {
+        "shape": [
+          1,
+          2500,
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "MSDeformableAttention3D[2].sampling_offsets",
+      "inputs": [
+        {
+          "shape": [
+            6,
+            604,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          6,
+          604,
+          128
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "MSDeformableAttention3D[2].attention_weights",
+      "inputs": [
+        {
+          "shape": [
+            6,
+            604,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          6,
+          604,
+          64
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "MSDeformableAttention3D[2].forward",
+      "inputs": [],
+      "kwargs": {
+        "query": {
+          "shape": [
+            6,
+            604,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "key": {
+          "shape": [
+            6,
+            375,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "value": {
+          "shape": [
+            6,
+            375,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "reference_points": {
+          "shape": [
+            6,
+            604,
+            4,
+            2
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "spatial_shapes": {
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        },
+        "level_start_index": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        }
+      },
+      "output": {
+        "shape": [
+          6,
+          604,
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "SpatialCrossAttention[2].forward",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            2500,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        {
+          "shape": [
+            6,
+            375,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        {
+          "shape": [
+            6,
+            375,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        null
+      ],
+      "kwargs": {
+        "query_pos": null,
+        "key_pos": null,
+        "reference_points": {
+          "shape": [
+            1,
+            4,
+            2500,
+            3
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "reference_points_cam": {
+          "shape": [
+            6,
+            1,
+            2500,
+            4,
+            2
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "mask": null,
+        "attn_mask": null,
+        "key_padding_mask": null,
+        "spatial_shapes": {
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        },
+        "level_start_index": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        },
+        "bev_mask": {
+          "shape": [
+            6,
+            1,
+            2500,
+            4
+          ],
+          "dtype": "torch.bool",
+          "device": "cuda:0"
+        }
+      },
+      "output": {
+        "shape": [
+          1,
+          2500,
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "BEVFormerLayer[2].forward",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            2500,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        {
+          "shape": [
+            6,
+            375,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        {
+          "shape": [
+            6,
+            375,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {
+        "bev_pos": {
+          "shape": [
+            1,
+            2500,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "ref_2d": {
+          "shape": [
+            2,
+            2500,
+            1,
+            2
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "ref_3d": {
+          "shape": [
+            1,
+            4,
+            2500,
+            3
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "bev_h": 50,
+        "bev_w": 50,
+        "spatial_shapes": {
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        },
+        "level_start_index": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        },
+        "reference_points_cam": {
+          "shape": [
+            6,
+            1,
+            2500,
+            4,
+            2
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "bev_mask": {
+          "shape": [
+            6,
+            1,
+            2500,
+            4
+          ],
+          "dtype": "torch.bool",
+          "device": "cuda:0"
+        },
+        "prev_bev": null
+      },
+      "output": {
+        "shape": [
+          1,
+          2500,
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "BEVFormerEncoder.forward",
+      "inputs": [
+        {
+          "shape": [
+            2500,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        {
+          "shape": [
+            6,
+            375,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        {
+          "shape": [
+            6,
+            375,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {
+        "bev_h": 50,
+        "bev_w": 50,
+        "bev_pos": {
+          "shape": [
+            2500,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "spatial_shapes": {
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        },
+        "level_start_index": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        },
+        "prev_bev": null,
+        "shift": {
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      },
+      "output": {
+        "shape": [
+          1,
+          2500,
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "PerceptionTransformer.get_bev_features",
+      "inputs": [
+        [
+          {
+            "shape": [
+              1,
+              6,
+              256,
+              15,
+              25
+            ],
+            "dtype": "torch.float32",
+            "device": "cuda:0"
+          }
+        ],
+        {
+          "shape": [
+            2500,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        50,
+        50
+      ],
+      "kwargs": {
+        "grid_length": [
+          2.048,
+          2.048
+        ],
+        "bev_pos": {
+          "shape": [
+            1,
+            256,
+            50,
+            50
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "prev_bev": null
+      },
+      "output": {
+        "shape": [
+          1,
+          2500,
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "reg_branches[0]",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            900,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          1,
+          900,
+          10
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "reg_branches[1]",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            900,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          1,
+          900,
+          10
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "reg_branches[2]",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            900,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          1,
+          900,
+          10
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "reg_branches[3]",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            900,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          1,
+          900,
+          10
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "reg_branches[4]",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            900,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          1,
+          900,
+          10
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "reg_branches[5]",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            900,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          1,
+          900,
+          10
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "DetectionTransformerDecoder.forward",
+      "inputs": [],
+      "kwargs": {
+        "query": {
+          "shape": [
+            900,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "key": null,
+        "value": {
+          "shape": [
+            2500,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "query_pos": {
+          "shape": [
+            900,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "reference_points": {
+          "shape": [
+            1,
+            900,
+            3
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "reg_branches": {
+          "type": "ModuleList"
+        },
+        "cls_branches": null,
+        "spatial_shapes": {
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        },
+        "level_start_index": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        }
+      },
+      "output": [
+        {
+          "shape": [
+            6,
+            900,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        {
+          "shape": [
+            6,
+            1,
+            900,
+            3
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ]
+    },
+    {
+      "name": "PerceptionTransformer.forward",
+      "inputs": [
+        [
+          {
+            "shape": [
+              1,
+              6,
+              256,
+              15,
+              25
+            ],
+            "dtype": "torch.float32",
+            "device": "cuda:0"
+          }
+        ],
+        {
+          "shape": [
+            2500,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        {
+          "shape": [
+            900,
+            512
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        50,
+        50
+      ],
+      "kwargs": {
+        "grid_length": [
+          2.048,
+          2.048
+        ],
+        "bev_pos": {
+          "shape": [
+            1,
+            256,
+            50,
+            50
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "reg_branches": {
+          "type": "ModuleList"
+        },
+        "cls_branches": null,
+        "prev_bev": null
+      },
+      "output": [
+        {
+          "shape": [
+            2500,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        {
+          "shape": [
+            6,
+            900,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        {
+          "shape": [
+            1,
+            900,
+            3
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        {
+          "shape": [
+            6,
+            1,
+            900,
+            3
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ]
+    },
+    {
+      "name": "cls_branches[0]",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            900,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          1,
+          900,
+          10
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "reg_branches[0]",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            900,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          1,
+          900,
+          10
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "cls_branches[1]",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            900,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          1,
+          900,
+          10
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "reg_branches[1]",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            900,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          1,
+          900,
+          10
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "cls_branches[2]",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            900,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          1,
+          900,
+          10
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "reg_branches[2]",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            900,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          1,
+          900,
+          10
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "cls_branches[3]",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            900,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          1,
+          900,
+          10
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "reg_branches[3]",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            900,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          1,
+          900,
+          10
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "cls_branches[4]",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            900,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          1,
+          900,
+          10
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "reg_branches[4]",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            900,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          1,
+          900,
+          10
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "cls_branches[5]",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            900,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          1,
+          900,
+          10
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "reg_branches[5]",
+      "inputs": [
+        {
+          "shape": [
+            1,
+            900,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "shape": [
+          1,
+          900,
+          10
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "name": "BEVFormerHead.forward",
+      "inputs": [
+        [
+          {
+            "shape": [
+              1,
+              6,
+              256,
+              15,
+              25
+            ],
+            "dtype": "torch.float32",
+            "device": "cuda:0"
+          }
+        ],
+        [
+          {
+            "filename": [
+              "./data/nuscenes/samples/CAM_FRONT/n008-2018-08-01-15-16-36-0400__CAM_FRONT__1533151603512404.jpg",
+              "./data/nuscenes/samples/CAM_FRONT_RIGHT/n008-2018-08-01-15-16-36-0400__CAM_FRONT_RIGHT__1533151603520482.jpg",
+              "./data/nuscenes/samples/CAM_FRONT_LEFT/n008-2018-08-01-15-16-36-0400__CAM_FRONT_LEFT__1533151603504799.jpg",
+              "./data/nuscenes/samples/CAM_BACK/n008-2018-08-01-15-16-36-0400__CAM_BACK__1533151603537558.jpg",
+              "./data/nuscenes/samples/CAM_BACK_LEFT/n008-2018-08-01-15-16-36-0400__CAM_BACK_LEFT__1533151603547405.jpg",
+              "./data/nuscenes/samples/CAM_BACK_RIGHT/n008-2018-08-01-15-16-36-0400__CAM_BACK_RIGHT__1533151603528113.jpg"
+            ],
+            "ori_shape": [
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ]
+            ],
+            "img_shape": [
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ]
+            ],
+            "lidar2img": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              }
+            ],
+            "lidar2cam": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              }
+            ],
+            "pad_shape": [
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ]
+            ],
+            "scale_factor": 1.0,
+            "flip": false,
+            "pcd_horizontal_flip": false,
+            "pcd_vertical_flip": false,
+            "box_mode_3d": 0,
+            "box_type_3d": {
+              "type": "type"
+            },
+            "img_norm_cfg": {
+              "mean": {
+                "shape": [
+                  3
+                ],
+                "dtype": "float32"
+              },
+              "std": {
+                "shape": [
+                  3
+                ],
+                "dtype": "float32"
+              },
+              "to_rgb": true
+            },
+            "sample_idx": "3e8750f331d7499e9b5123e9eb70f2e2",
+            "prev_idx": "",
+            "next_idx": "3950bd41f74548429c0f7700ff3d8269",
+            "pcd_scale_factor": 1.0,
+            "pts_filename": "./data/nuscenes/samples/LIDAR_TOP/n008-2018-08-01-15-16-36-0400__LIDAR_TOP__1533151603547590.pcd.bin",
+            "scene_token": "fcbccedd61424f1b85dcbf8f897f9754",
+            "can_bus": {
+              "shape": [
+                18
+              ],
+              "dtype": "float64"
+            }
+          }
+        ]
+      ],
+      "kwargs": {
+        "prev_bev": null
+      },
+      "output": {
+        "bev_embed": {
+          "shape": [
+            2500,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "all_cls_scores": {
+          "shape": [
+            6,
+            1,
+            900,
+            10
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "all_bbox_preds": {
+          "shape": [
+            6,
+            1,
+            900,
+            10
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "enc_cls_scores": null,
+        "enc_bbox_preds": null
+      }
+    },
+    {
+      "name": "NMSFreeCoder.decode_single",
+      "inputs": [
+        {
+          "shape": [
+            900,
+            10
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        {
+          "shape": [
+            900,
+            10
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {},
+      "output": {
+        "bboxes": {
+          "shape": [
+            300,
+            9
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "scores": {
+          "shape": [
+            300
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        "labels": {
+          "shape": [
+            300
+          ],
+          "dtype": "torch.int64",
+          "device": "cuda:0"
+        }
+      }
+    },
+    {
+      "name": "NMSFreeCoder.decode",
+      "inputs": [
+        {
+          "bev_embed": {
+            "shape": [
+              2500,
+              1,
+              256
+            ],
+            "dtype": "torch.float32",
+            "device": "cuda:0"
+          },
+          "all_cls_scores": {
+            "shape": [
+              6,
+              1,
+              900,
+              10
+            ],
+            "dtype": "torch.float32",
+            "device": "cuda:0"
+          },
+          "all_bbox_preds": {
+            "shape": [
+              6,
+              1,
+              900,
+              10
+            ],
+            "dtype": "torch.float32",
+            "device": "cuda:0"
+          },
+          "enc_cls_scores": null,
+          "enc_bbox_preds": null
+        }
+      ],
+      "kwargs": {},
+      "output": [
+        {
+          "bboxes": {
+            "shape": [
+              300,
+              9
+            ],
+            "dtype": "torch.float32",
+            "device": "cuda:0"
+          },
+          "scores": {
+            "shape": [
+              300
+            ],
+            "dtype": "torch.float32",
+            "device": "cuda:0"
+          },
+          "labels": {
+            "shape": [
+              300
+            ],
+            "dtype": "torch.int64",
+            "device": "cuda:0"
+          }
+        }
+      ]
+    },
+    {
+      "name": "BEVFormerHead.get_bboxes",
+      "inputs": [
+        {
+          "bev_embed": {
+            "shape": [
+              2500,
+              1,
+              256
+            ],
+            "dtype": "torch.float32",
+            "device": "cuda:0"
+          },
+          "all_cls_scores": {
+            "shape": [
+              6,
+              1,
+              900,
+              10
+            ],
+            "dtype": "torch.float32",
+            "device": "cuda:0"
+          },
+          "all_bbox_preds": {
+            "shape": [
+              6,
+              1,
+              900,
+              10
+            ],
+            "dtype": "torch.float32",
+            "device": "cuda:0"
+          },
+          "enc_cls_scores": null,
+          "enc_bbox_preds": null
+        },
+        [
+          {
+            "filename": [
+              "./data/nuscenes/samples/CAM_FRONT/n008-2018-08-01-15-16-36-0400__CAM_FRONT__1533151603512404.jpg",
+              "./data/nuscenes/samples/CAM_FRONT_RIGHT/n008-2018-08-01-15-16-36-0400__CAM_FRONT_RIGHT__1533151603520482.jpg",
+              "./data/nuscenes/samples/CAM_FRONT_LEFT/n008-2018-08-01-15-16-36-0400__CAM_FRONT_LEFT__1533151603504799.jpg",
+              "./data/nuscenes/samples/CAM_BACK/n008-2018-08-01-15-16-36-0400__CAM_BACK__1533151603537558.jpg",
+              "./data/nuscenes/samples/CAM_BACK_LEFT/n008-2018-08-01-15-16-36-0400__CAM_BACK_LEFT__1533151603547405.jpg",
+              "./data/nuscenes/samples/CAM_BACK_RIGHT/n008-2018-08-01-15-16-36-0400__CAM_BACK_RIGHT__1533151603528113.jpg"
+            ],
+            "ori_shape": [
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ]
+            ],
+            "img_shape": [
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ]
+            ],
+            "lidar2img": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              }
+            ],
+            "lidar2cam": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              }
+            ],
+            "pad_shape": [
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ]
+            ],
+            "scale_factor": 1.0,
+            "flip": false,
+            "pcd_horizontal_flip": false,
+            "pcd_vertical_flip": false,
+            "box_mode_3d": 0,
+            "box_type_3d": {
+              "type": "type"
+            },
+            "img_norm_cfg": {
+              "mean": {
+                "shape": [
+                  3
+                ],
+                "dtype": "float32"
+              },
+              "std": {
+                "shape": [
+                  3
+                ],
+                "dtype": "float32"
+              },
+              "to_rgb": true
+            },
+            "sample_idx": "3e8750f331d7499e9b5123e9eb70f2e2",
+            "prev_idx": "",
+            "next_idx": "3950bd41f74548429c0f7700ff3d8269",
+            "pcd_scale_factor": 1.0,
+            "pts_filename": "./data/nuscenes/samples/LIDAR_TOP/n008-2018-08-01-15-16-36-0400__LIDAR_TOP__1533151603547590.pcd.bin",
+            "scene_token": "fcbccedd61424f1b85dcbf8f897f9754",
+            "can_bus": {
+              "shape": [
+                18
+              ],
+              "dtype": "float64"
+            }
+          }
+        ]
+      ],
+      "kwargs": {
+        "rescale": true
+      },
+      "output": [
+        [
+          {
+            "type": "LiDARInstance3DBoxes",
+            "tensor": {
+              "shape": [
+                300,
+                9
+              ],
+              "dtype": "torch.float32",
+              "device": "cuda:0"
+            }
+          },
+          {
+            "shape": [
+              300
+            ],
+            "dtype": "torch.float32",
+            "device": "cuda:0"
+          },
+          {
+            "shape": [
+              300
+            ],
+            "dtype": "torch.int64",
+            "device": "cuda:0"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "BEVFormer.simple_test_pts",
+      "inputs": [
+        [
+          {
+            "shape": [
+              1,
+              6,
+              256,
+              15,
+              25
+            ],
+            "dtype": "torch.float32",
+            "device": "cuda:0"
+          }
+        ],
+        [
+          {
+            "filename": [
+              "./data/nuscenes/samples/CAM_FRONT/n008-2018-08-01-15-16-36-0400__CAM_FRONT__1533151603512404.jpg",
+              "./data/nuscenes/samples/CAM_FRONT_RIGHT/n008-2018-08-01-15-16-36-0400__CAM_FRONT_RIGHT__1533151603520482.jpg",
+              "./data/nuscenes/samples/CAM_FRONT_LEFT/n008-2018-08-01-15-16-36-0400__CAM_FRONT_LEFT__1533151603504799.jpg",
+              "./data/nuscenes/samples/CAM_BACK/n008-2018-08-01-15-16-36-0400__CAM_BACK__1533151603537558.jpg",
+              "./data/nuscenes/samples/CAM_BACK_LEFT/n008-2018-08-01-15-16-36-0400__CAM_BACK_LEFT__1533151603547405.jpg",
+              "./data/nuscenes/samples/CAM_BACK_RIGHT/n008-2018-08-01-15-16-36-0400__CAM_BACK_RIGHT__1533151603528113.jpg"
+            ],
+            "ori_shape": [
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ]
+            ],
+            "img_shape": [
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ]
+            ],
+            "lidar2img": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              }
+            ],
+            "lidar2cam": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              }
+            ],
+            "pad_shape": [
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ]
+            ],
+            "scale_factor": 1.0,
+            "flip": false,
+            "pcd_horizontal_flip": false,
+            "pcd_vertical_flip": false,
+            "box_mode_3d": 0,
+            "box_type_3d": {
+              "type": "type"
+            },
+            "img_norm_cfg": {
+              "mean": {
+                "shape": [
+                  3
+                ],
+                "dtype": "float32"
+              },
+              "std": {
+                "shape": [
+                  3
+                ],
+                "dtype": "float32"
+              },
+              "to_rgb": true
+            },
+            "sample_idx": "3e8750f331d7499e9b5123e9eb70f2e2",
+            "prev_idx": "",
+            "next_idx": "3950bd41f74548429c0f7700ff3d8269",
+            "pcd_scale_factor": 1.0,
+            "pts_filename": "./data/nuscenes/samples/LIDAR_TOP/n008-2018-08-01-15-16-36-0400__LIDAR_TOP__1533151603547590.pcd.bin",
+            "scene_token": "fcbccedd61424f1b85dcbf8f897f9754",
+            "can_bus": {
+              "shape": [
+                18
+              ],
+              "dtype": "float64"
+            }
+          }
+        ],
+        null
+      ],
+      "kwargs": {
+        "rescale": true
+      },
+      "output": [
+        {
+          "shape": [
+            2500,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        [
+          {
+            "boxes_3d": {
+              "type": "LiDARInstance3DBoxes",
+              "tensor": {
+                "shape": [
+                  300,
+                  9
+                ],
+                "dtype": "torch.float32",
+                "device": "cpu"
+              }
+            },
+            "scores_3d": {
+              "shape": [
+                300
+              ],
+              "dtype": "torch.float32",
+              "device": "cpu"
+            },
+            "labels_3d": {
+              "shape": [
+                300
+              ],
+              "dtype": "torch.int64",
+              "device": "cpu"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "name": "BEVFormer.simple_test",
+      "inputs": [
+        [
+          {
+            "filename": [
+              "./data/nuscenes/samples/CAM_FRONT/n008-2018-08-01-15-16-36-0400__CAM_FRONT__1533151603512404.jpg",
+              "./data/nuscenes/samples/CAM_FRONT_RIGHT/n008-2018-08-01-15-16-36-0400__CAM_FRONT_RIGHT__1533151603520482.jpg",
+              "./data/nuscenes/samples/CAM_FRONT_LEFT/n008-2018-08-01-15-16-36-0400__CAM_FRONT_LEFT__1533151603504799.jpg",
+              "./data/nuscenes/samples/CAM_BACK/n008-2018-08-01-15-16-36-0400__CAM_BACK__1533151603537558.jpg",
+              "./data/nuscenes/samples/CAM_BACK_LEFT/n008-2018-08-01-15-16-36-0400__CAM_BACK_LEFT__1533151603547405.jpg",
+              "./data/nuscenes/samples/CAM_BACK_RIGHT/n008-2018-08-01-15-16-36-0400__CAM_BACK_RIGHT__1533151603528113.jpg"
+            ],
+            "ori_shape": [
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ],
+              [
+                450,
+                800,
+                3
+              ]
+            ],
+            "img_shape": [
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ]
+            ],
+            "lidar2img": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              }
+            ],
+            "lidar2cam": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "float64"
+              }
+            ],
+            "pad_shape": [
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ],
+              [
+                480,
+                800,
+                3
+              ]
+            ],
+            "scale_factor": 1.0,
+            "flip": false,
+            "pcd_horizontal_flip": false,
+            "pcd_vertical_flip": false,
+            "box_mode_3d": 0,
+            "box_type_3d": {
+              "type": "type"
+            },
+            "img_norm_cfg": {
+              "mean": {
+                "shape": [
+                  3
+                ],
+                "dtype": "float32"
+              },
+              "std": {
+                "shape": [
+                  3
+                ],
+                "dtype": "float32"
+              },
+              "to_rgb": true
+            },
+            "sample_idx": "3e8750f331d7499e9b5123e9eb70f2e2",
+            "prev_idx": "",
+            "next_idx": "3950bd41f74548429c0f7700ff3d8269",
+            "pcd_scale_factor": 1.0,
+            "pts_filename": "./data/nuscenes/samples/LIDAR_TOP/n008-2018-08-01-15-16-36-0400__LIDAR_TOP__1533151603547590.pcd.bin",
+            "scene_token": "fcbccedd61424f1b85dcbf8f897f9754",
+            "can_bus": {
+              "shape": [
+                18
+              ],
+              "dtype": "float64"
+            }
+          }
+        ],
+        {
+          "shape": [
+            1,
+            6,
+            3,
+            480,
+            800
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      ],
+      "kwargs": {
+        "prev_bev": null,
+        "rescale": true
+      },
+      "output": [
+        {
+          "shape": [
+            2500,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        },
+        [
+          {
+            "pts_bbox": {
+              "boxes_3d": {
+                "type": "LiDARInstance3DBoxes",
+                "tensor": {
+                  "shape": [
+                    300,
+                    9
+                  ],
+                  "dtype": "torch.float32",
+                  "device": "cpu"
+                }
+              },
+              "scores_3d": {
+                "shape": [
+                  300
+                ],
+                "dtype": "torch.float32",
+                "device": "cpu"
+              },
+              "labels_3d": {
+                "shape": [
+                  300
+                ],
+                "dtype": "torch.int64",
+                "device": "cpu"
+              }
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "name": "BEVFormer.forward_test",
+      "inputs": [],
+      "kwargs": {
+        "rescale": true,
+        "img": [
+          {
+            "shape": [
+              1,
+              6,
+              3,
+              480,
+              800
+            ],
+            "dtype": "torch.float32",
+            "device": "cuda:0"
+          }
+        ]
+      },
+      "output": [
+        {
+          "pts_bbox": {
+            "boxes_3d": {
+              "type": "LiDARInstance3DBoxes",
+              "tensor": {
+                "shape": [
+                  300,
+                  9
+                ],
+                "dtype": "torch.float32",
+                "device": "cpu"
+              }
+            },
+            "scores_3d": {
+              "shape": [
+                300
+              ],
+              "dtype": "torch.float32",
+              "device": "cpu"
+            },
+            "labels_3d": {
+              "shape": [
+                300
+              ],
+              "dtype": "torch.int64",
+              "device": "cpu"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "BEVFormer.forward",
+      "inputs": [],
+      "kwargs": {
+        "return_loss": false,
+        "rescale": true,
+        "img": [
+          {
+            "shape": [
+              1,
+              6,
+              3,
+              480,
+              800
+            ],
+            "dtype": "torch.float32",
+            "device": "cuda:0"
+          }
+        ]
+      },
+      "output": [
+        {
+          "pts_bbox": {
+            "boxes_3d": {
+              "type": "LiDARInstance3DBoxes",
+              "tensor": {
+                "shape": [
+                  300,
+                  9
+                ],
+                "dtype": "torch.float32",
+                "device": "cpu"
+              }
+            },
+            "scores_3d": {
+              "shape": [
+                300
+              ],
+              "dtype": "torch.float32",
+              "device": "cpu"
+            },
+            "labels_3d": {
+              "shape": [
+                300
+              ],
+              "dtype": "torch.int64",
+              "device": "cpu"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Final detections",
+      "output": {
+        "boxes_3d": {
+          "shape": [
+            300,
+            9
+          ],
+          "dtype": "float32"
+        },
+        "scores_3d": {
+          "shape": [
+            300
+          ],
+          "dtype": "float32"
+        },
+        "labels_3d": {
+          "shape": [
+            300
+          ],
+          "dtype": "int64"
+        },
+        "prev_bev_after_forward_test": {
+          "shape": [
+            2500,
+            1,
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0"
+        }
+      }
+    }
+  ]
+}
