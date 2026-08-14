@@ -1,0 +1,42 @@
+{
+  "sample_token": "3950bd41f74548429c0f7700ff3d8269",
+  "timestamp": 1533151604048025,
+  "scene_token": "fcbccedd61424f1b85dcbf8f897f9754",
+  "prev_bev_shape": [
+    1,
+    256,
+    50,
+    50
+  ],
+  "grid_shape": [
+    1,
+    50,
+    50,
+    2
+  ],
+  "output_shape": [
+    1,
+    256,
+    50,
+    50
+  ],
+  "dtype": "torch.float32",
+  "mode": "nearest",
+  "padding_mode": "zeros",
+  "align_corners": false,
+  "operator_names": [
+    "aten::empty",
+    "aten::grid_sampler",
+    "aten::grid_sampler_2d",
+    "cudaDeviceSynchronize",
+    "cudaLaunchKernel",
+    "void at::native::(anonymous namespace)::grid_sampler_2d_kernel<float, int>(int, at::cuda::detail::TensorInfo<float, int>, at::cuda::detail::TensorInfo<float, int>, at::cuda::detail::TensorInfo<float, int>, at::native::detail::GridSamplerInterpolation, at::native::detail::GridSamplerPadding, bool)"
+  ],
+  "rewrite_metrics": {
+    "shape_equal": true,
+    "dtype_equal": true,
+    "max_abs_error": 0.0,
+    "mean_abs_error": 0.0,
+    "max_rel_error": 0.0
+  }
+}
