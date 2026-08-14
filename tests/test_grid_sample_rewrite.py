@@ -5,11 +5,13 @@ from pathlib import Path
 import pytest
 import torch
 import torch.nn.functional as F
+from torchvision.transforms.functional import rotate
 
 
 TOOLS = Path(__file__).parents[1] / 'tools'
 sys.path.insert(0, str(TOOLS))
-from deployment.grid_sample_rewrite import bev_grid_sample_nearest  # noqa: E402
+from deployment.grid_sample_rewrite import (  # noqa: E402
+    bev_grid_sample_nearest, bev_rotate_nearest)
 
 
 def reference(input_tensor, grid):
@@ -87,6 +89,15 @@ def test_multiple_batches():
     torch.manual_seed(13)
     assert_matches(torch.randn(3, 2, 5, 6),
                    torch.empty(3, 4, 7, 2).uniform_(-1.2, 1.2))
+
+
+def test_tiny_temporal_rotation_matches_torchvision():
+    torch.manual_seed(17)
+    input_tensor = torch.randn(4, 50, 50)
+    angle = -1.0353196091174368
+    expected = rotate(input_tensor, angle, center=[100, 100])
+    actual = bev_rotate_nearest(input_tensor, angle, center=[100, 100])
+    torch.testing.assert_allclose(actual, expected, rtol=0.0, atol=0.0)
 
 
 def test_rejects_unsupported_layout():
