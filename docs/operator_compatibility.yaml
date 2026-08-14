@@ -1,0 +1,391 @@
+schema_version: 1
+baseline:
+  onnx_opset: 13
+  tensorrt: 8.4.12.5
+  cuda: 11.4
+  cudnn: 8.4.1
+  architecture: aarch64 / sm_87
+  plugin_api: IPluginV2DynamicExt
+
+allowed_statuses: [SUPPORTED, CONDITIONAL, UNSUPPORTED, CUSTOM, UNKNOWN]
+allowed_actions: [NATIVE, CHECK, REWRITE, PLUGIN, CPP_POSTPROCESS]
+
+evidence_sources:
+  profiler: golden_samples/3e8750f331d7499e9b5123e9eb70f2e2/operator_profile.json
+  events: golden_samples/3e8750f331d7499e9b5123e9eb70f2e2/operator_events.json
+  trace: golden_samples/3e8750f331d7499e9b5123e9eb70f2e2/forward_trace.json
+  call_chain: docs/BEVFormer_forward_call_chain.md
+  onnx_operators: https://onnx.ai/onnx/operators/
+  tensorrt_8_4_support_matrix: https://docs.nvidia.com/deeplearning/tensorrt/archives/tensorrt-843/pdf/TensorRT-Support-Matrix-Guide.pdf
+  tensorrt_8_4_developer_guide: https://docs.nvidia.com/deeplearning/tensorrt/archives/tensorrt-843/pdf/TensorRT-Developer-Guide.pdf
+
+operators:
+  - runtime_op: aten::conv2d
+    modules: [Backbone.ResNet, Neck.FPN]
+    onnx_op: Conv
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: SUPPORTED
+    action: NATIVE
+    notes: Semantic convolution entry; cudnn_convolution and CUDA kernels are implementation details.
+    evidence: Observed 55 calls; ResNet/FPN call chain.
+  - runtime_op: aten::batch_norm
+    modules: [Backbone.ResNet]
+    onnx_op: BatchNormalization
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: SUPPORTED
+    action: NATIVE
+    notes: Eval-mode frozen BatchNorm; parser may fold constants.
+    evidence: Observed 53 calls in R50.
+  - runtime_op: aten::relu
+    modules: [Backbone.ResNet, Neck.FPN, BEVEncoder.FFN, Decoder.FFN, Head.Cls, Head.Reg]
+    onnx_op: Relu
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: SUPPORTED
+    action: NATIVE
+    notes: In-place variants are exporter aliases, not distinct deployment ops.
+    evidence: Observed 24 calls plus aten::relu_.
+  - runtime_op: aten::max_pool2d
+    modules: [Backbone.ResNet]
+    onnx_op: MaxPool
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: SUPPORTED
+    action: NATIVE
+    notes: Indices are not consumed by the ResNet inference path.
+    evidence: Observed once at the ResNet stem.
+  - runtime_op: aten::linear
+    modules: [BEVEncoder.TemporalSelfAttention, BEVEncoder.MSDeformableAttention3D, BEVEncoder.FFN, Decoder.ObjectSelfAttention, Decoder.DeformableCrossAttention, Decoder.FFN, Decoder.ReferenceRefinement, Head.Cls, Head.Reg]
+    onnx_op: Gemm / MatMul + Add
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: SUPPORTED
+    action: NATIVE
+    notes: Exact lowering depends on rank and exporter folding.
+    evidence: Observed 147 calls; branch and attention modules in forward trace.
+  - runtime_op: aten::matmul
+    modules: [BEVEncoder.SpatialCrossAttention, Decoder.ObjectSelfAttention, Decoder.ReferenceRefinement]
+    onnx_op: MatMul
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: SUPPORTED
+    action: NATIVE
+    notes: Includes projection and attention matrix multiplication.
+    evidence: Observed 146 calls; event shapes and call chain.
+  - runtime_op: aten::bmm
+    modules: [Decoder.ObjectSelfAttention]
+    onnx_op: MatMul
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: SUPPORTED
+    action: NATIVE
+    notes: Batched MatMul lowering.
+    evidence: Observed 13 calls, consistent with six decoder self-attention layers.
+  - runtime_op: aten::layer_norm
+    modules: [BEVEncoder.LayerNorm, Decoder.LayerNorm]
+    onnx_op: ReduceMean + Sub + Pow + Add + Sqrt + Div + Mul + Add
+    onnx_opset13_status: CONDITIONAL
+    tensorrt_8_4_12_status: CONDITIONAL
+    action: CHECK
+    notes: Opset 13 has no standard LayerNormalization op; exporter decomposition and parser fusion must be verified.
+    evidence: Observed 40 calls; encoder/decoder norms plus head positional path.
+  - runtime_op: aten::softmax
+    modules: [BEVEncoder.TemporalSelfAttention, BEVEncoder.MSDeformableAttention3D, Decoder.ObjectSelfAttention, Decoder.DeformableCrossAttention]
+    onnx_op: Softmax
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: CONDITIONAL
+    action: CHECK
+    notes: Verify axis and dynamic-rank lowering in the exported graph.
+    evidence: Observed 18 calls.
+  - runtime_op: aten::dropout
+    modules: [BEVEncoder.TemporalSelfAttention, BEVEncoder.SpatialCrossAttention, BEVEncoder.FFN, Decoder.ObjectSelfAttention, Decoder.DeformableCrossAttention, Decoder.FFN]
+    onnx_op: Identity (evaluation mode)
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: SUPPORTED
+    action: NATIVE
+    notes: Model is eval(); deployment graph should eliminate dropout.
+    evidence: Observed Python/ATen calls but no stochastic training behavior.
+  - runtime_op: aten::embedding
+    modules: [BEVEncoder.SpatialCrossAttention, Decoder.ObjectSelfAttention]
+    onnx_op: Gather
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: CONDITIONAL
+    action: CHECK
+    notes: Constant embedding weights and INT index type must parse correctly.
+    evidence: Observed twice for learned BEV/object positional embeddings.
+  - runtime_op: aten::add
+    modules: [Backbone.ResNet, Neck.FPN, BEVEncoder.TemporalSelfAttention, BEVEncoder.SpatialCrossAttention, BEVEncoder.FFN, Decoder.ObjectSelfAttention, Decoder.DeformableCrossAttention, Decoder.FFN, Decoder.ReferenceRefinement, Head.Cls, Head.Reg, Postprocess]
+    onnx_op: Add
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: SUPPORTED
+    action: NATIVE
+    notes: Covers residual and bias addition; in-place form is not a separate ONNX op.
+    evidence: Observed 96 calls plus aten::add_.
+  - runtime_op: aten::sub
+    modules: [BEVEncoder.SpatialCrossAttention, Decoder.ReferenceRefinement, Postprocess]
+    onnx_op: Sub
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: SUPPORTED
+    action: NATIVE
+    notes: Basic elementwise arithmetic.
+    evidence: Observed 19 calls.
+  - runtime_op: aten::mul
+    modules: [Backbone.ResNet, BEVEncoder.TemporalSelfAttention, BEVEncoder.SpatialCrossAttention, Decoder.ReferenceRefinement, Postprocess]
+    onnx_op: Mul
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: SUPPORTED
+    action: NATIVE
+    notes: Basic elementwise arithmetic.
+    evidence: Observed 36 calls.
+  - runtime_op: aten::div
+    modules: [BEVEncoder.TemporalSelfAttention, BEVEncoder.SpatialCrossAttention, BEVEncoder.MSDeformableAttention3D, Decoder.ObjectSelfAttention, Decoder.ReferenceRefinement, Postprocess]
+    onnx_op: Div
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: SUPPORTED
+    action: NATIVE
+    notes: Check integer floor division separately.
+    evidence: Observed 51 calls.
+  - runtime_op: aten::exp
+    modules: [Postprocess]
+    onnx_op: Exp
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: SUPPORTED
+    action: NATIVE
+    notes: Used by bbox dimension decode.
+    evidence: Observed 3 calls.
+  - runtime_op: aten::log
+    modules: [Decoder.ReferenceRefinement]
+    onnx_op: Log
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: SUPPORTED
+    action: NATIVE
+    notes: Part of inverse-sigmoid/reference refinement arithmetic.
+    evidence: Observed 18 calls.
+  - runtime_op: aten::sigmoid
+    modules: [Decoder.ReferenceRefinement, Head.Cls, Head.Reg, Postprocess]
+    onnx_op: Sigmoid
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: SUPPORTED
+    action: NATIVE
+    notes: Postprocess class scores and normalized reference/box coordinates.
+    evidence: Observed 20 calls.
+  - runtime_op: aten::clamp
+    modules: [BEVEncoder.SpatialCrossAttention, Decoder.ReferenceRefinement]
+    onnx_op: Clip
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: CONDITIONAL
+    action: CHECK
+    notes: Verify scalar/tensor bound lowering and dtype.
+    evidence: Observed 114 calls.
+  - runtime_op: aten::maximum
+    modules: [BEVEncoder.SpatialCrossAttention]
+    onnx_op: Max
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: CONDITIONAL
+    action: CHECK
+    notes: Dynamic max_len construction may become shape-tensor logic.
+    evidence: Observed once while deriving SCA rebatch length.
+  - runtime_op: aten::mean
+    modules: [BEVEncoder.TemporalSelfAttention]
+    onnx_op: ReduceMean
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: SUPPORTED
+    action: NATIVE
+    notes: Temporal queue reduction.
+    evidence: Observed 3 calls, one per TSA layer.
+  - runtime_op: aten::sum
+    modules: [BEVEncoder.SpatialCrossAttention, BEVEncoder.MSDeformableAttention3D, Decoder.ObjectSelfAttention, Decoder.DeformableCrossAttention, Postprocess]
+    onnx_op: ReduceSum
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: CONDITIONAL
+    action: CHECK
+    notes: Axes and keepdims may be constants; shape-tensor reductions require parser validation.
+    evidence: Observed 42 calls.
+  - runtime_op: aten::cumsum
+    modules: [BEVEncoder.SpatialCrossAttention]
+    onnx_op: CumSum
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: CONDITIONAL
+    action: CHECK
+    notes: Used to build level_start_index; TRT parser support/dtype must be tested.
+    evidence: Observed once.
+  - runtime_op: aten::reshape
+    modules: [Backbone.ResNet, Neck.FPN, BEVEncoder.TemporalSelfAttention, BEVEncoder.SpatialCrossAttention, BEVEncoder.MSDeformableAttention3D, BEVEncoder.FFN, Decoder.ObjectSelfAttention, Decoder.DeformableCrossAttention, Decoder.FFN, Decoder.ReferenceRefinement, Head.Cls, Head.Reg, Postprocess]
+    onnx_op: Reshape
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: CONDITIONAL
+    action: CHECK
+    notes: Static shapes are routine; dynamic max_len and camera-valid-query dimensions need profiles.
+    evidence: Observed 101 calls plus view/flatten aliases.
+  - runtime_op: aten::permute
+    modules: [Neck.FPN, BEVEncoder.TemporalSelfAttention, BEVEncoder.SpatialCrossAttention, BEVEncoder.MSDeformableAttention3D, Decoder.ObjectSelfAttention, Decoder.DeformableCrossAttention, Head.Cls, Head.Reg]
+    onnx_op: Transpose
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: SUPPORTED
+    action: NATIVE
+    notes: Constant permutation expected.
+    evidence: Observed 67 calls.
+  - runtime_op: aten::transpose
+    modules: [BEVEncoder.TemporalSelfAttention, BEVEncoder.SpatialCrossAttention, Decoder.ObjectSelfAttention, Decoder.DeformableCrossAttention, Head.Cls, Head.Reg]
+    onnx_op: Transpose
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: SUPPORTED
+    action: NATIVE
+    notes: Constant two-axis swap.
+    evidence: Observed 198 calls.
+  - runtime_op: aten::cat
+    modules: [Neck.FPN, BEVEncoder.TemporalSelfAttention, BEVEncoder.SpatialCrossAttention, Decoder.ObjectSelfAttention, Decoder.ReferenceRefinement, Head.Cls, Head.Reg, Postprocess]
+    onnx_op: Concat
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: SUPPORTED
+    action: NATIVE
+    notes: Axis must be constant.
+    evidence: Observed 30 calls.
+  - runtime_op: aten::stack
+    modules: [BEVEncoder.SpatialCrossAttention, Decoder.ReferenceRefinement, Head.Cls, Head.Reg, Postprocess]
+    onnx_op: Unsqueeze + Concat
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: CONDITIONAL
+    action: CHECK
+    notes: Exporter decomposes stack; validate shape tensors.
+    evidence: Observed 22 calls.
+  - runtime_op: aten::split
+    modules: [Decoder.ObjectSelfAttention, Decoder.ReferenceRefinement, Postprocess]
+    onnx_op: Split
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: CONDITIONAL
+    action: CHECK
+    notes: Static split sizes expected but parser must confirm.
+    evidence: Observed 13 calls.
+  - runtime_op: aten::slice
+    modules: [Backbone.ResNet, Neck.FPN, BEVEncoder.TemporalSelfAttention, BEVEncoder.SpatialCrossAttention, Decoder.ObjectSelfAttention, Decoder.ReferenceRefinement, Head.Cls, Head.Reg, Postprocess]
+    onnx_op: Slice
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: CONDITIONAL
+    action: CHECK
+    notes: Dynamic bounds and negative axes require parser validation.
+    evidence: Observed 366 calls.
+  - runtime_op: aten::select
+    modules: [BEVEncoder.SpatialCrossAttention, Decoder.ReferenceRefinement, Head.Cls, Head.Reg, Postprocess]
+    onnx_op: Gather / Slice + Squeeze
+    onnx_opset13_status: CONDITIONAL
+    tensorrt_8_4_12_status: CONDITIONAL
+    action: CHECK
+    notes: Mapping depends on index form and exporter canonicalization.
+    evidence: Observed 325 calls.
+  - runtime_op: aten::index
+    modules: [BEVEncoder.SpatialCrossAttention, Decoder.ReferenceRefinement, Postprocess]
+    onnx_op: Gather / GatherND / NonZero + GatherND
+    onnx_opset13_status: CONDITIONAL
+    tensorrt_8_4_12_status: CONDITIONAL
+    action: CHECK
+    notes: Advanced and boolean indexing have multiple lowerings; SCA has dynamic valid-query indexing.
+    evidence: 58 calls; shapes include [2500,256], [2500,4,2], [900,10], [300,9].
+  - runtime_op: aten::index_select
+    modules: [BEVEncoder.SpatialCrossAttention, Postprocess]
+    onnx_op: Gather
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: CONDITIONAL
+    action: CHECK
+    notes: Check INT32/INT64 indices on the target parser.
+    evidence: Observed twice.
+  - runtime_op: aten::index_put_
+    modules: [BEVEncoder.SpatialCrossAttention]
+    onnx_op: ScatterND / ScatterElements
+    onnx_opset13_status: CONDITIONAL
+    tensorrt_8_4_12_status: UNKNOWN
+    action: CHECK
+    notes: Accumulating writes and duplicate indices may not match plain ScatterND semantics.
+    evidence: Observed 18 calls; SCA scatter-add style slot accumulation in source.
+  - runtime_op: aten::nonzero
+    modules: [BEVEncoder.SpatialCrossAttention, Postprocess]
+    onnx_op: NonZero
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: CONDITIONAL
+    action: CHECK
+    notes: Produces data-dependent output shape; a central TensorRT dynamic-shape risk.
+    evidence: Observed 21 calls while selecting valid camera queries and filtered boxes.
+  - runtime_op: aten::all
+    modules: [Postprocess]
+    onnx_op: ReduceMin / Cast or ReduceSum comparison
+    onnx_opset13_status: CONDITIONAL
+    tensorrt_8_4_12_status: CONDITIONAL
+    action: CPP_POSTPROCESS
+    notes: Boolean reduction lowering varies; post-center-range filtering is a good C++ boundary.
+    evidence: Observed twice in NMSFreeCoder center-range mask.
+  - runtime_op: aten::bitwise_and
+    modules: [BEVEncoder.SpatialCrossAttention, Postprocess]
+    onnx_op: And
+    onnx_opset13_status: CONDITIONAL
+    tensorrt_8_4_12_status: CONDITIONAL
+    action: CHECK
+    notes: Boolean mask vs integer bitwise semantics depend on dtype.
+    evidence: Observed 9 calls.
+  - runtime_op: aten::gt
+    modules: [BEVEncoder.SpatialCrossAttention, Postprocess]
+    onnx_op: Greater
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: CONDITIONAL
+    action: CHECK
+    notes: Used in camera validity and optional score filtering.
+    evidence: Observed 12 calls.
+  - runtime_op: aten::ge
+    modules: [Postprocess]
+    onnx_op: GreaterOrEqual
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: CONDITIONAL
+    action: CPP_POSTPROCESS
+    notes: Center-range filtering can remain outside the TensorRT engine.
+    evidence: Observed twice.
+  - runtime_op: aten::le
+    modules: [Postprocess]
+    onnx_op: LessOrEqual
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: CONDITIONAL
+    action: CPP_POSTPROCESS
+    notes: Center-range filtering can remain outside the TensorRT engine.
+    evidence: Observed twice.
+  - runtime_op: aten::topk
+    modules: [Postprocess]
+    onnx_op: TopK-11
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: CONDITIONAL
+    action: CPP_POSTPROCESS
+    notes: K=300 over 9000 scores is static here; validate parser limits and index dtype, or keep in C++.
+    evidence: Observed once with input [9000].
+  - runtime_op: aten::remainder
+    modules: [Postprocess]
+    onnx_op: Mod
+    onnx_opset13_status: SUPPORTED
+    tensorrt_8_4_12_status: CONDITIONAL
+    action: CPP_POSTPROCESS
+    notes: Integer label decode; C++ postprocess avoids parser integer corner cases.
+    evidence: Observed once for class label = topk_index % 10.
+  - runtime_op: aten::floor_divide
+    modules: [Postprocess]
+    onnx_op: Div + Floor / integer Div
+    onnx_opset13_status: CONDITIONAL
+    tensorrt_8_4_12_status: CONDITIONAL
+    action: CPP_POSTPROCESS
+    notes: Integer bbox index decode semantics and dtype need validation.
+    evidence: Observed once for bbox_index = topk_index // 10.
+  - runtime_op: aten::atan2
+    modules: [Postprocess]
+    onnx_op: No direct opset-13 Atan2; quadrant-correct Atan-based subgraph required
+    onnx_opset13_status: UNSUPPORTED
+    tensorrt_8_4_12_status: UNKNOWN
+    action: CPP_POSTPROCESS
+    notes: Keep yaw decode in C++ or implement a verified quadrant-correct rewrite.
+    evidence: Observed once with [300,1] inputs in denormalize_bbox.
+  - runtime_op: MultiScaleDeformableAttnFunction_fp32
+    modules: [BEVEncoder.TemporalSelfAttention, BEVEncoder.MSDeformableAttention3D, Decoder.DeformableCrossAttention]
+    onnx_op: Custom domain MSDeformableAttention
+    onnx_opset13_status: CUSTOM
+    tensorrt_8_4_12_status: CUSTOM
+    action: PLUGIN
+    notes: No standard ONNX op captures this fused sampling/reduction; target API is IPluginV2DynamicExt.
+    evidence: 12 calls and 12 ms_deformable_im2col_gpu_kernel launches = 3 TSA + 3 SCA + 6 decoder layers.
+  - runtime_op: aten::grid_sampler
+    modules: [BEVEncoder.TemporalSelfAttention]
+    onnx_op: GridSample (introduced in ONNX opset 16)
+    onnx_opset13_status: UNSUPPORTED
+    tensorrt_8_4_12_status: UNKNOWN
+    action: REWRITE
+    notes: Latent rotate-prev-BEV path; not executed because this Golden Sample is the first scene frame.
+    evidence: Absent from current profile; transformer.py uses F.grid_sample only when prev_bev exists.
+    include_if_unobserved: true

@@ -140,59 +140,84 @@ def save_reference(output_dir, token, timestamp, boxes, scores, labels,
     return npz_path, json_path, summary
 
 
-def main():
-    args = parse_args()
+def prepare_golden_sample(token, config, checkpoint_path, seed):
+    """Build the model and batch for one Golden Sample inference."""
     if not torch.cuda.is_available():
         raise RuntimeError('CUDA is required for BEVFormer inference')
-    for path_name, path in (('config', args.config),
-                            ('checkpoint', args.checkpoint)):
+    for path_name, path in (('config', config),
+                            ('checkpoint', checkpoint_path)):
         if not os.path.isfile(path):
             raise FileNotFoundError('{} not found: {}'.format(path_name, path))
 
-    cfg = Config.fromfile(args.config)
-    import_plugin(cfg, args.config)
+    cfg = Config.fromfile(config)
+    import_plugin(cfg, config)
     cfg.model.pretrained = None
     cfg.model.train_cfg = None
     cfg.data.test.test_mode = True
-    set_random_seed(args.seed, deterministic=True)
+    set_random_seed(seed, deterministic=True)
     torch.backends.cudnn.benchmark = False
     if cfg.get('close_tf32', False):
         torch.backends.cuda.matmul.allow_tf32 = False
         torch.backends.cudnn.allow_tf32 = False
 
     dataset = build_dataset(cfg.data.test)
-    index = find_sample_index(dataset.data_infos, args.token)
+    index = find_sample_index(dataset.data_infos, token)
     info = dataset.data_infos[index]
     data = dataset[index]
-    camera_names, metas = validate_pipeline_item(data, info, args.token)
+    camera_names, metas = validate_pipeline_item(data, info, token)
     print('Golden sample index={}, timestamp={}, cameras={}'.format(
         index, info['timestamp'], ','.join(camera_names)))
     image_tensor = pipeline_image_tensor(data)
     print('Pipeline image tensor shape={}'.format(tuple(image_tensor.shape)))
 
     model = build_model(cfg.model, test_cfg=cfg.get('test_cfg'))
-    checkpoint = load_checkpoint(model, args.checkpoint, map_location='cpu')
+    checkpoint = load_checkpoint(model, checkpoint_path, map_location='cpu')
     model.CLASSES = checkpoint.get('meta', {}).get('CLASSES', dataset.CLASSES)
     model = MMDataParallel(model.cuda(), device_ids=[0])
     model.eval()
     batch = collate([data], samples_per_gpu=1)
+    return {
+        'model': model,
+        'batch': batch,
+        'dataset': dataset,
+        'index': index,
+        'info': info,
+        'camera_names': camera_names,
+        'metas': metas,
+        'image_tensor': image_tensor,
+    }
+
+
+def run_model_inference(model, batch):
+    """Run and validate the single-sample inference forward."""
     with torch.no_grad():
         outputs = model(return_loss=False, rescale=True, **batch)
     if len(outputs) != 1:
         raise ValueError('Expected one model output, found {}'.format(len(outputs)))
+    return outputs[0]
 
-    boxes, scores, labels = result_arrays(outputs[0])
+
+def main():
+    args = parse_args()
+    context = prepare_golden_sample(
+        args.token, args.config, args.checkpoint, args.seed)
+    model = context['model']
+    dataset = context['dataset']
+    info = context['info']
+    result = run_model_inference(model, context['batch'])
+
+    boxes, scores, labels = result_arrays(result)
     output_dir = Path(args.output_root) / args.token
     metadata = {
-        'dataset_index': index,
+        'dataset_index': context['index'],
         'scene_token': info['scene_token'],
-        'camera_names': camera_names,
+        'camera_names': context['camera_names'],
         'lidar_path': info['lidar_path'],
         'config': args.config,
         'checkpoint': args.checkpoint,
         'seed': args.seed,
-        'pipeline_img_shape': list(image_tensor.shape),
-        'can_bus_length': len(metas['can_bus']),
+        'pipeline_img_shape': list(context['image_tensor'].shape),
+        'can_bus_length': len(context['metas']['can_bus']),
     }
     npz_path, json_path, summary = save_reference(
         output_dir, args.token, info['timestamp'], boxes, scores, labels,
