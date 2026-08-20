@@ -1,0 +1,4656 @@
+[
+  {
+    "name": "backbone.c5",
+    "shape": [
+      6,
+      2048,
+      15,
+      25
+    ],
+    "dtype": "float32",
+    "min": 0.0,
+    "max": 5.972761631011963,
+    "mean": 0.029373467502022424,
+    "std": 0.1523425024637102,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/backbone/c5.npy"
+  },
+  {
+    "name": "fpn.level_0",
+    "shape": [
+      6,
+      256,
+      15,
+      25
+    ],
+    "dtype": "float32",
+    "min": -15.977251052856445,
+    "max": 13.197181701660156,
+    "mean": 0.0412328559275463,
+    "std": 1.6299264208019024,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/fpn/level_0.npy"
+  },
+  {
+    "name": "bev.bev_pos",
+    "shape": [
+      1,
+      256,
+      50,
+      50
+    ],
+    "dtype": "float32",
+    "min": -3.9150633811950684,
+    "max": 3.685087203979492,
+    "mean": -0.012482417197932279,
+    "std": 0.9158385589969802,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/bev/bev_pos.npy"
+  },
+  {
+    "name": "bev.bev_query",
+    "shape": [
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.559509754180908,
+    "max": 4.477896213531494,
+    "mean": 0.0014545507345957176,
+    "std": 0.914463242344442,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/bev/bev_query.npy"
+  },
+  {
+    "name": "bev.spatial_shapes",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "int64",
+    "min": 15.0,
+    "max": 25.0,
+    "mean": 20.0,
+    "std": 5.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/bev/spatial_shapes.npy"
+  },
+  {
+    "name": "bev.level_start_index",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/bev/level_start_index.npy"
+  },
+  {
+    "name": "temporal.shift",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": -0.0,
+    "max": -0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/shift.npy"
+  },
+  {
+    "name": "bev.reference_points_3d",
+    "shape": [
+      1,
+      4,
+      2500,
+      3
+    ],
+    "dtype": "float32",
+    "min": 0.009999999776482582,
+    "max": 0.9899999499320984,
+    "mean": 0.4999999948342641,
+    "std": 0.30162714384148986,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/bev/reference_points_3d.npy"
+  },
+  {
+    "name": "bev.reference_points_2d",
+    "shape": [
+      1,
+      2500,
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": 0.009999999776482582,
+    "max": 0.9899999499320984,
+    "mean": 0.4999999885261059,
+    "std": 0.2886173873214833,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/bev/reference_points_2d.npy"
+  },
+  {
+    "name": "bev.reference_points_cam",
+    "shape": [
+      6,
+      1,
+      2500,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -6670483.5,
+    "max": 4808629.5,
+    "mean": -635591.1283633322,
+    "std": 1408295.0827964311,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/bev/reference_points_cam.npy"
+  },
+  {
+    "name": "bev.bev_mask",
+    "shape": [
+      6,
+      1,
+      2500,
+      4
+    ],
+    "dtype": "bool",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.18671666666666667,
+    "std": 0.3896839142889472,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/bev/bev_mask.npy"
+  },
+  {
+    "name": "temporal.layer_0.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.08774471282959,
+    "max": 8.29212474822998,
+    "mean": -0.004651992653991329,
+    "std": 1.2017735051843326,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_0/query.npy"
+  },
+  {
+    "name": "temporal.layer_0.reference_points",
+    "shape": [
+      2,
+      2500,
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": 0.009999999776482582,
+    "max": 0.9899999499320984,
+    "mean": 0.4999999885261059,
+    "std": 0.2886173873214833,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_0/reference_points.npy"
+  },
+  {
+    "name": "temporal.layer_0.value_effective",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.08774471282959,
+    "max": 8.29212474822998,
+    "mean": -0.004651992653991329,
+    "std": 1.2017735051843328,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_0/value_effective.npy"
+  },
+  {
+    "name": "temporal.layer_0.sampling_offsets",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -10.370811462402344,
+    "max": 9.953730583190918,
+    "mean": -0.08883686148596753,
+    "std": 2.4786236907926753,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_0/sampling_offsets.npy"
+  },
+  {
+    "name": "temporal.layer_0.attention_weights",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4
+    ],
+    "dtype": "float32",
+    "min": 4.222129973641131e-06,
+    "max": 0.9998947381973267,
+    "mean": 0.24999999998215708,
+    "std": 0.26644917287076764,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_0/attention_weights.npy"
+  },
+  {
+    "name": "temporal.layer_0.sampling_locations",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -0.17449359595775604,
+    "max": 1.1234394311904907,
+    "mean": 0.4982232512654795,
+    "std": 0.29316810507548385,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_0/sampling_locations.npy"
+  },
+  {
+    "name": "temporal.layer_0.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -8.262300491333008,
+    "max": 9.837725639343262,
+    "mean": -0.020737864176094262,
+    "std": 1.916300037814786,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_0/output.npy"
+  },
+  {
+    "name": "spatial.layer_0.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.16061544418335,
+    "max": 4.824694633483887,
+    "mean": -0.008225319468616592,
+    "std": 0.9574956262483747,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/query.npy"
+  },
+  {
+    "name": "spatial.layer_0.key",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -13.803327560424805,
+    "max": 11.803302764892578,
+    "mean": -0.0027172482269432092,
+    "std": 1.600065512714744,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/key.npy"
+  },
+  {
+    "name": "spatial.layer_0.value",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -13.803327560424805,
+    "max": 11.803302764892578,
+    "mean": -0.0027172482269432092,
+    "std": 1.600065512714744,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/value.npy"
+  },
+  {
+    "name": "spatial.layer_0.reference_points_cam",
+    "shape": [
+      6,
+      1,
+      2500,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -6670483.5,
+    "max": 4808629.5,
+    "mean": -635591.1283633322,
+    "std": 1408295.0827964311,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/reference_points_cam.npy"
+  },
+  {
+    "name": "spatial.layer_0.bev_mask",
+    "shape": [
+      6,
+      1,
+      2500,
+      4
+    ],
+    "dtype": "bool",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.18671666666666667,
+    "std": 0.3896839142889472,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/bev_mask.npy"
+  },
+  {
+    "name": "spatial.layer_0.spatial_shapes",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "int64",
+    "min": 15.0,
+    "max": 25.0,
+    "mean": 20.0,
+    "std": 5.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/spatial_shapes.npy"
+  },
+  {
+    "name": "spatial.layer_0.level_start_index",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/level_start_index.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.query",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.16061544418335,
+    "max": 4.824694633483887,
+    "mean": -0.0065119449881860135,
+    "std": 0.8510295286546362,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/deformable/query.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.value",
+    "shape": [
+      6,
+      375,
+      256
+    ],
+    "dtype": "float32",
+    "min": -13.803327560424805,
+    "max": 11.803302764892578,
+    "mean": -0.0027172482269432092,
+    "std": 1.600065512714744,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/deformable/value.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.sampling_offsets",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -12.649490356445312,
+    "max": 12.435887336730957,
+    "mean": 0.030869195226942977,
+    "std": 4.6349152304619965,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/deformable/sampling_offsets.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.attention_weights",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8
+    ],
+    "dtype": "float32",
+    "min": 0.0002771224535536021,
+    "max": 0.9584110975265503,
+    "mean": 0.1250000001106134,
+    "std": 0.14119600618324654,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/deformable/attention_weights.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.sampling_locations",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -1.404188632965088,
+    "max": 3.3008079528808594,
+    "mean": 0.4103202162217823,
+    "std": 0.38788372357397577,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/deformable/sampling_locations.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.output",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -7.9189558029174805,
+    "max": 8.689104080200195,
+    "mean": -0.009653031383714062,
+    "std": 0.8087928735715691,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/deformable/output.npy"
+  },
+  {
+    "name": "spatial.layer_0.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -7.529041290283203,
+    "max": 11.118444442749023,
+    "mean": -0.020192459731491908,
+    "std": 1.466707536350162,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/output.npy"
+  },
+  {
+    "name": "temporal.layer_1.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.628637313842773,
+    "max": 7.926373481750488,
+    "mean": -0.0016330173524864758,
+    "std": 0.9869328562325217,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_1/query.npy"
+  },
+  {
+    "name": "temporal.layer_1.reference_points",
+    "shape": [
+      2,
+      2500,
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": 0.009999999776482582,
+    "max": 0.9899999499320984,
+    "mean": 0.4999999885261059,
+    "std": 0.2886173873214833,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_1/reference_points.npy"
+  },
+  {
+    "name": "temporal.layer_1.value_effective",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.628637313842773,
+    "max": 7.926373481750488,
+    "mean": -0.0016330173524864758,
+    "std": 0.9869328562325221,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_1/value_effective.npy"
+  },
+  {
+    "name": "temporal.layer_1.sampling_offsets",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -15.100675582885742,
+    "max": 22.38280487060547,
+    "mean": 0.23279600806216186,
+    "std": 3.9552488368469216,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_1/sampling_offsets.npy"
+  },
+  {
+    "name": "temporal.layer_1.attention_weights",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4
+    ],
+    "dtype": "float32",
+    "min": 1.190388957184041e-06,
+    "max": 0.9999152421951294,
+    "mean": 0.24999999999186065,
+    "std": 0.26081661631022546,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_1/attention_weights.npy"
+  },
+  {
+    "name": "temporal.layer_1.sampling_locations",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -0.22841469943523407,
+    "max": 1.3584035634994507,
+    "mean": 0.504655908708385,
+    "std": 0.2973901756170069,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_1/sampling_locations.npy"
+  },
+  {
+    "name": "temporal.layer_1.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -9.985218048095703,
+    "max": 10.20028305053711,
+    "mean": -0.010886528248871308,
+    "std": 1.58820963551096,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_1/output.npy"
+  },
+  {
+    "name": "spatial.layer_1.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.1112189292907715,
+    "max": 6.483969211578369,
+    "mean": -0.002167750434217166,
+    "std": 0.9143090457862846,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/query.npy"
+  },
+  {
+    "name": "spatial.layer_1.key",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -13.803327560424805,
+    "max": 11.803302764892578,
+    "mean": -0.0027172482269432092,
+    "std": 1.600065512714744,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/key.npy"
+  },
+  {
+    "name": "spatial.layer_1.value",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -13.803327560424805,
+    "max": 11.803302764892578,
+    "mean": -0.0027172482269432092,
+    "std": 1.600065512714744,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/value.npy"
+  },
+  {
+    "name": "spatial.layer_1.reference_points_cam",
+    "shape": [
+      6,
+      1,
+      2500,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -6670483.5,
+    "max": 4808629.5,
+    "mean": -635591.1283633322,
+    "std": 1408295.0827964311,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/reference_points_cam.npy"
+  },
+  {
+    "name": "spatial.layer_1.bev_mask",
+    "shape": [
+      6,
+      1,
+      2500,
+      4
+    ],
+    "dtype": "bool",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.18671666666666667,
+    "std": 0.3896839142889472,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/bev_mask.npy"
+  },
+  {
+    "name": "spatial.layer_1.spatial_shapes",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "int64",
+    "min": 15.0,
+    "max": 25.0,
+    "mean": 20.0,
+    "std": 5.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/spatial_shapes.npy"
+  },
+  {
+    "name": "spatial.layer_1.level_start_index",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/level_start_index.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.query",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.1112189292907715,
+    "max": 6.483969211578369,
+    "mean": -0.0017172264468040448,
+    "std": 0.8126488497469159,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/deformable/query.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.value",
+    "shape": [
+      6,
+      375,
+      256
+    ],
+    "dtype": "float32",
+    "min": -13.803327560424805,
+    "max": 11.803302764892578,
+    "mean": -0.0027172482269432092,
+    "std": 1.600065512714744,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/deformable/value.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.sampling_offsets",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -13.27758502960205,
+    "max": 12.163771629333496,
+    "mean": 0.019402844934734854,
+    "std": 4.5913642263583485,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/deformable/sampling_offsets.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.attention_weights",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8
+    ],
+    "dtype": "float32",
+    "min": 7.271392678376287e-05,
+    "max": 0.7177303433418274,
+    "mean": 0.12500000062349234,
+    "std": 0.12269956829907658,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/deformable/attention_weights.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.sampling_locations",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -1.4215571880340576,
+    "max": 3.262791633605957,
+    "mean": 0.40802603500233503,
+    "std": 0.38958212485578314,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/deformable/sampling_locations.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.output",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -6.138955593109131,
+    "max": 5.9225897789001465,
+    "mean": 0.006168777840858732,
+    "std": 0.6214938298032462,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/deformable/output.npy"
+  },
+  {
+    "name": "spatial.layer_1.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -6.565155029296875,
+    "max": 9.104484558105469,
+    "mean": -0.008936054894451264,
+    "std": 1.2281974805147844,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/output.npy"
+  },
+  {
+    "name": "temporal.layer_2.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.40825080871582,
+    "max": 6.308408260345459,
+    "mean": 0.00023772741141756093,
+    "std": 0.970333931319382,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_2/query.npy"
+  },
+  {
+    "name": "temporal.layer_2.reference_points",
+    "shape": [
+      2,
+      2500,
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": 0.009999999776482582,
+    "max": 0.9899999499320984,
+    "mean": 0.4999999885261059,
+    "std": 0.2886173873214833,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_2/reference_points.npy"
+  },
+  {
+    "name": "temporal.layer_2.value_effective",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.40825080871582,
+    "max": 6.308408260345459,
+    "mean": 0.00023772741141756093,
+    "std": 0.9703339313193821,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_2/value_effective.npy"
+  },
+  {
+    "name": "temporal.layer_2.sampling_offsets",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -24.420982360839844,
+    "max": 22.83511734008789,
+    "mean": -0.05589358393612192,
+    "std": 3.4355065284525663,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_2/sampling_offsets.npy"
+  },
+  {
+    "name": "temporal.layer_2.attention_weights",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4
+    ],
+    "dtype": "float32",
+    "min": 7.551035992037214e-07,
+    "max": 0.9999178647994995,
+    "mean": 0.25000000000632244,
+    "std": 0.2845768387117138,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_2/attention_weights.npy"
+  },
+  {
+    "name": "temporal.layer_2.sampling_locations",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -0.3666507303714752,
+    "max": 1.446702241897583,
+    "mean": 0.4988821168156894,
+    "std": 0.2957132254240724,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_2/sampling_locations.npy"
+  },
+  {
+    "name": "temporal.layer_2.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -8.130399703979492,
+    "max": 8.48956298828125,
+    "mean": -0.054269174537036086,
+    "std": 1.6195981373662278,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_2/output.npy"
+  },
+  {
+    "name": "spatial.layer_2.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.296573162078857,
+    "max": 5.018447399139404,
+    "mean": -0.001463379915788298,
+    "std": 0.9461907817842153,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/query.npy"
+  },
+  {
+    "name": "spatial.layer_2.key",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -13.803327560424805,
+    "max": 11.803302764892578,
+    "mean": -0.0027172482269432092,
+    "std": 1.600065512714744,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/key.npy"
+  },
+  {
+    "name": "spatial.layer_2.value",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -13.803327560424805,
+    "max": 11.803302764892578,
+    "mean": -0.0027172482269432092,
+    "std": 1.600065512714744,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/value.npy"
+  },
+  {
+    "name": "spatial.layer_2.reference_points_cam",
+    "shape": [
+      6,
+      1,
+      2500,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -6670483.5,
+    "max": 4808629.5,
+    "mean": -635591.1283633322,
+    "std": 1408295.0827964311,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/reference_points_cam.npy"
+  },
+  {
+    "name": "spatial.layer_2.bev_mask",
+    "shape": [
+      6,
+      1,
+      2500,
+      4
+    ],
+    "dtype": "bool",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.18671666666666667,
+    "std": 0.3896839142889472,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/bev_mask.npy"
+  },
+  {
+    "name": "spatial.layer_2.spatial_shapes",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "int64",
+    "min": 15.0,
+    "max": 25.0,
+    "mean": 20.0,
+    "std": 5.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/spatial_shapes.npy"
+  },
+  {
+    "name": "spatial.layer_2.level_start_index",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/level_start_index.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.query",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.296573162078857,
+    "max": 5.018447399139404,
+    "mean": -0.0010932442804700252,
+    "std": 0.8411025715710456,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/deformable/query.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.value",
+    "shape": [
+      6,
+      375,
+      256
+    ],
+    "dtype": "float32",
+    "min": -13.803327560424805,
+    "max": 11.803302764892578,
+    "mean": -0.0027172482269432092,
+    "std": 1.600065512714744,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/deformable/value.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.sampling_offsets",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -13.099434852600098,
+    "max": 15.978216171264648,
+    "mean": -0.24886821397931186,
+    "std": 4.468185326601141,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/deformable/sampling_offsets.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.attention_weights",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8
+    ],
+    "dtype": "float32",
+    "min": 0.00015991812688298523,
+    "max": 0.9304395914077759,
+    "mean": 0.12499999948291562,
+    "std": 0.13968941519150035,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/deformable/attention_weights.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.sampling_locations",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -1.429790735244751,
+    "max": 3.1909313201904297,
+    "mean": 0.3922323886001758,
+    "std": 0.37696758493708343,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/deformable/sampling_locations.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.output",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -8.778042793273926,
+    "max": 8.738051414489746,
+    "mean": 0.01446995450014451,
+    "std": 0.7274718856589292,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/deformable/output.npy"
+  },
+  {
+    "name": "spatial.layer_2.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -7.284724712371826,
+    "max": 7.031384468078613,
+    "mean": 0.006151411724412538,
+    "std": 1.3708237089613389,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/output.npy"
+  },
+  {
+    "name": "decoder.reference_points_initial",
+    "shape": [
+      1,
+      900,
+      3
+    ],
+    "dtype": "float32",
+    "min": 0.019861089065670967,
+    "max": 0.9876576662063599,
+    "mean": 0.49605041034450686,
+    "std": 0.21322183656815605,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/decoder/reference_points_initial.npy"
+  },
+  {
+    "name": "decoder.layer_0.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.200481414794922,
+    "max": 3.8851397037506104,
+    "mean": -0.00099271722681049,
+    "std": 0.8536466662950307,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/decoder/layer_0/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_1.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.946809768676758,
+    "max": 3.7453694343566895,
+    "mean": -0.003002575376174826,
+    "std": 0.8823547273416823,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/decoder/layer_1/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_2.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -6.2728400230407715,
+    "max": 4.0728936195373535,
+    "mean": -0.0005309628521447227,
+    "std": 0.8933923120014963,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/decoder/layer_2/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_3.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.779667854309082,
+    "max": 3.9272422790527344,
+    "mean": 0.0003113395367520348,
+    "std": 0.8878607358961854,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/decoder/layer_3/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_4.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.980895519256592,
+    "max": 4.846458911895752,
+    "mean": -0.0015413241981584451,
+    "std": 0.8691514282391221,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/decoder/layer_4/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_5.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.649337291717529,
+    "max": 3.7691407203674316,
+    "mean": -0.002232915422971241,
+    "std": 0.8529582983287581,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/decoder/layer_5/object_feature.npy"
+  },
+  {
+    "name": "decoder.reference_points_after_refinement",
+    "shape": [
+      6,
+      1,
+      900,
+      3
+    ],
+    "dtype": "float32",
+    "min": 0.015782339498400688,
+    "max": 0.9900804162025452,
+    "mean": 0.4972241090265689,
+    "std": 0.21371119008672246,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/decoder/reference_points_after_refinement.npy"
+  },
+  {
+    "name": "bev.final_bev",
+    "shape": [
+      2500,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -3.774695873260498,
+    "max": 3.1561121940612793,
+    "mean": 0.0023726543658263814,
+    "std": 0.7733762652888083,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/bev/final_bev.npy"
+  },
+  {
+    "name": "detection.cls_scores",
+    "shape": [
+      6,
+      1,
+      900,
+      10
+    ],
+    "dtype": "float32",
+    "min": -16.42008399963379,
+    "max": 3.2737674713134766,
+    "mean": -6.279639463173019,
+    "std": 1.4833105445959935,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/detection/cls_scores.npy"
+  },
+  {
+    "name": "detection.bbox_preds",
+    "shape": [
+      6,
+      1,
+      900,
+      10
+    ],
+    "dtype": "float32",
+    "min": -49.58388900756836,
+    "max": 50.18423843383789,
+    "mean": -0.04623037160381027,
+    "std": 11.426871885386745,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/detection/bbox_preds.npy"
+  },
+  {
+    "name": "detection.decoded_boxes",
+    "shape": [
+      300,
+      9
+    ],
+    "dtype": "float32",
+    "min": -49.58388900756836,
+    "max": 49.853153228759766,
+    "mean": 0.39696737494510737,
+    "std": 12.769082844205721,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/detection/decoded_boxes.npy"
+  },
+  {
+    "name": "detection.decoded_scores",
+    "shape": [
+      300
+    ],
+    "dtype": "float32",
+    "min": 0.03817368298768997,
+    "max": 0.9605700373649597,
+    "mean": 0.15679072705407937,
+    "std": 0.137301640088605,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/detection/decoded_scores.npy"
+  },
+  {
+    "name": "detection.decoded_labels",
+    "shape": [
+      300
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 9.0,
+    "mean": 6.463333333333333,
+    "std": 3.0499162101423196,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/detection/decoded_labels.npy"
+  },
+  {
+    "name": "temporal.prev_bev_stored",
+    "shape": [
+      2500,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -3.774695873260498,
+    "max": 3.1561121940612793,
+    "mean": 0.0023726543658263814,
+    "std": 0.7733762652888083,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/prev_bev_stored.npy"
+  },
+  {
+    "name": "backbone.c5",
+    "shape": [
+      6,
+      2048,
+      15,
+      25
+    ],
+    "dtype": "float32",
+    "min": 0.0,
+    "max": 6.720466136932373,
+    "mean": 0.030140109543748052,
+    "std": 0.157379539145446,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/backbone/c5.npy"
+  },
+  {
+    "name": "fpn.level_0",
+    "shape": [
+      6,
+      256,
+      15,
+      25
+    ],
+    "dtype": "float32",
+    "min": -14.353249549865723,
+    "max": 15.903532028198242,
+    "mean": 0.03905249241275922,
+    "std": 1.670271865081637,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/fpn/level_0.npy"
+  },
+  {
+    "name": "bev.bev_pos",
+    "shape": [
+      1,
+      256,
+      50,
+      50
+    ],
+    "dtype": "float32",
+    "min": -3.9150633811950684,
+    "max": 3.685087203979492,
+    "mean": -0.012482417197932279,
+    "std": 0.9158385589969802,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/bev/bev_pos.npy"
+  },
+  {
+    "name": "bev.bev_query",
+    "shape": [
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.559509754180908,
+    "max": 4.477896213531494,
+    "mean": 0.0014545507345957176,
+    "std": 0.914463242344442,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/bev/bev_query.npy"
+  },
+  {
+    "name": "temporal.prev_bev_aligned",
+    "shape": [
+      2500,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -3.774695873260498,
+    "max": 3.1561121940612793,
+    "mean": 0.0022298083773770747,
+    "std": 0.752220898049593,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/prev_bev_aligned.npy"
+  },
+  {
+    "name": "bev.spatial_shapes",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "int64",
+    "min": 15.0,
+    "max": 25.0,
+    "mean": 20.0,
+    "std": 5.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/bev/spatial_shapes.npy"
+  },
+  {
+    "name": "bev.level_start_index",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/bev/level_start_index.npy"
+  },
+  {
+    "name": "temporal.shift",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": -0.00013976912305224687,
+    "max": 0.04161344841122627,
+    "mean": 0.020736839644087013,
+    "std": 0.02087660876713926,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/shift.npy"
+  },
+  {
+    "name": "bev.reference_points_3d",
+    "shape": [
+      1,
+      4,
+      2500,
+      3
+    ],
+    "dtype": "float32",
+    "min": 0.009999999776482582,
+    "max": 0.9899999499320984,
+    "mean": 0.4999999948342641,
+    "std": 0.30162714384148986,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/bev/reference_points_3d.npy"
+  },
+  {
+    "name": "bev.reference_points_2d",
+    "shape": [
+      1,
+      2500,
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": 0.009999999776482582,
+    "max": 0.9899999499320984,
+    "mean": 0.4999999885261059,
+    "std": 0.2886173873214833,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/bev/reference_points_2d.npy"
+  },
+  {
+    "name": "bev.reference_points_cam",
+    "shape": [
+      6,
+      1,
+      2500,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -6670279.0,
+    "max": 4804046.0,
+    "mean": -635712.3242971266,
+    "std": 1408595.5741659843,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/bev/reference_points_cam.npy"
+  },
+  {
+    "name": "bev.bev_mask",
+    "shape": [
+      6,
+      1,
+      2500,
+      4
+    ],
+    "dtype": "bool",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.1867,
+    "std": 0.3896705146659162,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/bev/bev_mask.npy"
+  },
+  {
+    "name": "temporal.layer_0.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.129601001739502,
+    "max": 8.210617065429688,
+    "mean": 0.0018736527706030757,
+    "std": 1.2210023400574903,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_0/query.npy"
+  },
+  {
+    "name": "temporal.layer_0.key",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.129601001739502,
+    "max": 8.210617065429688,
+    "mean": 0.0020517305739900754,
+    "std": 1.0140717571532623,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_0/key.npy"
+  },
+  {
+    "name": "temporal.layer_0.value",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.129601001739502,
+    "max": 8.210617065429688,
+    "mean": 0.0020517305739900754,
+    "std": 1.0140717571532623,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_0/value.npy"
+  },
+  {
+    "name": "temporal.layer_0.reference_points",
+    "shape": [
+      2,
+      2500,
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": 0.00986023060977459,
+    "max": 1.0316133499145508,
+    "mean": 0.5103684087656438,
+    "std": 0.2891805953337012,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_0/reference_points.npy"
+  },
+  {
+    "name": "temporal.layer_0.value_effective",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.129601001739502,
+    "max": 8.210617065429688,
+    "mean": 0.0020517305739900754,
+    "std": 1.0140717571532623,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_0/value_effective.npy"
+  },
+  {
+    "name": "temporal.layer_0.sampling_offsets",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -11.45535659790039,
+    "max": 10.869745254516602,
+    "mean": 0.10800413224560033,
+    "std": 2.8846218656339904,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_0/sampling_offsets.npy"
+  },
+  {
+    "name": "temporal.layer_0.attention_weights",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4
+    ],
+    "dtype": "float32",
+    "min": 1.1591143902478507e-06,
+    "max": 0.9999182224273682,
+    "mean": 0.2499999999453747,
+    "std": 0.27759807486553784,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_0/attention_weights.npy"
+  },
+  {
+    "name": "temporal.layer_0.sampling_locations",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -0.13810047507286072,
+    "max": 1.1831400394439697,
+    "mean": 0.5125284914428645,
+    "std": 0.29480446532426147,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_0/sampling_locations.npy"
+  },
+  {
+    "name": "temporal.layer_0.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -8.256227493286133,
+    "max": 8.70703411102295,
+    "mean": -0.016240364950999356,
+    "std": 1.6504918976899237,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_0/output.npy"
+  },
+  {
+    "name": "spatial.layer_0.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.581915855407715,
+    "max": 4.651843547821045,
+    "mean": -0.005666449629894362,
+    "std": 0.9551103524991628,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/query.npy"
+  },
+  {
+    "name": "spatial.layer_0.key",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -12.919611930847168,
+    "max": 14.633625984191895,
+    "mean": -0.004897611835019537,
+    "std": 1.6465736259530088,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/key.npy"
+  },
+  {
+    "name": "spatial.layer_0.value",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -12.919611930847168,
+    "max": 14.633625984191895,
+    "mean": -0.004897611835019537,
+    "std": 1.6465736259530088,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/value.npy"
+  },
+  {
+    "name": "spatial.layer_0.reference_points_cam",
+    "shape": [
+      6,
+      1,
+      2500,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -6670279.0,
+    "max": 4804046.0,
+    "mean": -635712.3242971266,
+    "std": 1408595.5741659843,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/reference_points_cam.npy"
+  },
+  {
+    "name": "spatial.layer_0.bev_mask",
+    "shape": [
+      6,
+      1,
+      2500,
+      4
+    ],
+    "dtype": "bool",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.1867,
+    "std": 0.3896705146659162,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/bev_mask.npy"
+  },
+  {
+    "name": "spatial.layer_0.spatial_shapes",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "int64",
+    "min": 15.0,
+    "max": 25.0,
+    "mean": 20.0,
+    "std": 5.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/spatial_shapes.npy"
+  },
+  {
+    "name": "spatial.layer_0.level_start_index",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/level_start_index.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.query",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.581915855407715,
+    "max": 4.651843547821045,
+    "mean": -0.004484537389423836,
+    "std": 0.8489513763997161,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/deformable/query.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.value",
+    "shape": [
+      6,
+      375,
+      256
+    ],
+    "dtype": "float32",
+    "min": -12.919611930847168,
+    "max": 14.633625984191895,
+    "mean": -0.004897611835019537,
+    "std": 1.6465736259530088,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/deformable/value.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.sampling_offsets",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -11.705642700195312,
+    "max": 12.003874778747559,
+    "mean": 0.014865203378640047,
+    "std": 4.571902984007736,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/deformable/sampling_offsets.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.attention_weights",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8
+    ],
+    "dtype": "float32",
+    "min": 8.723483915673569e-05,
+    "max": 0.9539326429367065,
+    "mean": 0.12500000014611393,
+    "std": 0.12716295006807046,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/deformable/attention_weights.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.sampling_locations",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -1.4593071937561035,
+    "max": 3.2924304008483887,
+    "mean": 0.4101657732105634,
+    "std": 0.38825740750152554,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/deformable/sampling_locations.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.output",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -8.278356552124023,
+    "max": 9.285001754760742,
+    "mean": -0.011159906978599043,
+    "std": 0.8433639472180223,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/deformable/output.npy"
+  },
+  {
+    "name": "spatial.layer_0.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -9.28637981414795,
+    "max": 12.474845886230469,
+    "mean": -0.0029891759930804254,
+    "std": 1.5385785393741842,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/output.npy"
+  },
+  {
+    "name": "temporal.layer_1.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.510230541229248,
+    "max": 8.263635635375977,
+    "mean": -0.00020791018041162613,
+    "std": 0.9855786922904086,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_1/query.npy"
+  },
+  {
+    "name": "temporal.layer_1.key",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.129601001739502,
+    "max": 8.210617065429688,
+    "mean": 0.0020517305739900754,
+    "std": 1.0140717571532623,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_1/key.npy"
+  },
+  {
+    "name": "temporal.layer_1.value",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.129601001739502,
+    "max": 8.210617065429688,
+    "mean": 0.0020517305739900754,
+    "std": 1.0140717571532623,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_1/value.npy"
+  },
+  {
+    "name": "temporal.layer_1.reference_points",
+    "shape": [
+      2,
+      2500,
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": 0.00986023060977459,
+    "max": 1.0316133499145508,
+    "mean": 0.5103684087656438,
+    "std": 0.2891805953337012,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_1/reference_points.npy"
+  },
+  {
+    "name": "temporal.layer_1.value_effective",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.129601001739502,
+    "max": 8.210617065429688,
+    "mean": 0.0020517305739900754,
+    "std": 1.0140717571532623,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_1/value_effective.npy"
+  },
+  {
+    "name": "temporal.layer_1.sampling_offsets",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -14.156140327453613,
+    "max": 20.679391860961914,
+    "mean": 0.14145637178121614,
+    "std": 3.894781722387924,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_1/sampling_offsets.npy"
+  },
+  {
+    "name": "temporal.layer_1.attention_weights",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4
+    ],
+    "dtype": "float32",
+    "min": 3.1416184356203303e-06,
+    "max": 0.9999228715896606,
+    "mean": 0.249999999994888,
+    "std": 0.2595307569430026,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_1/attention_weights.npy"
+  },
+  {
+    "name": "temporal.layer_1.sampling_locations",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -0.18146085739135742,
+    "max": 1.34468674659729,
+    "mean": 0.5131975362431709,
+    "std": 0.29785745597887786,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_1/sampling_locations.npy"
+  },
+  {
+    "name": "temporal.layer_1.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -8.355853080749512,
+    "max": 13.141712188720703,
+    "mean": 0.004044576876339306,
+    "std": 1.5149561813153827,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_1/output.npy"
+  },
+  {
+    "name": "spatial.layer_1.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.707065582275391,
+    "max": 7.377042293548584,
+    "mean": -0.00012871865576390888,
+    "std": 0.9192203482239983,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/query.npy"
+  },
+  {
+    "name": "spatial.layer_1.key",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -12.919611930847168,
+    "max": 14.633625984191895,
+    "mean": -0.004897611835019537,
+    "std": 1.6465736259530088,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/key.npy"
+  },
+  {
+    "name": "spatial.layer_1.value",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -12.919611930847168,
+    "max": 14.633625984191895,
+    "mean": -0.004897611835019537,
+    "std": 1.6465736259530088,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/value.npy"
+  },
+  {
+    "name": "spatial.layer_1.reference_points_cam",
+    "shape": [
+      6,
+      1,
+      2500,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -6670279.0,
+    "max": 4804046.0,
+    "mean": -635712.3242971266,
+    "std": 1408595.5741659843,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/reference_points_cam.npy"
+  },
+  {
+    "name": "spatial.layer_1.bev_mask",
+    "shape": [
+      6,
+      1,
+      2500,
+      4
+    ],
+    "dtype": "bool",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.1867,
+    "std": 0.3896705146659162,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/bev_mask.npy"
+  },
+  {
+    "name": "spatial.layer_1.spatial_shapes",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "int64",
+    "min": 15.0,
+    "max": 25.0,
+    "mean": 20.0,
+    "std": 5.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/spatial_shapes.npy"
+  },
+  {
+    "name": "spatial.layer_1.level_start_index",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/level_start_index.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.query",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.707065582275391,
+    "max": 7.377042293548584,
+    "mean": -0.00010677718932769996,
+    "std": 0.8169652667157412,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/deformable/query.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.value",
+    "shape": [
+      6,
+      375,
+      256
+    ],
+    "dtype": "float32",
+    "min": -12.919611930847168,
+    "max": 14.633625984191895,
+    "mean": -0.004897611835019537,
+    "std": 1.6465736259530088,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/deformable/value.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.sampling_offsets",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -13.58193302154541,
+    "max": 13.058858871459961,
+    "mean": 0.13795813146513375,
+    "std": 4.806034364340678,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/deformable/sampling_offsets.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.attention_weights",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8
+    ],
+    "dtype": "float32",
+    "min": 3.645260221674107e-05,
+    "max": 0.8637192249298096,
+    "mean": 0.12500000058097765,
+    "std": 0.14823780102374468,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/deformable/attention_weights.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.sampling_locations",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -1.435750961303711,
+    "max": 3.2975871562957764,
+    "mean": 0.41379172281806176,
+    "std": 0.399943717465347,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/deformable/sampling_locations.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.output",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -6.2665114402771,
+    "max": 6.3495659828186035,
+    "mean": 0.001479476111615916,
+    "std": 0.5393220712540847,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/deformable/output.npy"
+  },
+  {
+    "name": "spatial.layer_1.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -6.103967189788818,
+    "max": 9.045621871948242,
+    "mean": -0.013908587880951291,
+    "std": 1.1620843446684859,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/output.npy"
+  },
+  {
+    "name": "temporal.layer_2.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.265506267547607,
+    "max": 6.60354471206665,
+    "mean": -0.00046761688044615475,
+    "std": 0.97506859044283,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_2/query.npy"
+  },
+  {
+    "name": "temporal.layer_2.key",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.129601001739502,
+    "max": 8.210617065429688,
+    "mean": 0.0020517305739900754,
+    "std": 1.0140717571532623,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_2/key.npy"
+  },
+  {
+    "name": "temporal.layer_2.value",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.129601001739502,
+    "max": 8.210617065429688,
+    "mean": 0.0020517305739900754,
+    "std": 1.0140717571532623,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_2/value.npy"
+  },
+  {
+    "name": "temporal.layer_2.reference_points",
+    "shape": [
+      2,
+      2500,
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": 0.00986023060977459,
+    "max": 1.0316133499145508,
+    "mean": 0.5103684087656438,
+    "std": 0.2891805953337012,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_2/reference_points.npy"
+  },
+  {
+    "name": "temporal.layer_2.value_effective",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.129601001739502,
+    "max": 8.210617065429688,
+    "mean": 0.0020517305739900754,
+    "std": 1.0140717571532623,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_2/value_effective.npy"
+  },
+  {
+    "name": "temporal.layer_2.sampling_offsets",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -29.88866424560547,
+    "max": 21.586990356445312,
+    "mean": 0.06898160385533911,
+    "std": 3.8222628915661745,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_2/sampling_offsets.npy"
+  },
+  {
+    "name": "temporal.layer_2.attention_weights",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4
+    ],
+    "dtype": "float32",
+    "min": 1.5134662589844083e-06,
+    "max": 0.9997804760932922,
+    "mean": 0.2500000000073104,
+    "std": 0.25059106768680767,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_2/attention_weights.npy"
+  },
+  {
+    "name": "temporal.layer_2.sampling_locations",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -0.35428956151008606,
+    "max": 1.4152345657348633,
+    "mean": 0.5117480408691627,
+    "std": 0.297676045984367,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_2/sampling_locations.npy"
+  },
+  {
+    "name": "temporal.layer_2.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -7.121878147125244,
+    "max": 8.408319473266602,
+    "mean": -0.021607531736499732,
+    "std": 1.3372277609360783,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_2/output.npy"
+  },
+  {
+    "name": "spatial.layer_2.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.98491907119751,
+    "max": 5.764821529388428,
+    "mean": -0.0015846749344376328,
+    "std": 0.9454790360550905,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/query.npy"
+  },
+  {
+    "name": "spatial.layer_2.key",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -12.919611930847168,
+    "max": 14.633625984191895,
+    "mean": -0.004897611835019537,
+    "std": 1.6465736259530088,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/key.npy"
+  },
+  {
+    "name": "spatial.layer_2.value",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -12.919611930847168,
+    "max": 14.633625984191895,
+    "mean": -0.004897611835019537,
+    "std": 1.6465736259530088,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/value.npy"
+  },
+  {
+    "name": "spatial.layer_2.reference_points_cam",
+    "shape": [
+      6,
+      1,
+      2500,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -6670279.0,
+    "max": 4804046.0,
+    "mean": -635712.3242971266,
+    "std": 1408595.5741659843,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/reference_points_cam.npy"
+  },
+  {
+    "name": "spatial.layer_2.bev_mask",
+    "shape": [
+      6,
+      1,
+      2500,
+      4
+    ],
+    "dtype": "bool",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.1867,
+    "std": 0.3896705146659162,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/bev_mask.npy"
+  },
+  {
+    "name": "spatial.layer_2.spatial_shapes",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "int64",
+    "min": 15.0,
+    "max": 25.0,
+    "mean": 20.0,
+    "std": 5.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/spatial_shapes.npy"
+  },
+  {
+    "name": "spatial.layer_2.level_start_index",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/level_start_index.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.query",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.98491907119751,
+    "max": 5.764821529388428,
+    "mean": -0.0012036120540699813,
+    "std": 0.8403866093182946,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/deformable/query.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.value",
+    "shape": [
+      6,
+      375,
+      256
+    ],
+    "dtype": "float32",
+    "min": -12.919611930847168,
+    "max": 14.633625984191895,
+    "mean": -0.004897611835019537,
+    "std": 1.6465736259530088,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/deformable/value.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.sampling_offsets",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -14.790812492370605,
+    "max": 20.56211280822754,
+    "mean": -0.25589634782499643,
+    "std": 4.849679556627249,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/deformable/sampling_offsets.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.attention_weights",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8
+    ],
+    "dtype": "float32",
+    "min": 5.65896880289074e-05,
+    "max": 0.96342533826828,
+    "mean": 0.12499999949791353,
+    "std": 0.1733427104137969,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/deformable/attention_weights.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.sampling_locations",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -1.4362128973007202,
+    "max": 3.288285493850708,
+    "mean": 0.3904503693279373,
+    "std": 0.3922031361141554,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/deformable/sampling_locations.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.output",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -12.690492630004883,
+    "max": 10.178125381469727,
+    "mean": 0.01854691371760307,
+    "std": 0.5974792344524213,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/deformable/output.npy"
+  },
+  {
+    "name": "spatial.layer_2.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -7.066850185394287,
+    "max": 7.061901569366455,
+    "mean": 0.01098483705969984,
+    "std": 1.279310805360929,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/output.npy"
+  },
+  {
+    "name": "decoder.reference_points_initial",
+    "shape": [
+      1,
+      900,
+      3
+    ],
+    "dtype": "float32",
+    "min": 0.019861089065670967,
+    "max": 0.9876576662063599,
+    "mean": 0.49605041034450686,
+    "std": 0.21322183656815605,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/decoder/reference_points_initial.npy"
+  },
+  {
+    "name": "decoder.layer_0.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.391387939453125,
+    "max": 4.027842044830322,
+    "mean": -0.0008440309004608931,
+    "std": 0.8526797174016966,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/decoder/layer_0/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_1.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.9603590965271,
+    "max": 3.612187147140503,
+    "mean": -0.0028070771271674236,
+    "std": 0.8820729524643739,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/decoder/layer_1/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_2.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -6.128650665283203,
+    "max": 3.754457712173462,
+    "mean": -0.0006192956094686114,
+    "std": 0.891826835553789,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/decoder/layer_2/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_3.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.646633148193359,
+    "max": 3.8720245361328125,
+    "mean": 0.0005610621771441693,
+    "std": 0.8890771768048445,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/decoder/layer_3/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_4.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.259371280670166,
+    "max": 4.685817241668701,
+    "mean": -0.0019469769593975902,
+    "std": 0.8686443880949102,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/decoder/layer_4/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_5.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.835996627807617,
+    "max": 3.9846134185791016,
+    "mean": -0.0026749258396459867,
+    "std": 0.8529744924874784,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/decoder/layer_5/object_feature.npy"
+  },
+  {
+    "name": "decoder.reference_points_after_refinement",
+    "shape": [
+      6,
+      1,
+      900,
+      3
+    ],
+    "dtype": "float32",
+    "min": 0.014600830152630806,
+    "max": 0.9904069304466248,
+    "mean": 0.4920131411051585,
+    "std": 0.21483733447856362,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/decoder/reference_points_after_refinement.npy"
+  },
+  {
+    "name": "bev.final_bev",
+    "shape": [
+      2500,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -3.7026326656341553,
+    "max": 3.5625345706939697,
+    "mean": 0.001625768519251975,
+    "std": 0.7592049746080538,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/bev/final_bev.npy"
+  },
+  {
+    "name": "detection.cls_scores",
+    "shape": [
+      6,
+      1,
+      900,
+      10
+    ],
+    "dtype": "float32",
+    "min": -15.61787223815918,
+    "max": 3.0478758811950684,
+    "mean": -6.489707183312487,
+    "std": 1.56323434297137,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/detection/cls_scores.npy"
+  },
+  {
+    "name": "detection.bbox_preds",
+    "shape": [
+      6,
+      1,
+      900,
+      10
+    ],
+    "dtype": "float32",
+    "min": -49.70487594604492,
+    "max": 50.21767044067383,
+    "mean": -0.12686245609682675,
+    "std": 11.417031453116252,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/detection/bbox_preds.npy"
+  },
+  {
+    "name": "detection.decoded_boxes",
+    "shape": [
+      300,
+      9
+    ],
+    "dtype": "float32",
+    "min": -49.46535873413086,
+    "max": 49.917362213134766,
+    "mean": 0.5776403895579946,
+    "std": 12.317740450216556,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/detection/decoded_boxes.npy"
+  },
+  {
+    "name": "detection.decoded_scores",
+    "shape": [
+      300
+    ],
+    "dtype": "float32",
+    "min": 0.03606441244482994,
+    "max": 0.9546907544136047,
+    "mean": 0.175816568347315,
+    "std": 0.1579096023088038,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/detection/decoded_scores.npy"
+  },
+  {
+    "name": "detection.decoded_labels",
+    "shape": [
+      300
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 9.0,
+    "mean": 7.276666666666666,
+    "std": 2.2701223657669987,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/detection/decoded_labels.npy"
+  },
+  {
+    "name": "temporal.prev_bev_stored",
+    "shape": [
+      2500,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -3.7026326656341553,
+    "max": 3.5625345706939697,
+    "mean": 0.001625768519251975,
+    "std": 0.7592049746080538,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/prev_bev_stored.npy"
+  },
+  {
+    "name": "backbone.c5",
+    "shape": [
+      6,
+      2048,
+      15,
+      25
+    ],
+    "dtype": "float32",
+    "min": 0.0,
+    "max": 7.383029937744141,
+    "mean": 0.02828421135759408,
+    "std": 0.1498530832270532,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/backbone/c5.npy"
+  },
+  {
+    "name": "fpn.level_0",
+    "shape": [
+      6,
+      256,
+      15,
+      25
+    ],
+    "dtype": "float32",
+    "min": -13.60790729522705,
+    "max": 13.2083740234375,
+    "mean": 0.04095254193523048,
+    "std": 1.617027922952158,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/fpn/level_0.npy"
+  },
+  {
+    "name": "bev.bev_pos",
+    "shape": [
+      1,
+      256,
+      50,
+      50
+    ],
+    "dtype": "float32",
+    "min": -3.9150633811950684,
+    "max": 3.685087203979492,
+    "mean": -0.012482417197932279,
+    "std": 0.9158385589969802,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/bev/bev_pos.npy"
+  },
+  {
+    "name": "bev.bev_query",
+    "shape": [
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.559509754180908,
+    "max": 4.477896213531494,
+    "mean": 0.0014545507345957176,
+    "std": 0.914463242344442,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/bev/bev_query.npy"
+  },
+  {
+    "name": "temporal.prev_bev_aligned",
+    "shape": [
+      2500,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -3.7026326656341553,
+    "max": 3.5625345706939697,
+    "mean": 0.0015140692136500354,
+    "std": 0.7265834493187853,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/prev_bev_aligned.npy"
+  },
+  {
+    "name": "bev.spatial_shapes",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "int64",
+    "min": 15.0,
+    "max": 25.0,
+    "mean": 20.0,
+    "std": 5.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/bev/spatial_shapes.npy"
+  },
+  {
+    "name": "bev.level_start_index",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/bev/level_start_index.npy"
+  },
+  {
+    "name": "temporal.shift",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": -0.0003195319150108844,
+    "max": 0.04129449278116226,
+    "mean": 0.02048748043307569,
+    "std": 0.020807012348086573,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/shift.npy"
+  },
+  {
+    "name": "bev.reference_points_3d",
+    "shape": [
+      1,
+      4,
+      2500,
+      3
+    ],
+    "dtype": "float32",
+    "min": 0.009999999776482582,
+    "max": 0.9899999499320984,
+    "mean": 0.4999999948342641,
+    "std": 0.30162714384148986,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/bev/reference_points_3d.npy"
+  },
+  {
+    "name": "bev.reference_points_2d",
+    "shape": [
+      1,
+      2500,
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": 0.009999999776482582,
+    "max": 0.9899999499320984,
+    "mean": 0.4999999885261059,
+    "std": 0.2886173873214833,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/bev/reference_points_2d.npy"
+  },
+  {
+    "name": "bev.reference_points_cam",
+    "shape": [
+      6,
+      1,
+      2500,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -6670335.0,
+    "max": 4802736.0,
+    "mean": -635674.4811387695,
+    "std": 1408562.9994270583,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/bev/reference_points_cam.npy"
+  },
+  {
+    "name": "bev.bev_mask",
+    "shape": [
+      6,
+      1,
+      2500,
+      4
+    ],
+    "dtype": "bool",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.18673333333333333,
+    "std": 0.3896973127384324,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/bev/bev_mask.npy"
+  },
+  {
+    "name": "temporal.layer_0.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.140256404876709,
+    "max": 8.012452125549316,
+    "mean": 0.003996778604619976,
+    "std": 1.230485856018176,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_0/query.npy"
+  },
+  {
+    "name": "temporal.layer_0.key",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.140256404876709,
+    "max": 8.012452125549316,
+    "mean": 0.002755423909135006,
+    "std": 1.0104508975224198,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_0/key.npy"
+  },
+  {
+    "name": "temporal.layer_0.value",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.140256404876709,
+    "max": 8.012452125549316,
+    "mean": 0.002755423909135006,
+    "std": 1.0104508975224198,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_0/value.npy"
+  },
+  {
+    "name": "temporal.layer_0.reference_points",
+    "shape": [
+      2,
+      2500,
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": 0.009680467657744884,
+    "max": 1.0312944650650024,
+    "mean": 0.510243729702197,
+    "std": 0.2891736459184062,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_0/reference_points.npy"
+  },
+  {
+    "name": "temporal.layer_0.value_effective",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.140256404876709,
+    "max": 8.012452125549316,
+    "mean": 0.002755423909135006,
+    "std": 1.0104508975224198,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_0/value_effective.npy"
+  },
+  {
+    "name": "temporal.layer_0.sampling_offsets",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -12.063211441040039,
+    "max": 12.041172981262207,
+    "mean": 0.10004208314779826,
+    "std": 2.950044947219823,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_0/sampling_offsets.npy"
+  },
+  {
+    "name": "temporal.layer_0.attention_weights",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4
+    ],
+    "dtype": "float32",
+    "min": 5.022999971515674e-07,
+    "max": 0.9999324083328247,
+    "mean": 0.24999999989764618,
+    "std": 0.28068885899451734,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_0/attention_weights.npy"
+  },
+  {
+    "name": "temporal.layer_0.sampling_locations",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -0.15268950164318085,
+    "max": 1.185758113861084,
+    "mean": 0.5122445713846028,
+    "std": 0.2949458245064001,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_0/sampling_locations.npy"
+  },
+  {
+    "name": "temporal.layer_0.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -8.579977989196777,
+    "max": 9.382590293884277,
+    "mean": -0.012834697690667963,
+    "std": 1.7226037357271777,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_0/output.npy"
+  },
+  {
+    "name": "spatial.layer_0.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.6687726974487305,
+    "max": 4.8031206130981445,
+    "mean": -0.005375749928772006,
+    "std": 0.9547850376367768,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/query.npy"
+  },
+  {
+    "name": "spatial.layer_0.key",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -14.287538528442383,
+    "max": 13.667600631713867,
+    "mean": -0.002997562176234674,
+    "std": 1.6111850979930247,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/key.npy"
+  },
+  {
+    "name": "spatial.layer_0.value",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -14.287538528442383,
+    "max": 13.667600631713867,
+    "mean": -0.002997562176234674,
+    "std": 1.6111850979930247,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/value.npy"
+  },
+  {
+    "name": "spatial.layer_0.reference_points_cam",
+    "shape": [
+      6,
+      1,
+      2500,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -6670335.0,
+    "max": 4802736.0,
+    "mean": -635674.4811387695,
+    "std": 1408562.9994270583,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/reference_points_cam.npy"
+  },
+  {
+    "name": "spatial.layer_0.bev_mask",
+    "shape": [
+      6,
+      1,
+      2500,
+      4
+    ],
+    "dtype": "bool",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.18673333333333333,
+    "std": 0.3896973127384324,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/bev_mask.npy"
+  },
+  {
+    "name": "spatial.layer_0.spatial_shapes",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "int64",
+    "min": 15.0,
+    "max": 25.0,
+    "mean": 20.0,
+    "std": 5.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/spatial_shapes.npy"
+  },
+  {
+    "name": "spatial.layer_0.level_start_index",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/level_start_index.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.query",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.6687726974487305,
+    "max": 4.8031206130981445,
+    "mean": -0.00425625098654543,
+    "std": 0.8486312493358953,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/deformable/query.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.value",
+    "shape": [
+      6,
+      375,
+      256
+    ],
+    "dtype": "float32",
+    "min": -14.287538528442383,
+    "max": 13.667600631713867,
+    "mean": -0.002997562176234674,
+    "std": 1.6111850979930247,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/deformable/value.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.sampling_offsets",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -11.784818649291992,
+    "max": 11.720986366271973,
+    "mean": 0.03240563767722769,
+    "std": 4.584016331616128,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/deformable/sampling_offsets.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.attention_weights",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8
+    ],
+    "dtype": "float32",
+    "min": 0.000107622254290618,
+    "max": 0.923164427280426,
+    "mean": 0.12500000008389772,
+    "std": 0.12879712835149623,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/deformable/attention_weights.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.sampling_locations",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -1.453258991241455,
+    "max": 3.3000361919403076,
+    "mean": 0.4110868218671496,
+    "std": 0.38920975136579367,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/deformable/sampling_locations.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.output",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -7.207472801208496,
+    "max": 9.652263641357422,
+    "mean": -0.011969375855238218,
+    "std": 0.8559020867109598,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/deformable/output.npy"
+  },
+  {
+    "name": "spatial.layer_0.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -9.175981521606445,
+    "max": 12.84328842163086,
+    "mean": -0.003994604737538338,
+    "std": 1.5670160491444485,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/output.npy"
+  },
+  {
+    "name": "temporal.layer_1.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.756985187530518,
+    "max": 8.199760437011719,
+    "mean": -0.0005267621322932728,
+    "std": 0.986093408641654,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_1/query.npy"
+  },
+  {
+    "name": "temporal.layer_1.key",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.140256404876709,
+    "max": 8.012452125549316,
+    "mean": 0.002755423909135006,
+    "std": 1.0104508975224198,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_1/key.npy"
+  },
+  {
+    "name": "temporal.layer_1.value",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.140256404876709,
+    "max": 8.012452125549316,
+    "mean": 0.002755423909135006,
+    "std": 1.0104508975224198,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_1/value.npy"
+  },
+  {
+    "name": "temporal.layer_1.reference_points",
+    "shape": [
+      2,
+      2500,
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": 0.009680467657744884,
+    "max": 1.0312944650650024,
+    "mean": 0.510243729702197,
+    "std": 0.2891736459184062,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_1/reference_points.npy"
+  },
+  {
+    "name": "temporal.layer_1.value_effective",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.140256404876709,
+    "max": 8.012452125549316,
+    "mean": 0.002755423909135006,
+    "std": 1.0104508975224198,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_1/value_effective.npy"
+  },
+  {
+    "name": "temporal.layer_1.sampling_offsets",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -13.944913864135742,
+    "max": 20.21705436706543,
+    "mean": 0.16503944818093513,
+    "std": 4.022136634036377,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_1/sampling_offsets.npy"
+  },
+  {
+    "name": "temporal.layer_1.attention_weights",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4
+    ],
+    "dtype": "float32",
+    "min": 1.3089858157400158e-06,
+    "max": 0.9999500513076782,
+    "mean": 0.24999999993154828,
+    "std": 0.2605586584124063,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_1/attention_weights.npy"
+  },
+  {
+    "name": "temporal.layer_1.sampling_locations",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -0.18758085370063782,
+    "max": 1.3348538875579834,
+    "mean": 0.5135445186732133,
+    "std": 0.2985403456986305,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_1/sampling_locations.npy"
+  },
+  {
+    "name": "temporal.layer_1.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -8.70478630065918,
+    "max": 13.350920677185059,
+    "mean": 0.0033582280503655056,
+    "std": 1.4969405241856004,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_1/output.npy"
+  },
+  {
+    "name": "spatial.layer_1.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.868034362792969,
+    "max": 7.67241096496582,
+    "mean": 0.00024074431203345196,
+    "std": 0.9187272547926073,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/query.npy"
+  },
+  {
+    "name": "spatial.layer_1.key",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -14.287538528442383,
+    "max": 13.667600631713867,
+    "mean": -0.002997562176234674,
+    "std": 1.6111850979930247,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/key.npy"
+  },
+  {
+    "name": "spatial.layer_1.value",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -14.287538528442383,
+    "max": 13.667600631713867,
+    "mean": -0.002997562176234674,
+    "std": 1.6111850979930247,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/value.npy"
+  },
+  {
+    "name": "spatial.layer_1.reference_points_cam",
+    "shape": [
+      6,
+      1,
+      2500,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -6670335.0,
+    "max": 4802736.0,
+    "mean": -635674.4811387695,
+    "std": 1408562.9994270583,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/reference_points_cam.npy"
+  },
+  {
+    "name": "spatial.layer_1.bev_mask",
+    "shape": [
+      6,
+      1,
+      2500,
+      4
+    ],
+    "dtype": "bool",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.18673333333333333,
+    "std": 0.3896973127384324,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/bev_mask.npy"
+  },
+  {
+    "name": "spatial.layer_1.spatial_shapes",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "int64",
+    "min": 15.0,
+    "max": 25.0,
+    "mean": 20.0,
+    "std": 5.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/spatial_shapes.npy"
+  },
+  {
+    "name": "spatial.layer_1.level_start_index",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/level_start_index.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.query",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.868034362792969,
+    "max": 7.67241096496582,
+    "mean": 0.00017045305479287514,
+    "std": 0.816553073890355,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/deformable/query.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.value",
+    "shape": [
+      6,
+      375,
+      256
+    ],
+    "dtype": "float32",
+    "min": -14.287538528442383,
+    "max": 13.667600631713867,
+    "mean": -0.002997562176234674,
+    "std": 1.6111850979930247,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/deformable/value.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.sampling_offsets",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -13.119510650634766,
+    "max": 13.404937744140625,
+    "mean": 0.14353960287501505,
+    "std": 4.816198432562231,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/deformable/sampling_offsets.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.attention_weights",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8
+    ],
+    "dtype": "float32",
+    "min": 4.204399010632187e-05,
+    "max": 0.8614321351051331,
+    "mean": 0.12500000063408045,
+    "std": 0.15064627976836137,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/deformable/attention_weights.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.sampling_locations",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -1.4347023963928223,
+    "max": 3.2865755558013916,
+    "mean": 0.4140608215972433,
+    "std": 0.4010189765270964,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/deformable/sampling_locations.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.output",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.76951265335083,
+    "max": 7.2052483558654785,
+    "mean": 0.007096522719115542,
+    "std": 0.531882154407769,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/deformable/output.npy"
+  },
+  {
+    "name": "spatial.layer_1.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -6.08834171295166,
+    "max": 9.083017349243164,
+    "mean": -0.011428661085610657,
+    "std": 1.141864536680085,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/output.npy"
+  },
+  {
+    "name": "temporal.layer_2.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.4821929931640625,
+    "max": 7.399693012237549,
+    "mean": -0.001402366008753705,
+    "std": 0.9771922908106423,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_2/query.npy"
+  },
+  {
+    "name": "temporal.layer_2.key",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.140256404876709,
+    "max": 8.012452125549316,
+    "mean": 0.002755423909135006,
+    "std": 1.0104508975224198,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_2/key.npy"
+  },
+  {
+    "name": "temporal.layer_2.value",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.140256404876709,
+    "max": 8.012452125549316,
+    "mean": 0.002755423909135006,
+    "std": 1.0104508975224198,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_2/value.npy"
+  },
+  {
+    "name": "temporal.layer_2.reference_points",
+    "shape": [
+      2,
+      2500,
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": 0.009680467657744884,
+    "max": 1.0312944650650024,
+    "mean": 0.510243729702197,
+    "std": 0.2891736459184062,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_2/reference_points.npy"
+  },
+  {
+    "name": "temporal.layer_2.value_effective",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.140256404876709,
+    "max": 8.012452125549316,
+    "mean": 0.002755423909135006,
+    "std": 1.0104508975224198,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_2/value_effective.npy"
+  },
+  {
+    "name": "temporal.layer_2.sampling_offsets",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -28.383148193359375,
+    "max": 21.058982849121094,
+    "mean": 0.0509377699280657,
+    "std": 3.9526336662075092,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_2/sampling_offsets.npy"
+  },
+  {
+    "name": "temporal.layer_2.attention_weights",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4
+    ],
+    "dtype": "float32",
+    "min": 6.068005973247637e-07,
+    "max": 0.9998384714126587,
+    "mean": 0.24999999997236222,
+    "std": 0.26015713752222075,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_2/attention_weights.npy"
+  },
+  {
+    "name": "temporal.layer_2.sampling_locations",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -0.40624862909317017,
+    "max": 1.4026399850845337,
+    "mean": 0.5112624850955894,
+    "std": 0.29831630327651093,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_2/sampling_locations.npy"
+  },
+  {
+    "name": "temporal.layer_2.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -7.226574897766113,
+    "max": 9.932760238647461,
+    "mean": 0.00040424362933904375,
+    "std": 1.35940643689146,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_2/output.npy"
+  },
+  {
+    "name": "spatial.layer_2.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.795004844665527,
+    "max": 6.495683193206787,
+    "mean": -0.0016228320711725666,
+    "std": 0.9438816136334872,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/query.npy"
+  },
+  {
+    "name": "spatial.layer_2.key",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -14.287538528442383,
+    "max": 13.667600631713867,
+    "mean": -0.002997562176234674,
+    "std": 1.6111850979930247,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/key.npy"
+  },
+  {
+    "name": "spatial.layer_2.value",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -14.287538528442383,
+    "max": 13.667600631713867,
+    "mean": -0.002997562176234674,
+    "std": 1.6111850979930247,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/value.npy"
+  },
+  {
+    "name": "spatial.layer_2.reference_points_cam",
+    "shape": [
+      6,
+      1,
+      2500,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -6670335.0,
+    "max": 4802736.0,
+    "mean": -635674.4811387695,
+    "std": 1408562.9994270583,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/reference_points_cam.npy"
+  },
+  {
+    "name": "spatial.layer_2.bev_mask",
+    "shape": [
+      6,
+      1,
+      2500,
+      4
+    ],
+    "dtype": "bool",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.18673333333333333,
+    "std": 0.3896973127384324,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/bev_mask.npy"
+  },
+  {
+    "name": "spatial.layer_2.spatial_shapes",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "int64",
+    "min": 15.0,
+    "max": 25.0,
+    "mean": 20.0,
+    "std": 5.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/spatial_shapes.npy"
+  },
+  {
+    "name": "spatial.layer_2.level_start_index",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/level_start_index.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.query",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.795004844665527,
+    "max": 6.495683193206787,
+    "mean": -0.001229715646287166,
+    "std": 0.8388354662137116,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/deformable/query.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.value",
+    "shape": [
+      6,
+      375,
+      256
+    ],
+    "dtype": "float32",
+    "min": -14.287538528442383,
+    "max": 13.667600631713867,
+    "mean": -0.002997562176234674,
+    "std": 1.6111850979930247,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/deformable/value.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.sampling_offsets",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -14.431320190429688,
+    "max": 20.049888610839844,
+    "mean": -0.2281131342509509,
+    "std": 4.808711017553828,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/deformable/sampling_offsets.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.attention_weights",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8
+    ],
+    "dtype": "float32",
+    "min": 3.128567186649889e-05,
+    "max": 0.943660318851471,
+    "mean": 0.12499999953496464,
+    "std": 0.168966824551538,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/deformable/attention_weights.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.sampling_locations",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -1.4399528503417969,
+    "max": 3.3080427646636963,
+    "mean": 0.3919251580012325,
+    "std": 0.39115751507407276,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/deformable/sampling_locations.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.output",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -8.722573280334473,
+    "max": 8.225488662719727,
+    "mean": 0.020031969646862092,
+    "std": 0.611682493097026,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/deformable/output.npy"
+  },
+  {
+    "name": "spatial.layer_2.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -7.995121002197266,
+    "max": 7.790860652923584,
+    "mean": 0.00895117397036447,
+    "std": 1.3030362733558478,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/output.npy"
+  },
+  {
+    "name": "decoder.reference_points_initial",
+    "shape": [
+      1,
+      900,
+      3
+    ],
+    "dtype": "float32",
+    "min": 0.019861089065670967,
+    "max": 0.9876576662063599,
+    "mean": 0.49605041034450686,
+    "std": 0.21322183656815605,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/decoder/reference_points_initial.npy"
+  },
+  {
+    "name": "decoder.layer_0.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.470645904541016,
+    "max": 4.103912353515625,
+    "mean": -0.0008674787257774636,
+    "std": 0.8528575637449545,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/decoder/layer_0/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_1.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.834694862365723,
+    "max": 3.8148841857910156,
+    "mean": -0.0024134541831195597,
+    "std": 0.8817545945536567,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/decoder/layer_1/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_2.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -6.075628280639648,
+    "max": 3.903687000274658,
+    "mean": -0.00051404209699922,
+    "std": 0.891086868181717,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/decoder/layer_2/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_3.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -6.011378765106201,
+    "max": 3.934201240539551,
+    "mean": 0.0004199401463783698,
+    "std": 0.8900792553808202,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/decoder/layer_3/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_4.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.933051586151123,
+    "max": 4.554901123046875,
+    "mean": -0.002061781741072678,
+    "std": 0.8698100496442606,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/decoder/layer_4/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_5.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.186676502227783,
+    "max": 4.223371505737305,
+    "mean": -0.003085161777335187,
+    "std": 0.8542762710215217,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/decoder/layer_5/object_feature.npy"
+  },
+  {
+    "name": "decoder.reference_points_after_refinement",
+    "shape": [
+      6,
+      1,
+      900,
+      3
+    ],
+    "dtype": "float32",
+    "min": 0.014530873857438564,
+    "max": 0.9912041425704956,
+    "mean": 0.49232306968892153,
+    "std": 0.21990649232010998,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/decoder/reference_points_after_refinement.npy"
+  },
+  {
+    "name": "bev.final_bev",
+    "shape": [
+      2500,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -3.980177164077759,
+    "max": 4.410879611968994,
+    "mean": 0.0010517919848252255,
+    "std": 0.7545077348547877,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/bev/final_bev.npy"
+  },
+  {
+    "name": "detection.cls_scores",
+    "shape": [
+      6,
+      1,
+      900,
+      10
+    ],
+    "dtype": "float32",
+    "min": -14.289237976074219,
+    "max": 3.0770931243896484,
+    "mean": -6.545665320109438,
+    "std": 1.5512868623867087,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/detection/cls_scores.npy"
+  },
+  {
+    "name": "detection.bbox_preds",
+    "shape": [
+      6,
+      1,
+      900,
+      10
+    ],
+    "dtype": "float32",
+    "min": -49.712039947509766,
+    "max": 50.2993049621582,
+    "mean": -0.11447116024864465,
+    "std": 11.397505984920565,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/detection/bbox_preds.npy"
+  },
+  {
+    "name": "detection.decoded_boxes",
+    "shape": [
+      300,
+      9
+    ],
+    "dtype": "float32",
+    "min": -49.21146011352539,
+    "max": 49.79520797729492,
+    "mean": 0.4706351311939454,
+    "std": 11.842126104045358,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/detection/decoded_boxes.npy"
+  },
+  {
+    "name": "detection.decoded_scores",
+    "shape": [
+      300
+    ],
+    "dtype": "float32",
+    "min": 0.03427362069487572,
+    "max": 0.9559378623962402,
+    "mean": 0.1738692976286014,
+    "std": 0.17249709345147163,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/detection/decoded_scores.npy"
+  },
+  {
+    "name": "detection.decoded_labels",
+    "shape": [
+      300
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 9.0,
+    "mean": 7.233333333333333,
+    "std": 2.12576783513367,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "golden_tensors/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/detection/decoded_labels.npy"
+  }
+]

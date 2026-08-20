@@ -137,3 +137,6 @@ dmypy.json
 
 # tmp data
 artifacts/
+
+# Local Golden Reference tensor artifacts; keep JSON manifests trackable.
+golden_tensors/**/*.npy
