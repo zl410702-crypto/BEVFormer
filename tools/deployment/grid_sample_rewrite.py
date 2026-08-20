@@ -1,5 +1,6 @@
 """ONNX-opset-13-friendly rewrite for tiny BEV temporal NEAREST sampling."""
 
+import math
 import torch
 import torch.nn as nn
 from torchvision.transforms.functional import _get_inverse_affine_matrix
@@ -57,14 +58,13 @@ def bev_rotate_nearest(input_tensor, angle, center):
         center_f, -float(angle), [0.0, 0.0], 1.0, [0.0, 0.0])
     theta = input_tensor.new_tensor(matrix).reshape(1, 2, 3)
     base_grid = input_tensor.new_empty(1, height, width, 3)
-    x_grid = torch.linspace(-width * 0.5 + 0.5,
-                            width * 0.5 - 0.5,
-                            steps=width, device=input_tensor.device,
-                            dtype=input_tensor.dtype)
-    y_grid = torch.linspace(-height * 0.5 + 0.5,
-                            height * 0.5 - 0.5,
-                            steps=height, device=input_tensor.device,
-                            dtype=input_tensor.dtype).unsqueeze(-1)
+    # arange is exactly equivalent for this unit-spaced grid and exports to
+    # ONNX Range in PyTorch 1.9, where aten::linspace is unsupported.
+    x_grid = torch.arange(width, device=input_tensor.device,
+                          dtype=input_tensor.dtype) - width * 0.5 + 0.5
+    y_grid = (torch.arange(height, device=input_tensor.device,
+                           dtype=input_tensor.dtype) - height * 0.5 + 0.5
+              ).unsqueeze(-1)
     base_grid[..., 0].copy_(x_grid)
     base_grid[..., 1].copy_(y_grid)
     base_grid[..., 2].fill_(1.0)
@@ -73,3 +73,36 @@ def bev_rotate_nearest(input_tensor, angle, center):
         theta.transpose(1, 2) / scale)
     grid = grid.reshape(1, height, width, 2)
     return bev_grid_sample_nearest(input_tensor.unsqueeze(0), grid).squeeze(0)
+
+
+def bev_rotate_nearest_tensor(input_tensor, angle_degrees, center):
+    """Tensor-angle equivalent of torchvision NEAREST rotate for export."""
+    if input_tensor.dim() != 3:
+        raise ValueError('BEV rotation input must have shape [C, H, W]')
+    if angle_degrees.numel() != 1:
+        raise ValueError('angle_degrees must contain exactly one value')
+    _, height, width = input_tensor.shape
+    angle = angle_degrees.reshape(()) * (math.pi / 180.0)
+    cosine = torch.cos(angle)
+    sine = torch.sin(angle)
+    center_x = float(center[0]) - width * 0.5
+    center_y = float(center[1]) - height * 0.5
+    translate_x = center_x - cosine * center_x + sine * center_y
+    translate_y = center_y - sine * center_x - cosine * center_y
+    theta = torch.stack((cosine, -sine, translate_x,
+                         sine, cosine, translate_y)).reshape(1, 2, 3)
+    base_grid = input_tensor.new_empty(1, height, width, 3)
+    x_grid = torch.arange(width, device=input_tensor.device,
+                          dtype=input_tensor.dtype) - width * 0.5 + 0.5
+    y_grid = (torch.arange(height, device=input_tensor.device,
+                           dtype=input_tensor.dtype) - height * 0.5 + 0.5
+              ).unsqueeze(-1)
+    base_grid[..., 0].copy_(x_grid)
+    base_grid[..., 1].copy_(y_grid)
+    base_grid[..., 2].fill_(1.0)
+    scale = input_tensor.new_tensor([0.5 * width, 0.5 * height])
+    grid = base_grid.reshape(1, height * width, 3).bmm(
+        theta.transpose(1, 2) / scale)
+    grid = grid.reshape(1, height, width, 2)
+    return bev_grid_sample_nearest(
+        input_tensor.unsqueeze(0), grid).squeeze(0)

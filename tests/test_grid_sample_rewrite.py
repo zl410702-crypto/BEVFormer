@@ -11,7 +11,18 @@ from torchvision.transforms.functional import rotate
 TOOLS = Path(__file__).parents[1] / 'tools'
 sys.path.insert(0, str(TOOLS))
 from deployment.grid_sample_rewrite import (  # noqa: E402
-    bev_grid_sample_nearest, bev_rotate_nearest)
+    bev_grid_sample_nearest, bev_rotate_nearest,
+    bev_rotate_nearest_tensor)
+
+
+@pytest.mark.parametrize('angle', [0.0, -1.0353196, 17.25])
+def test_tensor_angle_rotate_matches_torchvision(angle):
+    input_tensor = torch.arange(3 * 50 * 50, dtype=torch.float32).reshape(
+        3, 50, 50)
+    expected = rotate(input_tensor, angle, center=[100, 100])
+    actual = bev_rotate_nearest_tensor(
+        input_tensor, torch.tensor([angle]), center=[100, 100])
+    torch.testing.assert_allclose(actual, expected, rtol=0.0, atol=0.0)
 
 
 def reference(input_tensor, grid):
