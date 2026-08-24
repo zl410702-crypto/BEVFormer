@@ -13,11 +13,11 @@ from deployment import bevformer_onnx_wrapper as module  # noqa: E402
 
 class FakeGraph:
     def __init__(self):
-        self.call = None
+        self.calls = []
 
     def op(self, name, *inputs, **attributes):
-        self.call = (name, inputs, attributes)
-        return 'custom-output'
+        self.calls.append((name, inputs, attributes))
+        return '{}-output-{}'.format(name, len(self.calls))
 
 
 def test_custom_symbolic_has_stable_schema_and_five_tensor_inputs():
@@ -25,10 +25,16 @@ def test_custom_symbolic_has_stable_schema_and_five_tensor_inputs():
     inputs = [object() for _ in range(5)]
     output = module.ms_deformable_attention_symbolic(
         graph, *inputs, 32)
-    assert output == 'custom-output'
-    assert graph.call[0] == 'bevformer::MSDeformableAttention'
-    assert graph.call[1] == tuple(inputs)
-    assert graph.call[2] == {'im2col_step_i': 32}
+    assert output == 'bevformer::MSDeformableAttention-output-3'
+    assert graph.calls[:2] == [
+        ('Cast', (inputs[1],), {'to_i': module.ONNX_INT32}),
+        ('Cast', (inputs[2],), {'to_i': module.ONNX_INT32}),
+    ]
+    custom = graph.calls[2]
+    assert custom[0] == 'bevformer::MSDeformableAttention'
+    assert custom[1] == (inputs[0], 'Cast-output-1', 'Cast-output-2',
+                         inputs[3], inputs[4])
+    assert custom[2] == {'im2col_step_i': 32}
 
 
 def test_export_overrides_are_restored():

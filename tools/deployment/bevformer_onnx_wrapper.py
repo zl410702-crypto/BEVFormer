@@ -14,6 +14,7 @@ from .grid_sample_rewrite import bev_rotate_nearest
 
 CUSTOM_DOMAIN = 'bevformer'
 CUSTOM_OP_TYPE = 'MSDeformableAttention'
+ONNX_INT32 = 6
 transformer_module = importlib.import_module(
     'projects.mmdet3d_plugin.bevformer.modules.transformer')
 REFERENCE_MAXIMUM = torch.maximum
@@ -47,9 +48,15 @@ def ms_deformable_attention_symbolic(
         step = int(im2col_step)
     except (TypeError, ValueError):
         step = 64
+    # TensorRT 8.x IPluginV2DynamicExt has an explicit INT32 tensor contract.
+    # Do not depend on the ONNX parser implicitly down-casting INT64 constants.
+    spatial_shapes_i32 = graph.op(
+        'Cast', spatial_shapes, to_i=ONNX_INT32)
+    level_start_index_i32 = graph.op(
+        'Cast', level_start_index, to_i=ONNX_INT32)
     return graph.op(
         '{}::{}'.format(CUSTOM_DOMAIN, CUSTOM_OP_TYPE),
-        value, spatial_shapes, level_start_index, sampling_locations,
+        value, spatial_shapes_i32, level_start_index_i32, sampling_locations,
         attention_weights, im2col_step_i=step)
 
 
