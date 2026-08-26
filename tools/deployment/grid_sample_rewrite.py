@@ -77,10 +77,26 @@ def bev_rotate_nearest(input_tensor, angle, center):
 
 def bev_rotate_nearest_tensor(input_tensor, angle_degrees, center):
     """Tensor-angle equivalent of torchvision NEAREST rotate for export."""
+    grid = bev_affine_grid_tensor(input_tensor, angle_degrees, center)
+    height, width = input_tensor.shape[-2:]
+    grid = grid.reshape(1, height, width, 2)
+    return bev_grid_sample_nearest(
+        input_tensor.unsqueeze(0), grid).squeeze(0)
+
+
+def bev_affine_grid_tensor(input_tensor, angle_degrees, center):
+    """Return the exact pre-pixel-scaling affine grid used by BEV rotation.
+
+    The stable deployment boundary is contiguous ``[1, H*W, 2]`` FP32 for
+    the current tiny model.  Keeping this computation in one helper prevents
+    host preparation and the reference rotation path from drifting apart.
+    """
     if input_tensor.dim() != 3:
         raise ValueError('BEV rotation input must have shape [C, H, W]')
     if angle_degrees.numel() != 1:
         raise ValueError('angle_degrees must contain exactly one value')
+    if input_tensor.dtype != torch.float32 or angle_degrees.dtype != torch.float32:
+        raise TypeError('deployment affine grid requires FP32 tensors')
     _, height, width = input_tensor.shape
     angle = angle_degrees.reshape(()) * (math.pi / 180.0)
     cosine = torch.cos(angle)
@@ -103,6 +119,4 @@ def bev_rotate_nearest_tensor(input_tensor, angle_degrees, center):
     scale = input_tensor.new_tensor([0.5 * width, 0.5 * height])
     grid = base_grid.reshape(1, height * width, 3).bmm(
         theta.transpose(1, 2) / scale)
-    grid = grid.reshape(1, height, width, 2)
-    return bev_grid_sample_nearest(
-        input_tensor.unsqueeze(0), grid).squeeze(0)
+    return grid.contiguous()

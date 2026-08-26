@@ -14,7 +14,20 @@ namespace
 {
 constexpr int32_t kCudaThreads = 1024;
 
-__device__ float bilinearSample(float const* value, int32_t height,
+template <typename T>
+__device__ float loadAsFloat(T const* value, int32_t offset)
+{
+    return static_cast<float>(value[offset]);
+}
+
+template <>
+__device__ float loadAsFloat(__half const* value, int32_t offset)
+{
+    return __half2float(value[offset]);
+}
+
+template <typename T>
+__device__ float bilinearSample(T const* value, int32_t height,
     int32_t width, int32_t numHeads, int32_t channels, float h, float w,
     int32_t head, int32_t channel)
 {
@@ -36,19 +49,23 @@ __device__ float bilinearSample(float const* value, int32_t height,
     float v4 = 0.0F;
     if (hLow >= 0 && wLow >= 0)
     {
-        v1 = value[hLow * heightStride + wLow * widthStride + base];
+        v1 = loadAsFloat(value,
+            hLow * heightStride + wLow * widthStride + base);
     }
     if (hLow >= 0 && wHigh <= width - 1)
     {
-        v2 = value[hLow * heightStride + wHigh * widthStride + base];
+        v2 = loadAsFloat(value,
+            hLow * heightStride + wHigh * widthStride + base);
     }
     if (hHigh <= height - 1 && wLow >= 0)
     {
-        v3 = value[hHigh * heightStride + wLow * widthStride + base];
+        v3 = loadAsFloat(value,
+            hHigh * heightStride + wLow * widthStride + base);
     }
     if (hHigh <= height - 1 && wHigh <= width - 1)
     {
-        v4 = value[hHigh * heightStride + wHigh * widthStride + base];
+        v4 = loadAsFloat(value,
+            hHigh * heightStride + wHigh * widthStride + base);
     }
     float const w1 = hh * hw;
     float const w2 = hh * lw;
@@ -57,12 +74,13 @@ __device__ float bilinearSample(float const* value, int32_t height,
     return w1 * v1 + w2 * v2 + w3 * v3 + w4 * v4;
 }
 
+template <typename T>
 __global__ void msDeformableAttentionKernel(int32_t count,
-    float const* value, int32_t const* spatialShapes,
-    int32_t const* levelStartIndex, float const* samplingLocations,
-    float const* attentionWeights, int32_t spatialSize, int32_t numHeads,
+    T const* value, int32_t const* spatialShapes,
+    int32_t const* levelStartIndex, T const* samplingLocations,
+    T const* attentionWeights, int32_t spatialSize, int32_t numHeads,
     int32_t channels, int32_t numLevels, int32_t numQuery,
-    int32_t numPoints, float* output)
+    int32_t numPoints, T* output)
 {
     for (int32_t index = blockIdx.x * blockDim.x + threadIdx.x;
          index < count; index += blockDim.x * gridDim.x)
@@ -85,13 +103,13 @@ __global__ void msDeformableAttentionKernel(int32_t count,
         {
             int32_t const height = spatialShapes[level * 2];
             int32_t const width = spatialShapes[level * 2 + 1];
-            float const* levelValue = value + batchValueOffset
+            T const* levelValue = value + batchValueOffset
                 + levelStartIndex[level] * valueStride;
             for (int32_t point = 0; point < numPoints; ++point)
             {
-                float const x = samplingLocations[locationOffset];
-                float const y = samplingLocations[locationOffset + 1];
-                float const weight = attentionWeights[weightOffset];
+                float const x = loadAsFloat(samplingLocations, locationOffset);
+                float const y = loadAsFloat(samplingLocations, locationOffset + 1);
+                float const weight = loadAsFloat(attentionWeights, weightOffset);
                 float const h = y * static_cast<float>(height) - 0.5F;
                 float const w = x * static_cast<float>(width) - 0.5F;
                 if (h > -1.0F && w > -1.0F
@@ -105,7 +123,7 @@ __global__ void msDeformableAttentionKernel(int32_t count,
                 locationOffset += 2;
             }
         }
-        output[index] = result;
+        output[index] = static_cast<T>(result);
     }
 }
 } // namespace
@@ -125,8 +143,30 @@ int32_t launchMSDeformableAttentionFP32(
     }
     int32_t const count = static_cast<int32_t>(count64);
     int32_t const blocks = (count + kCudaThreads - 1) / kCudaThreads;
-    msDeformableAttentionKernel<<<blocks, kCudaThreads, 0, stream>>>(count,
+    msDeformableAttentionKernel<float><<<blocks, kCudaThreads, 0, stream>>>(count,
         value, spatialShapes, levelStartIndex, samplingLocations,
+        attentionWeights, spatialSize, numHeads, channelsPerHead, numLevels,
+        numQuery, numPoints, output);
+    return cudaPeekAtLastError() == cudaSuccess ? 0 : 1;
+}
+
+int32_t launchMSDeformableAttentionFP16(
+    cudaStream_t stream, __half const* value, int32_t const* spatialShapes,
+    int32_t const* levelStartIndex, __half const* samplingLocations,
+    __half const* attentionWeights, int32_t batch, int32_t spatialSize,
+    int32_t numHeads, int32_t channelsPerHead, int32_t numLevels,
+    int32_t numQuery, int32_t numPoints, __half* output) noexcept
+{
+    int64_t const count64 = static_cast<int64_t>(batch) * numQuery
+        * numHeads * channelsPerHead;
+    if (count64 <= 0 || count64 > INT32_MAX)
+    {
+        return 1;
+    }
+    int32_t const count = static_cast<int32_t>(count64);
+    int32_t const blocks = (count + kCudaThreads - 1) / kCudaThreads;
+    msDeformableAttentionKernel<__half><<<blocks, kCudaThreads, 0, stream>>>(
+        count, value, spatialShapes, levelStartIndex, samplingLocations,
         attentionWeights, spatialSize, numHeads, channelsPerHead, numLevels,
         numQuery, numPoints, output);
     return cudaPeekAtLastError() == cudaSuccess ? 0 : 1;

@@ -3,6 +3,7 @@
 
 #include <NvInferPlugin.h>
 #include <cuda_runtime_api.h>
+#include <iostream>
 #include <new>
 
 namespace
@@ -108,13 +109,35 @@ bool MSDeformableAttentionPlugin::supportsFormatCombination(int32_t pos,
     {
         return inOut[pos].type == nvinfer1::DataType::kINT32;
     }
-    return inOut[pos].type == nvinfer1::DataType::kFLOAT;
+    if (pos == 0)
+    {
+        return inOut[pos].type == nvinfer1::DataType::kFLOAT
+            || inOut[pos].type == nvinfer1::DataType::kHALF;
+    }
+    return inOut[pos].type == inOut[0].type;
 }
 
 void MSDeformableAttentionPlugin::configurePlugin(
-    nvinfer1::DynamicPluginTensorDesc const*, int32_t,
+    nvinfer1::DynamicPluginTensorDesc const* inputs, int32_t nbInputs,
     nvinfer1::DynamicPluginTensorDesc const*, int32_t) noexcept
 {
+#ifdef BEVFORMER_MSDA_DEBUG
+    if (inputs != nullptr && nbInputs == 5)
+    {
+        auto const& value = inputs[0].desc.dims;
+        auto const& locations = inputs[3].desc.dims;
+        std::cerr << "[MSDA Plugin] B=" << value.d[0]
+                  << " S=" << value.d[1] << " Q=" << locations.d[1]
+                  << " H=" << value.d[2] << " D=" << value.d[3]
+                  << " L=" << inputs[1].desc.dims.d[0]
+                  << " P=" << locations.d[4] << " dtype="
+                  << (inputs[0].desc.type == nvinfer1::DataType::kFLOAT
+                          ? "FP32" : "FP16") << '\n';
+    }
+#else
+    (void) inputs;
+    (void) nbInputs;
+#endif
 }
 
 size_t MSDeformableAttentionPlugin::getWorkspaceSize(
@@ -137,20 +160,37 @@ int32_t MSDeformableAttentionPlugin::enqueue(
     }
     auto const& value = inputDesc[0].dims;
     auto const& locations = inputDesc[3].dims;
-    return launchMSDeformableAttentionFP32(stream,
-        static_cast<float const*>(inputs[0]),
-        static_cast<int32_t const*>(inputs[1]),
-        static_cast<int32_t const*>(inputs[2]),
-        static_cast<float const*>(inputs[3]),
-        static_cast<float const*>(inputs[4]), value.d[0], value.d[1],
-        value.d[2], value.d[3], inputDesc[1].dims.d[0], locations.d[1],
-        locations.d[4], static_cast<float*>(outputs[0]));
+    if (inputDesc[0].type == nvinfer1::DataType::kFLOAT)
+    {
+        return launchMSDeformableAttentionFP32(stream,
+            static_cast<float const*>(inputs[0]),
+            static_cast<int32_t const*>(inputs[1]),
+            static_cast<int32_t const*>(inputs[2]),
+            static_cast<float const*>(inputs[3]),
+            static_cast<float const*>(inputs[4]), value.d[0], value.d[1],
+            value.d[2], value.d[3], inputDesc[1].dims.d[0], locations.d[1],
+            locations.d[4], static_cast<float*>(outputs[0]));
+    }
+    if (inputDesc[0].type == nvinfer1::DataType::kHALF)
+    {
+        return launchMSDeformableAttentionFP16(stream,
+            static_cast<__half const*>(inputs[0]),
+            static_cast<int32_t const*>(inputs[1]),
+            static_cast<int32_t const*>(inputs[2]),
+            static_cast<__half const*>(inputs[3]),
+            static_cast<__half const*>(inputs[4]), value.d[0], value.d[1],
+            value.d[2], value.d[3], inputDesc[1].dims.d[0], locations.d[1],
+            locations.d[4], static_cast<__half*>(outputs[0]));
+    }
+    return 1;
 }
 
 nvinfer1::DataType MSDeformableAttentionPlugin::getOutputDataType(
-    int32_t, nvinfer1::DataType const*, int32_t) const noexcept
+    int32_t index, nvinfer1::DataType const* inputTypes,
+    int32_t nbInputs) const noexcept
 {
-    return nvinfer1::DataType::kFLOAT;
+    return index == 0 && inputTypes != nullptr && nbInputs == 5
+        ? inputTypes[0] : nvinfer1::DataType::kFLOAT;
 }
 
 int32_t MSDeformableAttentionPlugin::initialize() noexcept

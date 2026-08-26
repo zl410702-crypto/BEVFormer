@@ -18,6 +18,7 @@ from deployment.bevformer_onnx_wrapper import (
     deployment_export_overrides)
 from deployment.bevformer_stateful_onnx_wrapper import (
     BEVFormerStatefulONNXWrapper)
+from deployment.onnx_slice_compat import canonicalize_static_slice_axes_file
 from run_golden_sample import (DEFAULT_CHECKPOINT, DEFAULT_CONFIG,
                                pipeline_image_tensor, prepare_golden_sample,
                                validate_pipeline_item)
@@ -37,6 +38,9 @@ def parse_args():
     parser.add_argument('--config', default=DEFAULT_CONFIG)
     parser.add_argument('--checkpoint', default=DEFAULT_CHECKPOINT)
     parser.add_argument('--output', type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument(
+        '--runtime-fixture-dir', type=Path,
+        help='Optionally save Frame 0/1 FP32 TensorRT inputs and references.')
     parser.add_argument('--seed', type=int, default=0)
     parser.add_argument(
         '--allow-validation-failure', action='store_true',
@@ -119,6 +123,26 @@ def compare_triplet(expected, actual):
         report[name] = metrics(reference, output.detach().cpu().numpy())
         report[name]['shape'] = list(reference.shape)
     return report
+
+
+def save_runtime_frame(root, frame, inputs, outputs):
+    """Save deterministic raw FP32 bindings for the C++ TensorRT runner."""
+    frame_root = root / frame
+    frame_root.mkdir(parents=True, exist_ok=True)
+    metadata = {'inputs': {}, 'outputs': {}}
+    for group, tensors in (('inputs', inputs), ('outputs', outputs)):
+        for name, tensor in tensors.items():
+            array = (tensor.detach().cpu().numpy() if torch.is_tensor(tensor)
+                     else np.asarray(tensor))
+            array = np.ascontiguousarray(array.astype(np.float32, copy=False))
+            path = frame_root / '{}.bin'.format(name)
+            array.tofile(str(path))
+            metadata[group][name] = {
+                'shape': list(array.shape), 'dtype': 'float32',
+                'path': path.name}
+    with (frame_root / 'metadata.json').open('w') as stream:
+        json.dump(metadata, stream, indent=2)
+        stream.write('\n')
 
 
 def assert_close_report(report, atol=1e-5, allow_failure=False):
@@ -314,6 +338,22 @@ def main():
     assert_close_report(
         frame0_report, allow_failure=args.allow_validation_failure)
 
+    if args.runtime_fixture_dir:
+        save_runtime_frame(args.runtime_fixture_dir, 'frame_000', {
+            'images': frame0_images,
+            'prev_bev': torch.zeros_like(frame1_prev),
+            'can_bus': can_bus0, 'shift': shift0,
+            'lidar2img': lidar2img0, 'use_prev_bev': gate0,
+        }, dict(zip(
+            ('all_cls_scores', 'all_bbox_preds', 'bev_embed'),
+            stateful0_outputs)))
+        save_runtime_frame(args.runtime_fixture_dir, 'frame_001', {
+            'images': frame1_images, 'prev_bev': frame1_prev,
+            'can_bus': can_bus1, 'shift': shift1,
+            'lidar2img': lidar2img1, 'use_prev_bev': gate1,
+        }, dict(zip(
+            ('all_cls_scores', 'all_bbox_preds', 'bev_embed'), outputs1)))
+
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with torch.no_grad(), deployment_export_overrides():
         torch.onnx.export(
@@ -324,7 +364,9 @@ def main():
                          'lidar2img', 'use_prev_bev'],
             output_names=['all_cls_scores', 'all_bbox_preds', 'bev_embed'],
             do_constant_folding=False, verbose=False)
+    slice_compat = canonicalize_static_slice_axes_file(args.output)
     audit = audit_onnx(args.output)
+    audit['slice_axes_compat'] = slice_compat
     audit['pytorch_validation'] = {
         'frame1_wrapper_vs_golden': frame1_report,
         'frame1_real_vs_zero_prev_sensitivity': sensitivity,

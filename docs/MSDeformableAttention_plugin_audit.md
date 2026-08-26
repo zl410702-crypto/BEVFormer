@@ -15,7 +15,7 @@ custom op: bevformer::MSDeformableAttention
 node count: 12
 ```
 
-Feasibility conclusion: **YES**. One TensorRT 8.6.4
+Feasibility conclusion: **YES**. One TensorRT 8.4.12.5
 `MSDeformableAttentionPlugin` class can serve all 12 nodes as 12 plugin layer
 instances. The plugin boundary starts after sampling locations and attention
 weights have already been calculated, so the different query/reference-point
@@ -231,14 +231,14 @@ D = channel dimension per head
 C = H × D
 ```
 
-| Position | Tensor | FP32 phase dtype | Rank / layout | Meaning |
+| Position | Tensor | Dtype | Rank / layout | Meaning |
 |---:|---|---|---|---|
-| 0 | `value` | FLOAT | 4, `[B,S,H,D]` | Flattened projected feature values, levels concatenated along S |
-| 1 | `spatial_shapes` | INT64 in current ONNX | 2, `[L,2]` | `(height,width)` for each level |
-| 2 | `level_start_index` | INT64 in current ONNX | 1, `[L]` | Start offset of each level in S |
-| 3 | `sampling_locations` | FLOAT | 6, `[B,Q,H,L,P,2]` | Normalized `(x,y)` sample coordinates |
-| 4 | `attention_weights` | FLOAT | 5, `[B,Q,H,L,P]` | Per-location weights, already softmax-normalized upstream |
-| output 0 | `output` | FLOAT | 3, `[B,Q,H×D]` | Per-head sampled sums concatenated over H |
+| 0 | `value` | FLOAT/HALF | 4, `[B,S,H,D]` | Flattened projected feature values, levels concatenated along S |
+| 1 | `spatial_shapes` | INT32 | 2, `[L,2]` | `(height,width)` for each level |
+| 2 | `level_start_index` | INT32 | 1, `[L]` | Start offset of each level in S |
+| 3 | `sampling_locations` | same as value | 6, `[B,Q,H,L,P,2]` | Normalized `(x,y)` sample coordinates |
+| 4 | `attention_weights` | same as value | 5, `[B,Q,H,L,P]` | Per-location weights, already softmax-normalized upstream |
+| output 0 | `output` | same as value | 3, `[B,Q,H×D]` | Per-head sampled sums concatenated over H |
 
 Required runtime/configuration checks for the later plugin:
 
@@ -254,10 +254,10 @@ output C=H*D
 im2col_step attribute=64
 ```
 
-TensorRT 8.6.4 compatibility note: the ONNX contract carries INT64 shape
-inputs. Whether the parser/plugin boundary preserves INT64 or requires an
-explicit, audited INT32 conversion must be decided in the implementation
-phase; it must not be silently assumed.
+The deployment exporter inserts explicit ONNX Cast nodes so all 12
+`spatial_shapes` and `level_start_index` plugin inputs are INT32. The audit
+script enforces this contract with `--require-int32`; no parser-side implicit
+INT64 conversion is accepted.
 
 ## Mathematical contract
 
@@ -286,22 +286,21 @@ feature values are bilinearly interpolated. The weighted values are accumulated
 over `L×P`. Heads are not reduced together; `[H,D]` is flattened/concatenated
 to `C=H×D` in the output.
 
-## Phase-1 decision and next gate
+## Implementation validation status
 
 ```text
 12-node audit: PASS
 classification: PASS (3 Temporal + 3 Spatial + 6 Decoder)
 single-plugin mathematical feasibility: YES
-TensorRT source: NOT STARTED by design
-CUDA implementation: NOT STARTED by design
-FP32 engine/compare: NOT STARTED
-FP16: NOT STARTED
+TensorRT source: IMPLEMENTED (IPluginV2DynamicExt)
+CUDA FP32: PASS, bitwise exact for Temporal/Spatial/Decoder representative shapes
+CUDA FP16: PASS against FP32 reference from quantized FP16 inputs
+serialization/deserialization enqueue: BITWISE IDENTICAL
+isolated 12-node parser: PASS on x86 preflight (12 PluginV2 layers)
+whole-model parser: BLOCKED before MSDA by unrelated dynamic Slice axes
+exact Orin TensorRT 8.4.12.5 parser/build: PENDING ON TARGET
 ```
 
-Before implementation, review and approve:
-
-1. one dynamic plugin class with 12 instances;
-2. the five-input contract above;
-3. explicit handling of ONNX INT64 shape tensors in TensorRT 8.6.4;
-4. reuse/minimal adaptation of the MMCV 1.4.0 forward CUDA kernel.
-
+Target deployment contract is Orin / DriveOS 6.0.5 / CUDA 11.4 /
+TensorRT 8.4.12.5. The available host preflight uses TensorRT 8.5.3; its engine
+is not a board artifact and is not portable to Orin.

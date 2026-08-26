@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cuda_runtime_api.h>
+#include <cuda_fp16.h>
 #include <cstdint>
 
 int32_t launchMSDeformableAttentionFP32(
@@ -9,3 +10,10 @@ int32_t launchMSDeformableAttentionFP32(
     float const* attentionWeights, int32_t batch, int32_t spatialSize,
     int32_t numHeads, int32_t channelsPerHead, int32_t numLevels,
     int32_t numQuery, int32_t numPoints, float* output) noexcept;
+
+int32_t launchMSDeformableAttentionFP16(
+    cudaStream_t stream, __half const* value, int32_t const* spatialShapes,
+    int32_t const* levelStartIndex, __half const* samplingLocations,
+    __half const* attentionWeights, int32_t batch, int32_t spatialSize,
+    int32_t numHeads, int32_t channelsPerHead, int32_t numLevels,
+    int32_t numQuery, int32_t numPoints, __half* output) noexcept;
