@@ -1,5 +1,23 @@
 #!/usr/bin/env python
-"""Export and audit a stateful single-frame BEVFormer tiny ONNX model."""
+"""Export and audit a stateful single-frame BEVFormer Tiny ONNX model.
+
+本脚本不是单纯调用 ``torch.onnx.export``，而是按以下顺序建立部署基线：
+
+1. 从三帧 Golden sequence 中读取 Frame 1，并使用 Frame 0 ``final_bev``
+   作为真实 ``prev_bev``；
+2. 复现官方 ``forward_test`` 对 ``can_bus`` translation/rotation delta 的
+   处理，并在 host 侧计算 BEV shift；
+3. 在导出前验证 Stateful wrapper 的 Frame 1 输出与 PyTorch Golden 一致；
+4. 验证 ``prev_bev`` 确实影响输出，并验证统一接口的 Frame 0 gate 能复现
+   官方 ``prev_bev=None`` 语义；
+5. 导出 opset 13 ONNX，安装 deployment-only symbolic/forward overrides；
+6. 将可证明为常量的 Slice axes canonicalize 为 TensorRT 8.4 可解析形式；
+7. 审计 graph interface、12 个 MSDeformableAttention custom nodes、输入依赖
+   和 alignment 子图，并写出同名 ``*_audit.json``。
+
+默认采用 fail-closed 策略：任何 Golden validation failure 都会阻止导出。
+``--allow-validation-failure`` 只用于生成结构调试模型，不能作为部署通过依据。
+"""
 
 import argparse
 import copy
@@ -32,6 +50,7 @@ DEFAULT_OUTPUT = Path('artifacts/bevformer_tiny_stateful_opset13.onnx')
 
 
 def parse_args():
+    """定义 Golden、模型权重、导出文件和可选 runtime fixture 参数。"""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--token', default=DEFAULT_FRAME1_TOKEN)
     parser.add_argument('--sequence-root', type=Path, default=DEFAULT_SEQUENCE)
@@ -50,6 +69,7 @@ def parse_args():
 
 
 def metrics(expected, actual):
+    """比较同 shape 数组；shape 不同立即失败，禁止隐式 transpose。"""
     result = compare_arrays(expected, actual)
     if result is None:
         raise ValueError('Shape mismatch: {} != {}'.format(
@@ -58,6 +78,12 @@ def metrics(expected, actual):
 
 
 def prepare_runtime_meta(meta, current_absolute, previous_absolute):
+    """按官方 test-time 逻辑生成 Frame t 相对 Frame t-1 的 motion metadata。
+
+    ``can_bus[:3]`` 是相对 translation，``can_bus[-1]`` 是相对 rotation。
+    差值必须先在 metadata 原有的 float64 域计算，再在构造模型输入时转
+    float32；提前 cast 会引入与 Golden 不一致的 rounding。
+    """
     runtime = copy.deepcopy(meta)
     # Match BEVFormer.forward_test: subtract in the metadata's float64 domain,
     # then cast when creating the model input tensor.
@@ -70,6 +96,7 @@ def prepare_runtime_meta(meta, current_absolute, previous_absolute):
 
 
 def first_frame_runtime_meta(meta, absolute):
+    """构造首帧 metadata：没有历史帧，因此 translation/rotation delta 为 0。"""
     runtime = copy.deepcopy(meta)
     can_bus = np.asarray(absolute, dtype=np.float64).copy()
     can_bus[:3] = 0.0
@@ -79,7 +106,12 @@ def first_frame_runtime_meta(meta, absolute):
 
 
 def compute_shift(can_bus, model):
-    """Host implementation of the exact reference shift equations."""
+    """在 host 侧复现 ``PerceptionTransformer`` 的 BEV shift 公式。
+
+    输入使用官方 delta can_bus，输出顺序为 ``[shift_x, shift_y]``。这里保留
+    NumPy float64 中间计算，再显式转换成模型要求的 float32，避免 exporter
+    自行重建 motion 几何公式。
+    """
     head = model.pts_bbox_head
     transformer = head.transformer
     delta_x = np.asarray([can_bus[0]], dtype=np.float64)
@@ -100,6 +132,7 @@ def compute_shift(can_bus, model):
 
 
 def tensor_inputs(meta, model):
+    """将一帧 metadata 转成 wrapper 的三个显式 CUDA runtime inputs。"""
     can_bus = torch.from_numpy(
         np.asarray(meta['can_bus'], dtype=np.float32)).unsqueeze(0).cuda()
     shift = compute_shift(meta['can_bus'], model).cuda()
@@ -109,6 +142,7 @@ def tensor_inputs(meta, model):
 
 
 def golden_outputs(root, frame):
+    """按 ONNX 输出顺序读取指定 Golden frame 的检测与 BEV reference。"""
     base = root / frame
     return tuple(np.load(str(path), allow_pickle=False) for path in (
         base / 'detection/cls_scores.npy',
@@ -117,6 +151,7 @@ def golden_outputs(root, frame):
 
 
 def compare_triplet(expected, actual):
+    """比较 ``cls/bbox/bev`` 三个正式 graph outputs。"""
     names = ('all_cls_scores', 'all_bbox_preds', 'bev_embed')
     report = {}
     for name, reference, output in zip(names, expected, actual):
@@ -126,7 +161,12 @@ def compare_triplet(expected, actual):
 
 
 def save_runtime_frame(root, frame, inputs, outputs):
-    """Save deterministic raw FP32 bindings for the C++ TensorRT runner."""
+    """为 C++ TensorRT runner 保存确定性的连续 FP32 raw bindings。
+
+    每个 binding 写为无 header 的 ``.bin``，shape/dtype/path 写入同目录
+    ``metadata.json``。这里强制 contiguous FP32，避免 C++ runtime 猜测 layout
+    或依赖 NumPy stride。
+    """
     frame_root = root / frame
     frame_root.mkdir(parents=True, exist_ok=True)
     metadata = {'inputs': {}, 'outputs': {}}
@@ -146,6 +186,7 @@ def save_runtime_frame(root, frame, inputs, outputs):
 
 
 def assert_close_report(report, atol=1e-5, allow_failure=False):
+    """执行 export gate；默认任一输出 MaxAE 超限就拒绝继续导出。"""
     failed = {name: values for name, values in report.items()
               if values['MaxAE'] > atol}
     if failed:
@@ -156,6 +197,7 @@ def assert_close_report(report, atol=1e-5, allow_failure=False):
 
 
 def value_description(value):
+    """把 ONNX ValueInfo 转成便于写入 audit JSON 的名称/shape/dtype。"""
     tensor = value.type.tensor_type
     dims = []
     for dimension in tensor.shape.dim:
@@ -170,6 +212,7 @@ def value_description(value):
 
 
 def descendants(graph, source):
+    """沿 ONNX consumer 方向遍历，用于证明 graph input 确实影响输出。"""
     consumers = {}
     for index, node in enumerate(graph.node):
         for name in node.input:
@@ -191,6 +234,17 @@ def descendants(graph, source):
 
 
 def audit_onnx(path):
+    """对导出模型执行 schema、依赖关系和 alignment 结构审计。
+
+    审计重点不是只检查文件可加载，而是确认：
+
+    * graph interface 与 Stateful runtime contract 完全一致；
+    * 12 个 ``bevformer::MSDeformableAttention`` 均为五输入且保留
+      ``im2col_step=64``；
+    * 每个 runtime input 都能到达至少一个正式 graph output；
+    * rotation/alignment 路径没有在 trace 时被裁掉；
+    * ONNX checker 通过，并尽量完成 shape inference。
+    """
     model = onnx.load(str(path))
     onnx.checker.check_model(model)
     counts = Counter((node.domain or 'ai.onnx', node.op_type)
@@ -264,6 +318,7 @@ def audit_onnx(path):
 
 
 def print_report(title, report):
+    """以稳定顺序打印三个模型输出的数值比较摘要。"""
     print('\n{}'.format(title))
     print('=' * 64)
     for name in ('bev_embed', 'all_cls_scores', 'all_bbox_preds'):
@@ -275,6 +330,9 @@ def print_report(title, report):
 
 def main():
     args = parse_args()
+
+    # sequence.json 是帧连续性与 absolute can_bus 的可信来源。Stateful export
+    # 必须使用真实 Frame 1，不能拿 Frame 0 或三个独立 sample 代替。
     sequence = json.loads((args.sequence_root / 'sequence.json').read_text())
     frames = sequence['frames']
     if len(frames) < 2 or frames[1]['sample_token'] != args.token:
@@ -282,6 +340,9 @@ def main():
     context = prepare_golden_sample(
         args.token, args.config, args.checkpoint, args.seed)
     model = context['model'].module
+
+    # 复现官方 forward_test 的状态准备：Frame 1 metadata 改为相对运动，
+    # Frame 0 encoder 输出直接作为 Frame 1 的 stored previous-BEV state。
     frame1_meta = prepare_runtime_meta(
         context['metas'], frames[1]['can_bus_absolute'],
         frames[0]['can_bus_absolute'])
@@ -292,6 +353,9 @@ def main():
     can_bus1, shift1, lidar2img1 = tensor_inputs(frame1_meta, model)
     gate1 = torch.ones(1, dtype=torch.float32, device='cuda')
     wrapper1 = BEVFormerStatefulONNXWrapper(model, frame1_meta).cuda().eval()
+
+    # Gate 1：真实历史路径。此验证必须在 torch.onnx.export 前通过，否则导出
+    # 出来的图即使 checker PASS，也不能作为 Stateful Golden model。
     with torch.no_grad():
         outputs1 = wrapper1(frame1_images, frame1_prev, can_bus1, shift1,
                             lidar2img1, gate1)
@@ -301,6 +365,8 @@ def main():
     assert_close_report(
         frame1_report, allow_failure=args.allow_validation_failure)
 
+    # Sensitivity test 防止 prev_bev 只出现在 graph input 列表中，却没有真正
+    # 参与输出计算。相同 Frame 1 输入下，real/zero history 必须产生非零差异。
     zero_prev = torch.zeros_like(frame1_prev)
     with torch.no_grad():
         zero_outputs = wrapper1(frame1_images, zero_prev, can_bus1, shift1,
@@ -312,6 +378,9 @@ def main():
         raise RuntimeError('prev_bev sensitivity check produced no difference')
     print_report('Frame 1 real prev_bev vs zero prev_bev sensitivity', sensitivity)
 
+    # Gate 0：ONNX 不能把 prev_bev 设为 None，因此首帧统一使用 zero tensor +
+    # use_prev_bev=0。这里将其与官方 use_prev_bev=False/prev_bev=None 路径比较，
+    # 证明统一 runtime interface 没有改变首帧语义。
     frame0_info = context['dataset'].data_infos[context['index'] - 1]
     if frame0_info['token'] != frames[0]['sample_token']:
         raise ValueError('Frame 0 is not immediately before Frame 1')
@@ -338,6 +407,8 @@ def main():
     assert_close_report(
         frame0_report, allow_failure=args.allow_validation_failure)
 
+    # 可选生成 C++ runner fixture。正式导出不依赖这些文件；它们仅用于后续
+    # TensorRT Frame 0/1 runtime 与 PyTorch outputs 的可重复比较。
     if args.runtime_fixture_dir:
         save_runtime_frame(args.runtime_fixture_dir, 'frame_000', {
             'images': frame0_images,
@@ -355,6 +426,12 @@ def main():
             ('all_cls_scores', 'all_bbox_preds', 'bev_embed'), outputs1)))
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
+
+    # deployment_export_overrides() 只在此 context 内临时安装 ONNX symbolic 和
+    # deployment-only forward，包括 Stateful temporal path、static-Nq SCA 及
+    # MSDeformableAttention custom op。退出 context 后必须恢复普通 PyTorch 行为。
+    # do_constant_folding=False 用于保留已审计的部署图结构，避免 exporter 在此
+    # 阶段重写 custom-op 周边 contract。
     with torch.no_grad(), deployment_export_overrides():
         torch.onnx.export(
             wrapper1,
@@ -364,7 +441,12 @@ def main():
                          'lidar2img', 'use_prev_bev'],
             output_names=['all_cls_scores', 'all_bbox_preds', 'bev_embed'],
             do_constant_folding=False, verbose=False)
+    # PyTorch 1.9 可能把固定 Slice axes 导成 Constant→Unsqueeze 子图，而 TRT
+    # 8.4 要求 axes 是 build-time weights。兼容 pass 只处理可严格静态求值的
+    # axes；真正 runtime-dependent 的情况会 fail closed/skip，绝不硬编码。
     slice_compat = canonicalize_static_slice_axes_file(args.output)
+
+    # Audit 在保存成功后立即执行，使 ONNX 文件与旁路 audit JSON 始终对应。
     audit = audit_onnx(args.output)
     audit['slice_axes_compat'] = slice_compat
     audit['pytorch_validation'] = {
@@ -381,6 +463,8 @@ def main():
         'lidar2img': 'per-frame camera projection matrices',
         'use_prev_bev': 'float32 scalar gate: exactly 0 or 1',
     }
+    # Audit JSON 记录文件 hash、接口、custom-op contract、输入依赖、Golden
+    # metrics 和 motion 语义，是后续 ONNX/TRT build 的机器可读交接物。
     audit_path = args.output.with_name(args.output.stem + '_audit.json')
     with audit_path.open('w') as stream:
         json.dump(audit, stream, indent=2)
