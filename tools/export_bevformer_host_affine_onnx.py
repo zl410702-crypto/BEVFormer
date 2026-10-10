@@ -10,6 +10,7 @@ from pathlib import Path
 import onnx
 
 from deployment.host_affine_contract import rewrite_host_affine_input
+from deployment.onnx_pad_compat import canonicalize_fixed_chunk_pads
 
 
 def parse_args():
@@ -26,6 +27,7 @@ def main():
         raise RuntimeError('refusing to overwrite {}'.format(args.output))
     source = onnx.load(str(args.input))
     model, rewrite = rewrite_host_affine_input(source)
+    pad_compat = canonicalize_fixed_chunk_pads(model)
     inferred = onnx.shape_inference.infer_shapes(model)
     onnx.checker.check_model(inferred)
     args.output.parent.mkdir(parents=True, exist_ok=True)
@@ -44,6 +46,7 @@ def main():
         'onnx_checker': 'PASS',
         'shape_inference': 'PASS',
         'rewrite': rewrite,
+        'fixed_chunk_pad_compat': pad_compat,
     }
     if args.report:
         args.report.write_text(json.dumps(report, indent=2) + '\n')
