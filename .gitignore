@@ -140,3 +140,4 @@ artifacts/
 
 # Local Golden Reference tensor artifacts; keep JSON manifests trackable.
 golden_tensors/**/*.npy
+golden_tensors_fp32/**/*.npy

@@ -1,0 +1,4707 @@
+[
+  {
+    "name": "input.images",
+    "shape": [
+      6,
+      3,
+      480,
+      800
+    ],
+    "dtype": "float32",
+    "min": -2.1136226654052734,
+    "max": 2.640000104904175,
+    "mean": -0.10960092531467965,
+    "std": 0.8571340741996226,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/input/images.npy"
+  },
+  {
+    "name": "backbone.c5",
+    "shape": [
+      6,
+      2048,
+      15,
+      25
+    ],
+    "dtype": "float32",
+    "min": 0.0,
+    "max": 5.971538066864014,
+    "mean": 0.029372916562045905,
+    "std": 0.15234171478419206,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/backbone/c5.npy"
+  },
+  {
+    "name": "fpn.level_0",
+    "shape": [
+      6,
+      256,
+      15,
+      25
+    ],
+    "dtype": "float32",
+    "min": -15.982068061828613,
+    "max": 13.195694923400879,
+    "mean": 0.04122315284869193,
+    "std": 1.6299110690399459,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/fpn/level_0.npy"
+  },
+  {
+    "name": "bev.bev_pos",
+    "shape": [
+      1,
+      256,
+      50,
+      50
+    ],
+    "dtype": "float32",
+    "min": -3.9150633811950684,
+    "max": 3.685087203979492,
+    "mean": -0.012482417197932279,
+    "std": 0.9158385589969802,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/bev/bev_pos.npy"
+  },
+  {
+    "name": "bev.bev_query",
+    "shape": [
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.559509754180908,
+    "max": 4.477896213531494,
+    "mean": 0.0014545507345957176,
+    "std": 0.914463242344442,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/bev/bev_query.npy"
+  },
+  {
+    "name": "bev.spatial_shapes",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "int64",
+    "min": 15.0,
+    "max": 25.0,
+    "mean": 20.0,
+    "std": 5.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/bev/spatial_shapes.npy"
+  },
+  {
+    "name": "bev.level_start_index",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/bev/level_start_index.npy"
+  },
+  {
+    "name": "temporal.shift",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": -0.0,
+    "max": -0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/shift.npy"
+  },
+  {
+    "name": "bev.reference_points_3d",
+    "shape": [
+      1,
+      4,
+      2500,
+      3
+    ],
+    "dtype": "float32",
+    "min": 0.009999999776482582,
+    "max": 0.9899999499320984,
+    "mean": 0.4999999948342641,
+    "std": 0.30162714384148986,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/bev/reference_points_3d.npy"
+  },
+  {
+    "name": "bev.reference_points_2d",
+    "shape": [
+      1,
+      2500,
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": 0.009999999776482582,
+    "max": 0.9899999499320984,
+    "mean": 0.4999999885261059,
+    "std": 0.2886173873214833,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/bev/reference_points_2d.npy"
+  },
+  {
+    "name": "bev.reference_points_cam",
+    "shape": [
+      6,
+      1,
+      2500,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -6670483.5,
+    "max": 4808629.5,
+    "mean": -635591.1283633322,
+    "std": 1408295.0827964311,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/bev/reference_points_cam.npy"
+  },
+  {
+    "name": "bev.bev_mask",
+    "shape": [
+      6,
+      1,
+      2500,
+      4
+    ],
+    "dtype": "bool",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.18671666666666667,
+    "std": 0.3896839142889472,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/bev/bev_mask.npy"
+  },
+  {
+    "name": "temporal.layer_0.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.087724685668945,
+    "max": 8.292668342590332,
+    "mean": -0.004652367856516503,
+    "std": 1.2017655163153986,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_0/query.npy"
+  },
+  {
+    "name": "temporal.layer_0.reference_points",
+    "shape": [
+      2,
+      2500,
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": 0.009999999776482582,
+    "max": 0.9899999499320984,
+    "mean": 0.4999999885261059,
+    "std": 0.2886173873214833,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_0/reference_points.npy"
+  },
+  {
+    "name": "temporal.layer_0.value_effective",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.087724685668945,
+    "max": 8.292668342590332,
+    "mean": -0.004652367856516503,
+    "std": 1.2017655163153989,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_0/value_effective.npy"
+  },
+  {
+    "name": "temporal.layer_0.sampling_offsets",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -10.371066093444824,
+    "max": 9.953895568847656,
+    "mean": -0.08884708948192566,
+    "std": 2.478650870282292,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_0/sampling_offsets.npy"
+  },
+  {
+    "name": "temporal.layer_0.attention_weights",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4
+    ],
+    "dtype": "float32",
+    "min": 4.222702045808546e-06,
+    "max": 0.9998946189880371,
+    "mean": 0.25000000004757966,
+    "std": 0.2664480994198194,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_0/attention_weights.npy"
+  },
+  {
+    "name": "temporal.layer_0.sampling_locations",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -0.174509197473526,
+    "max": 1.123439908027649,
+    "mean": 0.49822304676054047,
+    "std": 0.2931682096631866,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_0/sampling_locations.npy"
+  },
+  {
+    "name": "temporal.layer_0.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -8.262001037597656,
+    "max": 9.836994171142578,
+    "mean": -0.02073503927294714,
+    "std": 1.9163509537355279,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_0/output.npy"
+  },
+  {
+    "name": "spatial.layer_0.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.160696029663086,
+    "max": 4.8244404792785645,
+    "mean": -0.008225829994522755,
+    "std": 0.957495991311831,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/query.npy"
+  },
+  {
+    "name": "spatial.layer_0.key",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -13.808143615722656,
+    "max": 11.802732467651367,
+    "mean": -0.002726951200759989,
+    "std": 1.6000686902176484,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/key.npy"
+  },
+  {
+    "name": "spatial.layer_0.value",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -13.808143615722656,
+    "max": 11.802732467651367,
+    "mean": -0.002726951200759989,
+    "std": 1.6000686902176484,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/value.npy"
+  },
+  {
+    "name": "spatial.layer_0.reference_points_cam",
+    "shape": [
+      6,
+      1,
+      2500,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -6670483.5,
+    "max": 4808629.5,
+    "mean": -635591.1283633322,
+    "std": 1408295.0827964311,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/reference_points_cam.npy"
+  },
+  {
+    "name": "spatial.layer_0.bev_mask",
+    "shape": [
+      6,
+      1,
+      2500,
+      4
+    ],
+    "dtype": "bool",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.18671666666666667,
+    "std": 0.3896839142889472,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/bev_mask.npy"
+  },
+  {
+    "name": "spatial.layer_0.spatial_shapes",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "int64",
+    "min": 15.0,
+    "max": 25.0,
+    "mean": 20.0,
+    "std": 5.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/spatial_shapes.npy"
+  },
+  {
+    "name": "spatial.layer_0.level_start_index",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/level_start_index.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.query",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.160696029663086,
+    "max": 4.8244404792785645,
+    "mean": -0.006512346150310533,
+    "std": 0.8510298671948766,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/deformable/query.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.value",
+    "shape": [
+      6,
+      375,
+      256
+    ],
+    "dtype": "float32",
+    "min": -13.808143615722656,
+    "max": 11.802732467651367,
+    "mean": -0.002726951200759989,
+    "std": 1.6000686902176484,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/deformable/value.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.sampling_offsets",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -12.649480819702148,
+    "max": 12.436010360717773,
+    "mean": 0.03086456076757874,
+    "std": 4.634951747982181,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/deformable/sampling_offsets.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.attention_weights",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8
+    ],
+    "dtype": "float32",
+    "min": 0.0002769928250927478,
+    "max": 0.9584265351295471,
+    "mean": 0.12500000022013535,
+    "std": 0.14120166484436142,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/deformable/attention_weights.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.sampling_locations",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -1.4041996002197266,
+    "max": 3.3008034229278564,
+    "mean": 0.4103201513018836,
+    "std": 0.38788458984430635,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/deformable/sampling_locations.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.output",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -7.919818878173828,
+    "max": 8.688894271850586,
+    "mean": -0.009648747342309544,
+    "std": 0.8088043501692008,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/deformable/output.npy"
+  },
+  {
+    "name": "spatial.layer_0.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -7.53066873550415,
+    "max": 11.119333267211914,
+    "mean": -0.02018815038588491,
+    "std": 1.4667162582678666,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_0/output.npy"
+  },
+  {
+    "name": "temporal.layer_1.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.629173755645752,
+    "max": 7.926262855529785,
+    "mean": -0.0016342087312634294,
+    "std": 0.9869302396602813,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_1/query.npy"
+  },
+  {
+    "name": "temporal.layer_1.reference_points",
+    "shape": [
+      2,
+      2500,
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": 0.009999999776482582,
+    "max": 0.9899999499320984,
+    "mean": 0.4999999885261059,
+    "std": 0.2886173873214833,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_1/reference_points.npy"
+  },
+  {
+    "name": "temporal.layer_1.value_effective",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.629173755645752,
+    "max": 7.926262855529785,
+    "mean": -0.0016342087312634294,
+    "std": 0.9869302396602813,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_1/value_effective.npy"
+  },
+  {
+    "name": "temporal.layer_1.sampling_offsets",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -15.100923538208008,
+    "max": 22.37989616394043,
+    "mean": 0.23278331112001616,
+    "std": 3.955227032757963,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_1/sampling_offsets.npy"
+  },
+  {
+    "name": "temporal.layer_1.attention_weights",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4
+    ],
+    "dtype": "float32",
+    "min": 1.1924032605747925e-06,
+    "max": 0.9999152421951294,
+    "mean": 0.250000000017573,
+    "std": 0.2608162944215364,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_1/attention_weights.npy"
+  },
+  {
+    "name": "temporal.layer_1.sampling_locations",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -0.22842586040496826,
+    "max": 1.3584043979644775,
+    "mean": 0.5046556547910266,
+    "std": 0.2973897813200048,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_1/sampling_locations.npy"
+  },
+  {
+    "name": "temporal.layer_1.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -9.984233856201172,
+    "max": 10.199456214904785,
+    "mean": -0.01089482463801387,
+    "std": 1.5882223795080768,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_1/output.npy"
+  },
+  {
+    "name": "spatial.layer_1.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.111180305480957,
+    "max": 6.483910083770752,
+    "mean": -0.002168422000429492,
+    "std": 0.9143084127189277,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/query.npy"
+  },
+  {
+    "name": "spatial.layer_1.key",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -13.808143615722656,
+    "max": 11.802732467651367,
+    "mean": -0.002726951200759989,
+    "std": 1.6000686902176484,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/key.npy"
+  },
+  {
+    "name": "spatial.layer_1.value",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -13.808143615722656,
+    "max": 11.802732467651367,
+    "mean": -0.002726951200759989,
+    "std": 1.6000686902176484,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/value.npy"
+  },
+  {
+    "name": "spatial.layer_1.reference_points_cam",
+    "shape": [
+      6,
+      1,
+      2500,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -6670483.5,
+    "max": 4808629.5,
+    "mean": -635591.1283633322,
+    "std": 1408295.0827964311,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/reference_points_cam.npy"
+  },
+  {
+    "name": "spatial.layer_1.bev_mask",
+    "shape": [
+      6,
+      1,
+      2500,
+      4
+    ],
+    "dtype": "bool",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.18671666666666667,
+    "std": 0.3896839142889472,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/bev_mask.npy"
+  },
+  {
+    "name": "spatial.layer_1.spatial_shapes",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "int64",
+    "min": 15.0,
+    "max": 25.0,
+    "mean": 20.0,
+    "std": 5.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/spatial_shapes.npy"
+  },
+  {
+    "name": "spatial.layer_1.level_start_index",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/level_start_index.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.query",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.111180305480957,
+    "max": 6.483910083770752,
+    "mean": -0.0017177615561330285,
+    "std": 0.8126482813808443,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/deformable/query.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.value",
+    "shape": [
+      6,
+      375,
+      256
+    ],
+    "dtype": "float32",
+    "min": -13.808143615722656,
+    "max": 11.802732467651367,
+    "mean": -0.002726951200759989,
+    "std": 1.6000686902176484,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/deformable/value.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.sampling_offsets",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -13.278146743774414,
+    "max": 12.163528442382812,
+    "mean": 0.019438891528507952,
+    "std": 4.59132926293607,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/deformable/sampling_offsets.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.attention_weights",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8
+    ],
+    "dtype": "float32",
+    "min": 7.280250429175794e-05,
+    "max": 0.7176464200019836,
+    "mean": 0.1250000006040281,
+    "std": 0.12269850000680191,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/deformable/attention_weights.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.sampling_locations",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -1.4215598106384277,
+    "max": 3.262809991836548,
+    "mean": 0.4080285638070515,
+    "std": 0.38958100019726477,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/deformable/sampling_locations.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.output",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -6.1396708488464355,
+    "max": 5.922682285308838,
+    "mean": 0.006177334443848403,
+    "std": 0.6215129021422118,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/deformable/output.npy"
+  },
+  {
+    "name": "spatial.layer_1.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -6.565557479858398,
+    "max": 9.103570938110352,
+    "mean": -0.008931702018091346,
+    "std": 1.2282331083280353,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_1/output.npy"
+  },
+  {
+    "name": "temporal.layer_2.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.40845251083374,
+    "max": 6.308374881744385,
+    "mean": 0.000237894958026833,
+    "std": 0.9703344294877062,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_2/query.npy"
+  },
+  {
+    "name": "temporal.layer_2.reference_points",
+    "shape": [
+      2,
+      2500,
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": 0.009999999776482582,
+    "max": 0.9899999499320984,
+    "mean": 0.4999999885261059,
+    "std": 0.2886173873214833,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_2/reference_points.npy"
+  },
+  {
+    "name": "temporal.layer_2.value_effective",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.40845251083374,
+    "max": 6.308374881744385,
+    "mean": 0.000237894958026833,
+    "std": 0.9703344294877063,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_2/value_effective.npy"
+  },
+  {
+    "name": "temporal.layer_2.sampling_offsets",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -24.419166564941406,
+    "max": 22.832088470458984,
+    "mean": -0.05588206609174876,
+    "std": 3.4355996433230755,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_2/sampling_offsets.npy"
+  },
+  {
+    "name": "temporal.layer_2.attention_weights",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4
+    ],
+    "dtype": "float32",
+    "min": 7.555070169473765e-07,
+    "max": 0.9999178647994995,
+    "mean": 0.2500000000033172,
+    "std": 0.2845717608224244,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_2/attention_weights.npy"
+  },
+  {
+    "name": "temporal.layer_2.sampling_locations",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -0.366559237241745,
+    "max": 1.4466416835784912,
+    "mean": 0.4988823471949974,
+    "std": 0.2957133367572371,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_2/sampling_locations.npy"
+  },
+  {
+    "name": "temporal.layer_2.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -8.130143165588379,
+    "max": 8.489859580993652,
+    "mean": -0.05427066365353585,
+    "std": 1.6196328623025575,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/temporal/layer_2/output.npy"
+  },
+  {
+    "name": "spatial.layer_2.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.295650482177734,
+    "max": 5.019437313079834,
+    "mean": -0.0014632373622663884,
+    "std": 0.9461896499759004,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/query.npy"
+  },
+  {
+    "name": "spatial.layer_2.key",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -13.808143615722656,
+    "max": 11.802732467651367,
+    "mean": -0.002726951200759989,
+    "std": 1.6000686902176484,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/key.npy"
+  },
+  {
+    "name": "spatial.layer_2.value",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -13.808143615722656,
+    "max": 11.802732467651367,
+    "mean": -0.002726951200759989,
+    "std": 1.6000686902176484,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/value.npy"
+  },
+  {
+    "name": "spatial.layer_2.reference_points_cam",
+    "shape": [
+      6,
+      1,
+      2500,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -6670483.5,
+    "max": 4808629.5,
+    "mean": -635591.1283633322,
+    "std": 1408295.0827964311,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/reference_points_cam.npy"
+  },
+  {
+    "name": "spatial.layer_2.bev_mask",
+    "shape": [
+      6,
+      1,
+      2500,
+      4
+    ],
+    "dtype": "bool",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.18671666666666667,
+    "std": 0.3896839142889472,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/bev_mask.npy"
+  },
+  {
+    "name": "spatial.layer_2.spatial_shapes",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "int64",
+    "min": 15.0,
+    "max": 25.0,
+    "mean": 20.0,
+    "std": 5.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/spatial_shapes.npy"
+  },
+  {
+    "name": "spatial.layer_2.level_start_index",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/level_start_index.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.query",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.295650482177734,
+    "max": 5.019437313079834,
+    "mean": -0.001093143504304587,
+    "std": 0.8411013927150556,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/deformable/query.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.value",
+    "shape": [
+      6,
+      375,
+      256
+    ],
+    "dtype": "float32",
+    "min": -13.808143615722656,
+    "max": 11.802732467651367,
+    "mean": -0.002726951200759989,
+    "std": 1.6000686902176484,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/deformable/value.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.sampling_offsets",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -13.099462509155273,
+    "max": 15.977151870727539,
+    "mean": -0.24883168607764986,
+    "std": 4.468145158568852,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/deformable/sampling_offsets.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.attention_weights",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8
+    ],
+    "dtype": "float32",
+    "min": 0.00015982041077222675,
+    "max": 0.9303841590881348,
+    "mean": 0.12499999954648501,
+    "std": 0.13968620869129372,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/deformable/attention_weights.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.sampling_locations",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -1.4297902584075928,
+    "max": 3.1909265518188477,
+    "mean": 0.39223449424427564,
+    "std": 0.37696681697602197,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/deformable/sampling_locations.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.output",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -8.777667045593262,
+    "max": 8.735360145568848,
+    "mean": 0.014472437939989136,
+    "std": 0.7275109257970701,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/deformable/output.npy"
+  },
+  {
+    "name": "spatial.layer_2.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -7.284918785095215,
+    "max": 7.031538009643555,
+    "mean": 0.006148182599612301,
+    "std": 1.3708565858360802,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/spatial/layer_2/output.npy"
+  },
+  {
+    "name": "decoder.reference_points_initial",
+    "shape": [
+      1,
+      900,
+      3
+    ],
+    "dtype": "float32",
+    "min": 0.019861089065670967,
+    "max": 0.9876576662063599,
+    "mean": 0.49605041034450686,
+    "std": 0.21322183656815605,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/decoder/reference_points_initial.npy"
+  },
+  {
+    "name": "decoder.layer_0.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.20098352432251,
+    "max": 3.88545823097229,
+    "mean": -0.0009928163528844516,
+    "std": 0.853646425502118,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/decoder/layer_0/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_1.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.946847438812256,
+    "max": 3.7456095218658447,
+    "mean": -0.0030024329727926812,
+    "std": 0.882352014819157,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/decoder/layer_1/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_2.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -6.272337913513184,
+    "max": 4.07236909866333,
+    "mean": -0.0005313929151069136,
+    "std": 0.8933888444046031,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/decoder/layer_2/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_3.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.779207229614258,
+    "max": 3.924856424331665,
+    "mean": 0.0003113976179912085,
+    "std": 0.8878588586011897,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/decoder/layer_3/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_4.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.980373859405518,
+    "max": 4.84650993347168,
+    "mean": -0.0015412719232464791,
+    "std": 0.8691490619816896,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/decoder/layer_4/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_5.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.651702404022217,
+    "max": 3.7700555324554443,
+    "mean": -0.0022328834765542047,
+    "std": 0.8529562207593829,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/decoder/layer_5/object_feature.npy"
+  },
+  {
+    "name": "decoder.reference_points_after_refinement",
+    "shape": [
+      6,
+      1,
+      900,
+      3
+    ],
+    "dtype": "float32",
+    "min": 0.015782494097948074,
+    "max": 0.9900814890861511,
+    "mean": 0.4972129875949273,
+    "std": 0.2137069587827822,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/decoder/reference_points_after_refinement.npy"
+  },
+  {
+    "name": "bev.final_bev",
+    "shape": [
+      2500,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -3.776520013809204,
+    "max": 3.15614652633667,
+    "mean": 0.0023728119147487167,
+    "std": 0.7733732589706273,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/bev/final_bev.npy"
+  },
+  {
+    "name": "detection.cls_scores",
+    "shape": [
+      6,
+      1,
+      900,
+      10
+    ],
+    "dtype": "float32",
+    "min": -16.415857315063477,
+    "max": 3.2715654373168945,
+    "mean": -6.2796711276063215,
+    "std": 1.4833742441847895,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/detection/cls_scores.npy"
+  },
+  {
+    "name": "detection.bbox_preds",
+    "shape": [
+      6,
+      1,
+      900,
+      10
+    ],
+    "dtype": "float32",
+    "min": -49.5838737487793,
+    "max": 50.18434524536133,
+    "mean": -0.04622030472521783,
+    "std": 11.426865087058731,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/detection/bbox_preds.npy"
+  },
+  {
+    "name": "detection.decoded_boxes",
+    "shape": [
+      300,
+      9
+    ],
+    "dtype": "float32",
+    "min": -49.5838737487793,
+    "max": 49.853153228759766,
+    "mean": 0.39700114357139665,
+    "std": 12.769078656840358,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/detection/decoded_boxes.npy"
+  },
+  {
+    "name": "detection.decoded_scores",
+    "shape": [
+      300
+    ],
+    "dtype": "float32",
+    "min": 0.03819917142391205,
+    "max": 0.9606101512908936,
+    "mean": 0.15679565398643414,
+    "std": 0.13728486978730264,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/detection/decoded_scores.npy"
+  },
+  {
+    "name": "detection.decoded_labels",
+    "shape": [
+      300
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 9.0,
+    "mean": 6.463333333333333,
+    "std": 3.0499162101423196,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_000/detection/decoded_labels.npy"
+  },
+  {
+    "name": "temporal.prev_bev_stored",
+    "shape": [
+      2500,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -3.776520013809204,
+    "max": 3.15614652633667,
+    "mean": 0.0023728119147487167,
+    "std": 0.7733732589706273,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/prev_bev_stored.npy"
+  },
+  {
+    "name": "input.images",
+    "shape": [
+      6,
+      3,
+      480,
+      800
+    ],
+    "dtype": "float32",
+    "min": -2.08793568611145,
+    "max": 2.640000104904175,
+    "mean": -0.1362034273739266,
+    "std": 0.8640580886374692,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/input/images.npy"
+  },
+  {
+    "name": "backbone.c5",
+    "shape": [
+      6,
+      2048,
+      15,
+      25
+    ],
+    "dtype": "float32",
+    "min": 0.0,
+    "max": 6.716984748840332,
+    "mean": 0.030139402440174004,
+    "std": 0.15737731055499907,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/backbone/c5.npy"
+  },
+  {
+    "name": "fpn.level_0",
+    "shape": [
+      6,
+      256,
+      15,
+      25
+    ],
+    "dtype": "float32",
+    "min": -14.356444358825684,
+    "max": 15.90294361114502,
+    "mean": 0.03903928526841855,
+    "std": 1.6702177289430225,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/fpn/level_0.npy"
+  },
+  {
+    "name": "bev.bev_pos",
+    "shape": [
+      1,
+      256,
+      50,
+      50
+    ],
+    "dtype": "float32",
+    "min": -3.9150633811950684,
+    "max": 3.685087203979492,
+    "mean": -0.012482417197932279,
+    "std": 0.9158385589969802,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/bev/bev_pos.npy"
+  },
+  {
+    "name": "bev.bev_query",
+    "shape": [
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.559509754180908,
+    "max": 4.477896213531494,
+    "mean": 0.0014545507345957176,
+    "std": 0.914463242344442,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/bev/bev_query.npy"
+  },
+  {
+    "name": "temporal.prev_bev_aligned",
+    "shape": [
+      2500,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -3.776520013809204,
+    "max": 3.15614652633667,
+    "mean": 0.002231107094358758,
+    "std": 0.7525447095880591,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/prev_bev_aligned.npy"
+  },
+  {
+    "name": "bev.spatial_shapes",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "int64",
+    "min": 15.0,
+    "max": 25.0,
+    "mean": 20.0,
+    "std": 5.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/bev/spatial_shapes.npy"
+  },
+  {
+    "name": "bev.level_start_index",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/bev/level_start_index.npy"
+  },
+  {
+    "name": "temporal.shift",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": -0.00013976912305224687,
+    "max": 0.04161344841122627,
+    "mean": 0.020736839644087013,
+    "std": 0.02087660876713926,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/shift.npy"
+  },
+  {
+    "name": "bev.reference_points_3d",
+    "shape": [
+      1,
+      4,
+      2500,
+      3
+    ],
+    "dtype": "float32",
+    "min": 0.009999999776482582,
+    "max": 0.9899999499320984,
+    "mean": 0.4999999948342641,
+    "std": 0.30162714384148986,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/bev/reference_points_3d.npy"
+  },
+  {
+    "name": "bev.reference_points_2d",
+    "shape": [
+      1,
+      2500,
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": 0.009999999776482582,
+    "max": 0.9899999499320984,
+    "mean": 0.4999999885261059,
+    "std": 0.2886173873214833,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/bev/reference_points_2d.npy"
+  },
+  {
+    "name": "bev.reference_points_cam",
+    "shape": [
+      6,
+      1,
+      2500,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -6670279.0,
+    "max": 4804046.0,
+    "mean": -635712.3242971266,
+    "std": 1408595.5741659843,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/bev/reference_points_cam.npy"
+  },
+  {
+    "name": "bev.bev_mask",
+    "shape": [
+      6,
+      1,
+      2500,
+      4
+    ],
+    "dtype": "bool",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.1867,
+    "std": 0.3896705146659162,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/bev/bev_mask.npy"
+  },
+  {
+    "name": "temporal.layer_0.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.129567623138428,
+    "max": 8.210947036743164,
+    "mean": 0.0018716597922422806,
+    "std": 1.2209948035374374,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_0/query.npy"
+  },
+  {
+    "name": "temporal.layer_0.key",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.129567623138428,
+    "max": 8.210947036743164,
+    "mean": 0.0020513834433005195,
+    "std": 1.0141873384132698,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_0/key.npy"
+  },
+  {
+    "name": "temporal.layer_0.value",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.129567623138428,
+    "max": 8.210947036743164,
+    "mean": 0.0020513834433005195,
+    "std": 1.0141873384132698,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_0/value.npy"
+  },
+  {
+    "name": "temporal.layer_0.reference_points",
+    "shape": [
+      2,
+      2500,
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": 0.00986023060977459,
+    "max": 1.0316133499145508,
+    "mean": 0.5103684087656438,
+    "std": 0.2891805953337012,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_0/reference_points.npy"
+  },
+  {
+    "name": "temporal.layer_0.value_effective",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.129567623138428,
+    "max": 8.210947036743164,
+    "mean": 0.0020513834433005195,
+    "std": 1.0141873384132698,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_0/value_effective.npy"
+  },
+  {
+    "name": "temporal.layer_0.sampling_offsets",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -11.455243110656738,
+    "max": 10.870490074157715,
+    "mean": 0.10804500750887527,
+    "std": 2.8848296164302774,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_0/sampling_offsets.npy"
+  },
+  {
+    "name": "temporal.layer_0.attention_weights",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4
+    ],
+    "dtype": "float32",
+    "min": 8.126282295961573e-07,
+    "max": 0.9999790191650391,
+    "mean": 0.25000000001013295,
+    "std": 0.27763793532420505,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_0/attention_weights.npy"
+  },
+  {
+    "name": "temporal.layer_0.sampling_locations",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -0.1380990594625473,
+    "max": 1.1831437349319458,
+    "mean": 0.5125293089068902,
+    "std": 0.2948050463903308,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_0/sampling_locations.npy"
+  },
+  {
+    "name": "temporal.layer_0.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -8.257905960083008,
+    "max": 8.707805633544922,
+    "mean": -0.016213950103148092,
+    "std": 1.6505930099164359,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_0/output.npy"
+  },
+  {
+    "name": "spatial.layer_0.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.5824761390686035,
+    "max": 4.651697158813477,
+    "mean": -0.005665986981975352,
+    "std": 0.955112488390409,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/query.npy"
+  },
+  {
+    "name": "spatial.layer_0.key",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -12.918781280517578,
+    "max": 14.633038520812988,
+    "mean": -0.004910818893706568,
+    "std": 1.6465574061116979,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/key.npy"
+  },
+  {
+    "name": "spatial.layer_0.value",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -12.918781280517578,
+    "max": 14.633038520812988,
+    "mean": -0.004910818893706568,
+    "std": 1.6465574061116979,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/value.npy"
+  },
+  {
+    "name": "spatial.layer_0.reference_points_cam",
+    "shape": [
+      6,
+      1,
+      2500,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -6670279.0,
+    "max": 4804046.0,
+    "mean": -635712.3242971266,
+    "std": 1408595.5741659843,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/reference_points_cam.npy"
+  },
+  {
+    "name": "spatial.layer_0.bev_mask",
+    "shape": [
+      6,
+      1,
+      2500,
+      4
+    ],
+    "dtype": "bool",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.1867,
+    "std": 0.3896705146659162,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/bev_mask.npy"
+  },
+  {
+    "name": "spatial.layer_0.spatial_shapes",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "int64",
+    "min": 15.0,
+    "max": 25.0,
+    "mean": 20.0,
+    "std": 5.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/spatial_shapes.npy"
+  },
+  {
+    "name": "spatial.layer_0.level_start_index",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/level_start_index.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.query",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.5824761390686035,
+    "max": 4.651697158813477,
+    "mean": -0.0044840445575236665,
+    "std": 0.848953369300692,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/deformable/query.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.value",
+    "shape": [
+      6,
+      375,
+      256
+    ],
+    "dtype": "float32",
+    "min": -12.918781280517578,
+    "max": 14.633038520812988,
+    "mean": -0.004910818893706568,
+    "std": 1.6465574061116979,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/deformable/value.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.sampling_offsets",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -11.706212997436523,
+    "max": 12.002037048339844,
+    "mean": 0.014848542847515153,
+    "std": 4.571875064812083,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/deformable/sampling_offsets.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.attention_weights",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8
+    ],
+    "dtype": "float32",
+    "min": 8.728859393158928e-05,
+    "max": 0.9539962410926819,
+    "mean": 0.12500000018633192,
+    "std": 0.1271662896987265,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/deformable/attention_weights.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.sampling_locations",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -1.4593055248260498,
+    "max": 3.292422294616699,
+    "mean": 0.41016497096855914,
+    "std": 0.388256303675822,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/deformable/sampling_locations.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.output",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -8.266240119934082,
+    "max": 9.282955169677734,
+    "mean": -0.011150283029270801,
+    "std": 0.8433803559804516,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/deformable/output.npy"
+  },
+  {
+    "name": "spatial.layer_0.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -9.286523818969727,
+    "max": 12.475383758544922,
+    "mean": -0.0029715658375343993,
+    "std": 1.5385540847325962,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_0/output.npy"
+  },
+  {
+    "name": "temporal.layer_1.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.507730007171631,
+    "max": 8.270328521728516,
+    "mean": -0.0002082281357811227,
+    "std": 0.9855741289159918,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_1/query.npy"
+  },
+  {
+    "name": "temporal.layer_1.key",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.129567623138428,
+    "max": 8.210947036743164,
+    "mean": 0.0020513834433005195,
+    "std": 1.0141873384132698,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_1/key.npy"
+  },
+  {
+    "name": "temporal.layer_1.value",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.129567623138428,
+    "max": 8.210947036743164,
+    "mean": 0.0020513834433005195,
+    "std": 1.0141873384132698,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_1/value.npy"
+  },
+  {
+    "name": "temporal.layer_1.reference_points",
+    "shape": [
+      2,
+      2500,
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": 0.00986023060977459,
+    "max": 1.0316133499145508,
+    "mean": 0.5103684087656438,
+    "std": 0.2891805953337012,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_1/reference_points.npy"
+  },
+  {
+    "name": "temporal.layer_1.value_effective",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.129567623138428,
+    "max": 8.210947036743164,
+    "mean": 0.0020513834433005195,
+    "std": 1.0141873384132698,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_1/value_effective.npy"
+  },
+  {
+    "name": "temporal.layer_1.sampling_offsets",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -14.156654357910156,
+    "max": 20.67691993713379,
+    "mean": 0.1413493353611826,
+    "std": 3.8950978846857494,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_1/sampling_offsets.npy"
+  },
+  {
+    "name": "temporal.layer_1.attention_weights",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4
+    ],
+    "dtype": "float32",
+    "min": 3.144843958580168e-06,
+    "max": 0.9999228715896606,
+    "mean": 0.2500000000070356,
+    "std": 0.25955999809703506,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_1/attention_weights.npy"
+  },
+  {
+    "name": "temporal.layer_1.sampling_locations",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -0.18145841360092163,
+    "max": 1.3446944952011108,
+    "mean": 0.5131953955121528,
+    "std": 0.2978603947559909,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_1/sampling_locations.npy"
+  },
+  {
+    "name": "temporal.layer_1.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -8.35539436340332,
+    "max": 13.141968727111816,
+    "mean": 0.0040596331395050585,
+    "std": 1.515091309501548,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_1/output.npy"
+  },
+  {
+    "name": "spatial.layer_1.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.761785507202148,
+    "max": 7.377368927001953,
+    "mean": -0.00012882383691701155,
+    "std": 0.9192202297668615,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/query.npy"
+  },
+  {
+    "name": "spatial.layer_1.key",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -12.918781280517578,
+    "max": 14.633038520812988,
+    "mean": -0.004910818893706568,
+    "std": 1.6465574061116979,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/key.npy"
+  },
+  {
+    "name": "spatial.layer_1.value",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -12.918781280517578,
+    "max": 14.633038520812988,
+    "mean": -0.004910818893706568,
+    "std": 1.6465574061116979,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/value.npy"
+  },
+  {
+    "name": "spatial.layer_1.reference_points_cam",
+    "shape": [
+      6,
+      1,
+      2500,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -6670279.0,
+    "max": 4804046.0,
+    "mean": -635712.3242971266,
+    "std": 1408595.5741659843,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/reference_points_cam.npy"
+  },
+  {
+    "name": "spatial.layer_1.bev_mask",
+    "shape": [
+      6,
+      1,
+      2500,
+      4
+    ],
+    "dtype": "bool",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.1867,
+    "std": 0.3896705146659162,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/bev_mask.npy"
+  },
+  {
+    "name": "spatial.layer_1.spatial_shapes",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "int64",
+    "min": 15.0,
+    "max": 25.0,
+    "mean": 20.0,
+    "std": 5.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/spatial_shapes.npy"
+  },
+  {
+    "name": "spatial.layer_1.level_start_index",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/level_start_index.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.query",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.761785507202148,
+    "max": 7.377368927001953,
+    "mean": -0.00010673560200947893,
+    "std": 0.8169656287702908,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/deformable/query.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.value",
+    "shape": [
+      6,
+      375,
+      256
+    ],
+    "dtype": "float32",
+    "min": -12.918781280517578,
+    "max": 14.633038520812988,
+    "mean": -0.004910818893706568,
+    "std": 1.6465574061116979,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/deformable/value.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.sampling_offsets",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -13.582103729248047,
+    "max": 13.058023452758789,
+    "mean": 0.13796275713088257,
+    "std": 4.8059961949120735,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/deformable/sampling_offsets.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.attention_weights",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8
+    ],
+    "dtype": "float32",
+    "min": 3.648620258900337e-05,
+    "max": 0.8636553287506104,
+    "mean": 0.1250000005065272,
+    "std": 0.14823241022167832,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/deformable/attention_weights.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.sampling_locations",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -1.4357531070709229,
+    "max": 3.2976224422454834,
+    "mean": 0.41379183946189185,
+    "std": 0.3999423886436269,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/deformable/sampling_locations.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.output",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -6.266233921051025,
+    "max": 6.348924160003662,
+    "mean": 0.0014875013725900196,
+    "std": 0.5393570262631107,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/deformable/output.npy"
+  },
+  {
+    "name": "spatial.layer_1.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -6.103799819946289,
+    "max": 9.04526138305664,
+    "mean": -0.013904308152689464,
+    "std": 1.1621131470891444,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_1/output.npy"
+  },
+  {
+    "name": "temporal.layer_2.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.265801906585693,
+    "max": 6.603497505187988,
+    "mean": -0.00046647503555791305,
+    "std": 0.9750703526398871,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_2/query.npy"
+  },
+  {
+    "name": "temporal.layer_2.key",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.129567623138428,
+    "max": 8.210947036743164,
+    "mean": 0.0020513834433005195,
+    "std": 1.0141873384132698,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_2/key.npy"
+  },
+  {
+    "name": "temporal.layer_2.value",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.129567623138428,
+    "max": 8.210947036743164,
+    "mean": 0.0020513834433005195,
+    "std": 1.0141873384132698,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_2/value.npy"
+  },
+  {
+    "name": "temporal.layer_2.reference_points",
+    "shape": [
+      2,
+      2500,
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": 0.00986023060977459,
+    "max": 1.0316133499145508,
+    "mean": 0.5103684087656438,
+    "std": 0.2891805953337012,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_2/reference_points.npy"
+  },
+  {
+    "name": "temporal.layer_2.value_effective",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.129567623138428,
+    "max": 8.210947036743164,
+    "mean": 0.0020513834433005195,
+    "std": 1.0141873384132698,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_2/value_effective.npy"
+  },
+  {
+    "name": "temporal.layer_2.sampling_offsets",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -29.88625717163086,
+    "max": 21.149391174316406,
+    "mean": 0.06903542168525592,
+    "std": 3.822677212946996,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_2/sampling_offsets.npy"
+  },
+  {
+    "name": "temporal.layer_2.attention_weights",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4
+    ],
+    "dtype": "float32",
+    "min": 1.5147317071750876e-06,
+    "max": 0.9997808337211609,
+    "mean": 0.25000000005317924,
+    "std": 0.2505769427394569,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_2/attention_weights.npy"
+  },
+  {
+    "name": "temporal.layer_2.sampling_locations",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -0.35429635643959045,
+    "max": 1.4216169118881226,
+    "mean": 0.5117491172383437,
+    "std": 0.29767828107806343,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_2/sampling_locations.npy"
+  },
+  {
+    "name": "temporal.layer_2.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -7.121400833129883,
+    "max": 8.406828880310059,
+    "mean": -0.02161769625290217,
+    "std": 1.3372618279201474,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/temporal/layer_2/output.npy"
+  },
+  {
+    "name": "spatial.layer_2.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.984510898590088,
+    "max": 5.764720439910889,
+    "mean": -0.0015827931565414008,
+    "std": 0.9454798264217555,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/query.npy"
+  },
+  {
+    "name": "spatial.layer_2.key",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -12.918781280517578,
+    "max": 14.633038520812988,
+    "mean": -0.004910818893706568,
+    "std": 1.6465574061116979,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/key.npy"
+  },
+  {
+    "name": "spatial.layer_2.value",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -12.918781280517578,
+    "max": 14.633038520812988,
+    "mean": -0.004910818893706568,
+    "std": 1.6465574061116979,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/value.npy"
+  },
+  {
+    "name": "spatial.layer_2.reference_points_cam",
+    "shape": [
+      6,
+      1,
+      2500,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -6670279.0,
+    "max": 4804046.0,
+    "mean": -635712.3242971266,
+    "std": 1408595.5741659843,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/reference_points_cam.npy"
+  },
+  {
+    "name": "spatial.layer_2.bev_mask",
+    "shape": [
+      6,
+      1,
+      2500,
+      4
+    ],
+    "dtype": "bool",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.1867,
+    "std": 0.3896705146659162,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/bev_mask.npy"
+  },
+  {
+    "name": "spatial.layer_2.spatial_shapes",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "int64",
+    "min": 15.0,
+    "max": 25.0,
+    "mean": 20.0,
+    "std": 5.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/spatial_shapes.npy"
+  },
+  {
+    "name": "spatial.layer_2.level_start_index",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/level_start_index.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.query",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.984510898590088,
+    "max": 5.764720439910889,
+    "mean": -0.0012019338416005957,
+    "std": 0.8403875774429096,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/deformable/query.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.value",
+    "shape": [
+      6,
+      375,
+      256
+    ],
+    "dtype": "float32",
+    "min": -12.918781280517578,
+    "max": 14.633038520812988,
+    "mean": -0.004910818893706568,
+    "std": 1.6465574061116979,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/deformable/value.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.sampling_offsets",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -14.791170120239258,
+    "max": 20.562917709350586,
+    "mean": -0.25586659146245755,
+    "std": 4.849605005167795,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/deformable/sampling_offsets.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.attention_weights",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8
+    ],
+    "dtype": "float32",
+    "min": 5.657837027683854e-05,
+    "max": 0.9634024500846863,
+    "mean": 0.12499999961111428,
+    "std": 0.17333157885169712,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/deformable/attention_weights.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.sampling_locations",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -1.436199426651001,
+    "max": 3.288233757019043,
+    "mean": 0.39045216177030934,
+    "std": 0.39220118274445054,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/deformable/sampling_locations.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.output",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -12.69953727722168,
+    "max": 10.16745376586914,
+    "mean": 0.018547385035210102,
+    "std": 0.597545394490703,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/deformable/output.npy"
+  },
+  {
+    "name": "spatial.layer_2.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -7.066031455993652,
+    "max": 7.059746742248535,
+    "mean": 0.010981262018830967,
+    "std": 1.2793924641566188,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/spatial/layer_2/output.npy"
+  },
+  {
+    "name": "decoder.reference_points_initial",
+    "shape": [
+      1,
+      900,
+      3
+    ],
+    "dtype": "float32",
+    "min": 0.019861089065670967,
+    "max": 0.9876576662063599,
+    "mean": 0.49605041034450686,
+    "std": 0.21322183656815605,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/decoder/reference_points_initial.npy"
+  },
+  {
+    "name": "decoder.layer_0.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.3913068771362305,
+    "max": 4.027994155883789,
+    "mean": -0.0008456884224174368,
+    "std": 0.8526858150405259,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/decoder/layer_0/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_1.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.961955547332764,
+    "max": 3.6136324405670166,
+    "mean": -0.0028062062019440113,
+    "std": 0.8820760034124552,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/decoder/layer_1/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_2.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -6.130412578582764,
+    "max": 3.7544150352478027,
+    "mean": -0.000616571206751398,
+    "std": 0.8918305096056419,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/decoder/layer_2/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_3.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.647307395935059,
+    "max": 3.8722941875457764,
+    "mean": 0.0005620816818775707,
+    "std": 0.8890728818279375,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/decoder/layer_3/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_4.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.259363651275635,
+    "max": 4.686540126800537,
+    "mean": -0.0019462625422067327,
+    "std": 0.8686395507859364,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/decoder/layer_4/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_5.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.83696174621582,
+    "max": 3.9834840297698975,
+    "mean": -0.0026728839004490643,
+    "std": 0.8529701490730356,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/decoder/layer_5/object_feature.npy"
+  },
+  {
+    "name": "decoder.reference_points_after_refinement",
+    "shape": [
+      6,
+      1,
+      900,
+      3
+    ],
+    "dtype": "float32",
+    "min": 0.014606257900595665,
+    "max": 0.9904085397720337,
+    "mean": 0.4920178369805217,
+    "std": 0.21483109886106158,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/decoder/reference_points_after_refinement.npy"
+  },
+  {
+    "name": "bev.final_bev",
+    "shape": [
+      2500,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -3.7031829357147217,
+    "max": 3.561403274536133,
+    "mean": 0.0016273891940456074,
+    "std": 0.7592184322546038,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/bev/final_bev.npy"
+  },
+  {
+    "name": "detection.cls_scores",
+    "shape": [
+      6,
+      1,
+      900,
+      10
+    ],
+    "dtype": "float32",
+    "min": -15.618539810180664,
+    "max": 3.0471324920654297,
+    "mean": -6.489404472836742,
+    "std": 1.563562995682851,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/detection/cls_scores.npy"
+  },
+  {
+    "name": "detection.bbox_preds",
+    "shape": [
+      6,
+      1,
+      900,
+      10
+    ],
+    "dtype": "float32",
+    "min": -49.70431900024414,
+    "max": 50.217838287353516,
+    "mean": -0.12670721030935161,
+    "std": 11.417045917562378,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/detection/bbox_preds.npy"
+  },
+  {
+    "name": "detection.decoded_boxes",
+    "shape": [
+      300,
+      9
+    ],
+    "dtype": "float32",
+    "min": -49.46614074707031,
+    "max": 49.91696548461914,
+    "mean": 0.5783642063972935,
+    "std": 12.317770723380569,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/detection/decoded_boxes.npy"
+  },
+  {
+    "name": "detection.decoded_scores",
+    "shape": [
+      300
+    ],
+    "dtype": "float32",
+    "min": 0.03611583262681961,
+    "max": 0.954658567905426,
+    "mean": 0.1759362911929687,
+    "std": 0.15784375103298054,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/detection/decoded_scores.npy"
+  },
+  {
+    "name": "detection.decoded_labels",
+    "shape": [
+      300
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 9.0,
+    "mean": 7.276666666666666,
+    "std": 2.2701223657669987,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_001/detection/decoded_labels.npy"
+  },
+  {
+    "name": "temporal.prev_bev_stored",
+    "shape": [
+      2500,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -3.7031829357147217,
+    "max": 3.561403274536133,
+    "mean": 0.0016273891940456074,
+    "std": 0.7592184322546038,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/prev_bev_stored.npy"
+  },
+  {
+    "name": "input.images",
+    "shape": [
+      6,
+      3,
+      480,
+      800
+    ],
+    "dtype": "float32",
+    "min": -2.1179039478302,
+    "max": 2.640000104904175,
+    "mean": -0.1745314516400922,
+    "std": 0.860781978266818,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/input/images.npy"
+  },
+  {
+    "name": "backbone.c5",
+    "shape": [
+      6,
+      2048,
+      15,
+      25
+    ],
+    "dtype": "float32",
+    "min": 0.0,
+    "max": 7.383664608001709,
+    "mean": 0.028283850336953194,
+    "std": 0.14985158086867165,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/backbone/c5.npy"
+  },
+  {
+    "name": "fpn.level_0",
+    "shape": [
+      6,
+      256,
+      15,
+      25
+    ],
+    "dtype": "float32",
+    "min": -13.607519149780273,
+    "max": 13.209441184997559,
+    "mean": 0.04094133304469561,
+    "std": 1.617001334255938,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/fpn/level_0.npy"
+  },
+  {
+    "name": "bev.bev_pos",
+    "shape": [
+      1,
+      256,
+      50,
+      50
+    ],
+    "dtype": "float32",
+    "min": -3.9150633811950684,
+    "max": 3.685087203979492,
+    "mean": -0.012482417197932279,
+    "std": 0.9158385589969802,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/bev/bev_pos.npy"
+  },
+  {
+    "name": "bev.bev_query",
+    "shape": [
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.559509754180908,
+    "max": 4.477896213531494,
+    "mean": 0.0014545507345957176,
+    "std": 0.914463242344442,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/bev/bev_query.npy"
+  },
+  {
+    "name": "temporal.prev_bev_aligned",
+    "shape": [
+      2500,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -3.7031829357147217,
+    "max": 3.561403274536133,
+    "mean": 0.0015166158470876856,
+    "std": 0.7266060846751353,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/prev_bev_aligned.npy"
+  },
+  {
+    "name": "bev.spatial_shapes",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "int64",
+    "min": 15.0,
+    "max": 25.0,
+    "mean": 20.0,
+    "std": 5.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/bev/spatial_shapes.npy"
+  },
+  {
+    "name": "bev.level_start_index",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/bev/level_start_index.npy"
+  },
+  {
+    "name": "temporal.shift",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": -0.0003195319150108844,
+    "max": 0.04129449278116226,
+    "mean": 0.02048748043307569,
+    "std": 0.020807012348086573,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/shift.npy"
+  },
+  {
+    "name": "bev.reference_points_3d",
+    "shape": [
+      1,
+      4,
+      2500,
+      3
+    ],
+    "dtype": "float32",
+    "min": 0.009999999776482582,
+    "max": 0.9899999499320984,
+    "mean": 0.4999999948342641,
+    "std": 0.30162714384148986,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/bev/reference_points_3d.npy"
+  },
+  {
+    "name": "bev.reference_points_2d",
+    "shape": [
+      1,
+      2500,
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": 0.009999999776482582,
+    "max": 0.9899999499320984,
+    "mean": 0.4999999885261059,
+    "std": 0.2886173873214833,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/bev/reference_points_2d.npy"
+  },
+  {
+    "name": "bev.reference_points_cam",
+    "shape": [
+      6,
+      1,
+      2500,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -6670335.0,
+    "max": 4802736.0,
+    "mean": -635674.4811387695,
+    "std": 1408562.9994270583,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/bev/reference_points_cam.npy"
+  },
+  {
+    "name": "bev.bev_mask",
+    "shape": [
+      6,
+      1,
+      2500,
+      4
+    ],
+    "dtype": "bool",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.18673333333333333,
+    "std": 0.3896973127384324,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/bev/bev_mask.npy"
+  },
+  {
+    "name": "temporal.layer_0.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.140228748321533,
+    "max": 8.01263427734375,
+    "mean": 0.0039938373093633345,
+    "std": 1.2304764283218665,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_0/query.npy"
+  },
+  {
+    "name": "temporal.layer_0.key",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.140228748321533,
+    "max": 8.01263427734375,
+    "mean": 0.0027552265782255104,
+    "std": 1.0104532921554943,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_0/key.npy"
+  },
+  {
+    "name": "temporal.layer_0.value",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.140228748321533,
+    "max": 8.01263427734375,
+    "mean": 0.0027552265782255104,
+    "std": 1.0104532921554943,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_0/value.npy"
+  },
+  {
+    "name": "temporal.layer_0.reference_points",
+    "shape": [
+      2,
+      2500,
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": 0.009680467657744884,
+    "max": 1.0312944650650024,
+    "mean": 0.510243729702197,
+    "std": 0.2891736459184062,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_0/reference_points.npy"
+  },
+  {
+    "name": "temporal.layer_0.value_effective",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.140228748321533,
+    "max": 8.01263427734375,
+    "mean": 0.0027552265782255104,
+    "std": 1.0104532921554943,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_0/value_effective.npy"
+  },
+  {
+    "name": "temporal.layer_0.sampling_offsets",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -12.072982788085938,
+    "max": 12.041150093078613,
+    "mean": 0.10007034919081488,
+    "std": 2.9500391803812156,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_0/sampling_offsets.npy"
+  },
+  {
+    "name": "temporal.layer_0.attention_weights",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4
+    ],
+    "dtype": "float32",
+    "min": 5.021287279305398e-07,
+    "max": 0.9999324083328247,
+    "mean": 0.24999999999389597,
+    "std": 0.28069270359510357,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_0/attention_weights.npy"
+  },
+  {
+    "name": "temporal.layer_0.sampling_locations",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -0.1532517671585083,
+    "max": 1.185758352279663,
+    "mean": 0.5122451367307541,
+    "std": 0.29494518011705456,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_0/sampling_locations.npy"
+  },
+  {
+    "name": "temporal.layer_0.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -8.580023765563965,
+    "max": 9.383820533752441,
+    "mean": -0.012875092244280312,
+    "std": 1.7225919628566788,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_0/output.npy"
+  },
+  {
+    "name": "spatial.layer_0.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.668770790100098,
+    "max": 4.80379056930542,
+    "mean": -0.005376172095092061,
+    "std": 0.9547847374737396,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/query.npy"
+  },
+  {
+    "name": "spatial.layer_0.key",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -14.285629272460938,
+    "max": 13.668667793273926,
+    "mean": -0.003008771125607988,
+    "std": 1.6111805720658985,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/key.npy"
+  },
+  {
+    "name": "spatial.layer_0.value",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -14.285629272460938,
+    "max": 13.668667793273926,
+    "mean": -0.003008771125607988,
+    "std": 1.6111805720658985,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/value.npy"
+  },
+  {
+    "name": "spatial.layer_0.reference_points_cam",
+    "shape": [
+      6,
+      1,
+      2500,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -6670335.0,
+    "max": 4802736.0,
+    "mean": -635674.4811387695,
+    "std": 1408562.9994270583,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/reference_points_cam.npy"
+  },
+  {
+    "name": "spatial.layer_0.bev_mask",
+    "shape": [
+      6,
+      1,
+      2500,
+      4
+    ],
+    "dtype": "bool",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.18673333333333333,
+    "std": 0.3896973127384324,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/bev_mask.npy"
+  },
+  {
+    "name": "spatial.layer_0.spatial_shapes",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "int64",
+    "min": 15.0,
+    "max": 25.0,
+    "mean": 20.0,
+    "std": 5.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/spatial_shapes.npy"
+  },
+  {
+    "name": "spatial.layer_0.level_start_index",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/level_start_index.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.query",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.668770790100098,
+    "max": 4.80379056930542,
+    "mean": -0.004256516372967406,
+    "std": 0.8486313575309096,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/deformable/query.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.value",
+    "shape": [
+      6,
+      375,
+      256
+    ],
+    "dtype": "float32",
+    "min": -14.285629272460938,
+    "max": 13.668667793273926,
+    "mean": -0.003008771125607988,
+    "std": 1.6111805720658985,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/deformable/value.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.sampling_offsets",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -11.785869598388672,
+    "max": 11.72005558013916,
+    "mean": 0.03238994460389272,
+    "std": 4.583876241935347,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/deformable/sampling_offsets.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.attention_weights",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8
+    ],
+    "dtype": "float32",
+    "min": 0.00010751518129836768,
+    "max": 0.9231798052787781,
+    "mean": 0.12500000013030682,
+    "std": 0.12879361024259242,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/deformable/attention_weights.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.sampling_locations",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -1.4532625675201416,
+    "max": 3.3000588417053223,
+    "mean": 0.41108631602773676,
+    "std": 0.3892045950508199,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/deformable/sampling_locations.npy"
+  },
+  {
+    "name": "spatial.layer_0.deformable.output",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -7.207528591156006,
+    "max": 9.637939453125,
+    "mean": -0.01197525442376404,
+    "std": 0.8560027563190208,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/deformable/output.npy"
+  },
+  {
+    "name": "spatial.layer_0.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -9.176116943359375,
+    "max": 12.847455978393555,
+    "mean": -0.003995413194210778,
+    "std": 1.567140157724136,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_0/output.npy"
+  },
+  {
+    "name": "temporal.layer_1.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.757909774780273,
+    "max": 8.199137687683105,
+    "mean": -0.0005264984702134498,
+    "std": 0.9860898923216584,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_1/query.npy"
+  },
+  {
+    "name": "temporal.layer_1.key",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.140228748321533,
+    "max": 8.01263427734375,
+    "mean": 0.0027552265782255104,
+    "std": 1.0104532921554943,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_1/key.npy"
+  },
+  {
+    "name": "temporal.layer_1.value",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.140228748321533,
+    "max": 8.01263427734375,
+    "mean": 0.0027552265782255104,
+    "std": 1.0104532921554943,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_1/value.npy"
+  },
+  {
+    "name": "temporal.layer_1.reference_points",
+    "shape": [
+      2,
+      2500,
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": 0.009680467657744884,
+    "max": 1.0312944650650024,
+    "mean": 0.510243729702197,
+    "std": 0.2891736459184062,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_1/reference_points.npy"
+  },
+  {
+    "name": "temporal.layer_1.value_effective",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.140228748321533,
+    "max": 8.01263427734375,
+    "mean": 0.0027552265782255104,
+    "std": 1.0104532921554943,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_1/value_effective.npy"
+  },
+  {
+    "name": "temporal.layer_1.sampling_offsets",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -13.94610595703125,
+    "max": 20.225215911865234,
+    "mean": 0.16495327877446034,
+    "std": 4.022124116711104,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_1/sampling_offsets.npy"
+  },
+  {
+    "name": "temporal.layer_1.attention_weights",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4
+    ],
+    "dtype": "float32",
+    "min": 1.3077379890091834e-06,
+    "max": 0.9999500513076782,
+    "mean": 0.24999999993376715,
+    "std": 0.2605682200703503,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_1/attention_weights.npy"
+  },
+  {
+    "name": "temporal.layer_1.sampling_locations",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -0.18759998679161072,
+    "max": 1.3348910808563232,
+    "mean": 0.5135427952745697,
+    "std": 0.29853784350730933,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_1/sampling_locations.npy"
+  },
+  {
+    "name": "temporal.layer_1.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -8.708019256591797,
+    "max": 13.349944114685059,
+    "mean": 0.003368268795859967,
+    "std": 1.4969721477036106,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_1/output.npy"
+  },
+  {
+    "name": "spatial.layer_1.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.869418144226074,
+    "max": 7.672147750854492,
+    "mean": 0.0002402464156959862,
+    "std": 0.9187289450177303,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/query.npy"
+  },
+  {
+    "name": "spatial.layer_1.key",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -14.285629272460938,
+    "max": 13.668667793273926,
+    "mean": -0.003008771125607988,
+    "std": 1.6111805720658985,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/key.npy"
+  },
+  {
+    "name": "spatial.layer_1.value",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -14.285629272460938,
+    "max": 13.668667793273926,
+    "mean": -0.003008771125607988,
+    "std": 1.6111805720658985,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/value.npy"
+  },
+  {
+    "name": "spatial.layer_1.reference_points_cam",
+    "shape": [
+      6,
+      1,
+      2500,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -6670335.0,
+    "max": 4802736.0,
+    "mean": -635674.4811387695,
+    "std": 1408562.9994270583,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/reference_points_cam.npy"
+  },
+  {
+    "name": "spatial.layer_1.bev_mask",
+    "shape": [
+      6,
+      1,
+      2500,
+      4
+    ],
+    "dtype": "bool",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.18673333333333333,
+    "std": 0.3896973127384324,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/bev_mask.npy"
+  },
+  {
+    "name": "spatial.layer_1.spatial_shapes",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "int64",
+    "min": 15.0,
+    "max": 25.0,
+    "mean": 20.0,
+    "std": 5.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/spatial_shapes.npy"
+  },
+  {
+    "name": "spatial.layer_1.level_start_index",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/level_start_index.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.query",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.869418144226074,
+    "max": 7.672147750854492,
+    "mean": 0.00017011830084965064,
+    "std": 0.8165546527369626,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/deformable/query.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.value",
+    "shape": [
+      6,
+      375,
+      256
+    ],
+    "dtype": "float32",
+    "min": -14.285629272460938,
+    "max": 13.668667793273926,
+    "mean": -0.003008771125607988,
+    "std": 1.6111805720658985,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/deformable/value.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.sampling_offsets",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -13.120101928710938,
+    "max": 13.404352188110352,
+    "mean": 0.1435562957228012,
+    "std": 4.816258867923233,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/deformable/sampling_offsets.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.attention_weights",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8
+    ],
+    "dtype": "float32",
+    "min": 4.211564009892754e-05,
+    "max": 0.8619052767753601,
+    "mean": 0.12500000059520072,
+    "std": 0.15065097939249922,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/deformable/attention_weights.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.sampling_locations",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -1.4347119331359863,
+    "max": 3.2865865230560303,
+    "mean": 0.41406176294836045,
+    "std": 0.4010213932159195,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/deformable/sampling_locations.npy"
+  },
+  {
+    "name": "spatial.layer_1.deformable.output",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.771337032318115,
+    "max": 7.207682132720947,
+    "mean": 0.0070918394728276945,
+    "std": 0.5318804711303243,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/deformable/output.npy"
+  },
+  {
+    "name": "spatial.layer_1.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -6.064113616943359,
+    "max": 9.083292961120605,
+    "mean": -0.01142263002776981,
+    "std": 1.1418687537609107,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_1/output.npy"
+  },
+  {
+    "name": "temporal.layer_2.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.482721328735352,
+    "max": 7.400447845458984,
+    "mean": -0.0014020915341520417,
+    "std": 0.977189378069454,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_2/query.npy"
+  },
+  {
+    "name": "temporal.layer_2.key",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.140228748321533,
+    "max": 8.01263427734375,
+    "mean": 0.0027552265782255104,
+    "std": 1.0104532921554943,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_2/key.npy"
+  },
+  {
+    "name": "temporal.layer_2.value",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.140228748321533,
+    "max": 8.01263427734375,
+    "mean": 0.0027552265782255104,
+    "std": 1.0104532921554943,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_2/value.npy"
+  },
+  {
+    "name": "temporal.layer_2.reference_points",
+    "shape": [
+      2,
+      2500,
+      1,
+      2
+    ],
+    "dtype": "float32",
+    "min": 0.009680467657744884,
+    "max": 1.0312944650650024,
+    "mean": 0.510243729702197,
+    "std": 0.2891736459184062,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_2/reference_points.npy"
+  },
+  {
+    "name": "temporal.layer_2.value_effective",
+    "shape": [
+      2,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.140228748321533,
+    "max": 8.01263427734375,
+    "mean": 0.0027552265782255104,
+    "std": 1.0104532921554943,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_2/value_effective.npy"
+  },
+  {
+    "name": "temporal.layer_2.sampling_offsets",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -28.380043029785156,
+    "max": 21.03885269165039,
+    "mean": 0.050962665286219,
+    "std": 3.952599453842234,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_2/sampling_offsets.npy"
+  },
+  {
+    "name": "temporal.layer_2.attention_weights",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4
+    ],
+    "dtype": "float32",
+    "min": 6.067940034881758e-07,
+    "max": 0.9998387098312378,
+    "mean": 0.24999999992705116,
+    "std": 0.26016149696231494,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_2/attention_weights.npy"
+  },
+  {
+    "name": "temporal.layer_2.sampling_locations",
+    "shape": [
+      2,
+      2500,
+      8,
+      1,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -0.40634822845458984,
+    "max": 1.40264093875885,
+    "mean": 0.5112629830035236,
+    "std": 0.29831915669716574,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_2/sampling_locations.npy"
+  },
+  {
+    "name": "temporal.layer_2.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -7.226261138916016,
+    "max": 9.93099594116211,
+    "mean": 0.0003539866406355031,
+    "std": 1.3594305590921192,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/temporal/layer_2/output.npy"
+  },
+  {
+    "name": "spatial.layer_2.query",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.791523456573486,
+    "max": 6.49418830871582,
+    "mean": -0.0016220957409341476,
+    "std": 0.9438840902589599,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/query.npy"
+  },
+  {
+    "name": "spatial.layer_2.key",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -14.285629272460938,
+    "max": 13.668667793273926,
+    "mean": -0.003008771125607988,
+    "std": 1.6111805720658985,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/key.npy"
+  },
+  {
+    "name": "spatial.layer_2.value",
+    "shape": [
+      6,
+      375,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -14.285629272460938,
+    "max": 13.668667793273926,
+    "mean": -0.003008771125607988,
+    "std": 1.6111805720658985,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/value.npy"
+  },
+  {
+    "name": "spatial.layer_2.reference_points_cam",
+    "shape": [
+      6,
+      1,
+      2500,
+      4,
+      2
+    ],
+    "dtype": "float32",
+    "min": -6670335.0,
+    "max": 4802736.0,
+    "mean": -635674.4811387695,
+    "std": 1408562.9994270583,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/reference_points_cam.npy"
+  },
+  {
+    "name": "spatial.layer_2.bev_mask",
+    "shape": [
+      6,
+      1,
+      2500,
+      4
+    ],
+    "dtype": "bool",
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.18673333333333333,
+    "std": 0.3896973127384324,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/bev_mask.npy"
+  },
+  {
+    "name": "spatial.layer_2.spatial_shapes",
+    "shape": [
+      1,
+      2
+    ],
+    "dtype": "int64",
+    "min": 15.0,
+    "max": 25.0,
+    "mean": 20.0,
+    "std": 5.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/spatial_shapes.npy"
+  },
+  {
+    "name": "spatial.layer_2.level_start_index",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 0.0,
+    "mean": 0.0,
+    "std": 0.0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/level_start_index.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.query",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.791523456573486,
+    "max": 6.49418830871582,
+    "mean": -0.0012291693657143674,
+    "std": 0.8388376986745689,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/deformable/query.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.value",
+    "shape": [
+      6,
+      375,
+      256
+    ],
+    "dtype": "float32",
+    "min": -14.285629272460938,
+    "max": 13.668667793273926,
+    "mean": -0.003008771125607988,
+    "std": 1.6111805720658985,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/deformable/value.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.sampling_offsets",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -14.433553695678711,
+    "max": 20.051021575927734,
+    "mean": -0.228064651508196,
+    "std": 4.808771221966327,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/deformable/sampling_offsets.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.attention_weights",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8
+    ],
+    "dtype": "float32",
+    "min": 3.0555238481611013e-05,
+    "max": 0.943759560585022,
+    "mean": 0.12499999952795139,
+    "std": 0.16897909054504925,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/deformable/attention_weights.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.sampling_locations",
+    "shape": [
+      6,
+      604,
+      8,
+      1,
+      8,
+      2
+    ],
+    "dtype": "float32",
+    "min": -1.4399597644805908,
+    "max": 3.307992696762085,
+    "mean": 0.39192736589036997,
+    "std": 0.39116087997080584,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/deformable/sampling_locations.npy"
+  },
+  {
+    "name": "spatial.layer_2.deformable.output",
+    "shape": [
+      6,
+      604,
+      256
+    ],
+    "dtype": "float32",
+    "min": -8.708521842956543,
+    "max": 8.228275299072266,
+    "mean": 0.020034161247491123,
+    "std": 0.6118390107848234,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/deformable/output.npy"
+  },
+  {
+    "name": "spatial.layer_2.output",
+    "shape": [
+      1,
+      2500,
+      256
+    ],
+    "dtype": "float32",
+    "min": -7.992766857147217,
+    "max": 7.790266036987305,
+    "mean": 0.008955349998790461,
+    "std": 1.3031399417893448,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/spatial/layer_2/output.npy"
+  },
+  {
+    "name": "decoder.reference_points_initial",
+    "shape": [
+      1,
+      900,
+      3
+    ],
+    "dtype": "float32",
+    "min": 0.019861089065670967,
+    "max": 0.9876576662063599,
+    "mean": 0.49605041034450686,
+    "std": 0.21322183656815605,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/decoder/reference_points_initial.npy"
+  },
+  {
+    "name": "decoder.layer_0.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -4.469048976898193,
+    "max": 4.104525089263916,
+    "mean": -0.0008683118509216763,
+    "std": 0.85285335525835,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/decoder/layer_0/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_1.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.833679676055908,
+    "max": 3.8151278495788574,
+    "mean": -0.0024158439639053184,
+    "std": 0.8817549361081786,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/decoder/layer_1/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_2.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -6.080282211303711,
+    "max": 3.9016294479370117,
+    "mean": -0.0005161297342704037,
+    "std": 0.8910924520756984,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/decoder/layer_2/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_3.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -6.009302139282227,
+    "max": 3.9330356121063232,
+    "mean": 0.0004158959133697129,
+    "std": 0.890076702155146,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/decoder/layer_3/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_4.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.929921627044678,
+    "max": 4.56024169921875,
+    "mean": -0.0020620909710392333,
+    "std": 0.8698124159633552,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/decoder/layer_4/object_feature.npy"
+  },
+  {
+    "name": "decoder.layer_5.object_feature",
+    "shape": [
+      900,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -5.1887993812561035,
+    "max": 4.224148750305176,
+    "mean": -0.0030853315404875525,
+    "std": 0.8542811596652575,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/decoder/layer_5/object_feature.npy"
+  },
+  {
+    "name": "decoder.reference_points_after_refinement",
+    "shape": [
+      6,
+      1,
+      900,
+      3
+    ],
+    "dtype": "float32",
+    "min": 0.014510034583508968,
+    "max": 0.9912047982215881,
+    "mean": 0.49232310348960723,
+    "std": 0.21990275854258717,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/decoder/reference_points_after_refinement.npy"
+  },
+  {
+    "name": "bev.final_bev",
+    "shape": [
+      2500,
+      1,
+      256
+    ],
+    "dtype": "float32",
+    "min": -3.9813690185546875,
+    "max": 4.409858226776123,
+    "mean": 0.0010519798442894604,
+    "std": 0.7545160922061352,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/bev/final_bev.npy"
+  },
+  {
+    "name": "detection.cls_scores",
+    "shape": [
+      6,
+      1,
+      900,
+      10
+    ],
+    "dtype": "float32",
+    "min": -14.288841247558594,
+    "max": 3.0837230682373047,
+    "mean": -6.544883797557266,
+    "std": 1.5511425420204283,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/detection/cls_scores.npy"
+  },
+  {
+    "name": "detection.bbox_preds",
+    "shape": [
+      6,
+      1,
+      900,
+      10
+    ],
+    "dtype": "float32",
+    "min": -49.71417236328125,
+    "max": 50.299373626708984,
+    "mean": -0.11434418461452851,
+    "std": 11.397519674008171,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/detection/bbox_preds.npy"
+  },
+  {
+    "name": "detection.decoded_boxes",
+    "shape": [
+      300,
+      9
+    ],
+    "dtype": "float32",
+    "min": -49.211212158203125,
+    "max": 49.7946662902832,
+    "mean": 0.46311971345446046,
+    "std": 11.87432056807306,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/detection/decoded_boxes.npy"
+  },
+  {
+    "name": "detection.decoded_scores",
+    "shape": [
+      300
+    ],
+    "dtype": "float32",
+    "min": 0.03475416824221611,
+    "max": 0.9562162756919861,
+    "mean": 0.17385211816678445,
+    "std": 0.17236745971005538,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/detection/decoded_scores.npy"
+  },
+  {
+    "name": "detection.decoded_labels",
+    "shape": [
+      300
+    ],
+    "dtype": "int64",
+    "min": 0.0,
+    "max": 9.0,
+    "mean": 7.236666666666666,
+    "std": 2.1261833306550857,
+    "nan_count": 0,
+    "inf_count": 0,
+    "path": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3/frame_002/detection/decoded_labels.npy"
+  }
+]

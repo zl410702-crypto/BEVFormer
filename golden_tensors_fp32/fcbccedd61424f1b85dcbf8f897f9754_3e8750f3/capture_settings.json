@@ -1,0 +1,27 @@
+{
+  "source": "tools/run_golden_sequence.py via capture_fp32_reference.py",
+  "torch": "1.9.1+cu111",
+  "cuda_runtime": "11.1",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "checkpoint": "/data/bevformer/checkpoints/bevformer_tiny_epoch_24.pth",
+  "checkpoint_sha256": "7305046dbaa4fe8b1fa6d6acb9e0e3d605a70a3c473f763e936103428d2b2f12",
+  "model_eval": true,
+  "dtype": "float32",
+  "autocast": false,
+  "cudnn_allow_tf32": false,
+  "cuda_matmul_allow_tf32": false,
+  "cudnn_deterministic": true,
+  "cudnn_benchmark": false,
+  "input_sha256": {
+    "frame_000": "dd03abe931b2428b946a10bc8b9f06f540e96d6cdde7648211c75ba277603a68",
+    "frame_001": "54edff30cecc15c81df879464aa5554e17ae3fe25dd8b2d851e43cdfb80c30d6",
+    "frame_002": "318ab842d189173d5af21d0ece3ce8cace632957e45e515733a2a32b44d33542"
+  },
+  "python": "3.8.20",
+  "numpy": "1.19.5",
+  "cudnn": 8005,
+  "mmcv": "1.4.0",
+  "mmdet": "2.14.0",
+  "mmdet3d": "0.17.1",
+  "mmseg": "0.14.1"
+}

@@ -1,0 +1,443 @@
+{
+  "reference": "/home/eric/workspace/bevformer/BEVFormer/golden_tensors_fp32/fcbccedd61424f1b85dcbf8f897f9754_3e8750f3",
+  "pytorch": "2.8.0+cu128",
+  "cuda_runtime": "12.8",
+  "checkpoint_items": 643,
+  "stateful_mode": "feedback",
+  "settings": {
+    "eval": true,
+    "dtype": "float32",
+    "autocast": false,
+    "cudnn_allow_tf32": false,
+    "cuda_matmul_allow_tf32": false,
+    "cudnn_deterministic": true
+  },
+  "frames": {
+    "frame_000": {
+      "backbone/c5.npy": {
+        "MaxAE": 6.794929504394531e-06,
+        "MAE": 3.981223481364093e-08,
+        "MSE": 3.6709073846791876e-14
+      },
+      "fpn/level_0.npy": {
+        "MaxAE": 2.765655517578125e-05,
+        "MAE": 1.2217686424062574e-06,
+        "MSE": 3.0428531160625864e-12
+      },
+      "bev/bev_pos.npy": {
+        "MaxAE": 0.0,
+        "MAE": 0.0,
+        "MSE": 0.0
+      },
+      "temporal/layer_0/query.npy": {
+        "MaxAE": 9.5367431640625e-07,
+        "MAE": 7.616220245836302e-08,
+        "MSE": 1.3075506442286524e-14
+      },
+      "temporal/layer_0/output.npy": {
+        "MaxAE": 7.212162017822266e-06,
+        "MAE": 6.493977960417396e-07,
+        "MSE": 7.452461597929833e-13
+      },
+      "spatial/layer_0/query.npy": {
+        "MaxAE": 3.6507844924926758e-06,
+        "MAE": 3.2230966325794697e-07,
+        "MSE": 1.8242698289917513e-13
+      },
+      "spatial/layer_0/output.npy": {
+        "MaxAE": 1.5497207641601562e-05,
+        "MAE": 9.897673600789858e-07,
+        "MSE": 1.837314340732183e-12
+      },
+      "temporal/layer_1/query.npy": {
+        "MaxAE": 8.940696716308594e-06,
+        "MAE": 5.557011597794315e-07,
+        "MSE": 5.555915881834722e-13
+      },
+      "temporal/layer_1/output.npy": {
+        "MaxAE": 1.1444091796875e-05,
+        "MAE": 7.95201170603832e-07,
+        "MSE": 1.0894121839597249e-12
+      },
+      "spatial/layer_1/query.npy": {
+        "MaxAE": 6.4373016357421875e-06,
+        "MAE": 4.498620356756078e-07,
+        "MSE": 3.4712039625314907e-13
+      },
+      "spatial/layer_1/output.npy": {
+        "MaxAE": 1.7821788787841797e-05,
+        "MAE": 9.439215321435768e-07,
+        "MSE": 1.7235380266074315e-12
+      },
+      "temporal/layer_2/query.npy": {
+        "MaxAE": 1.3113021850585938e-05,
+        "MAE": 7.235086746927522e-07,
+        "MSE": 9.82758711516976e-13
+      },
+      "temporal/layer_2/output.npy": {
+        "MaxAE": 1.5914440155029297e-05,
+        "MAE": 9.974432594390236e-07,
+        "MSE": 1.7943024640697282e-12
+      },
+      "spatial/layer_2/query.npy": {
+        "MaxAE": 8.910894393920898e-06,
+        "MAE": 5.811210149580859e-07,
+        "MSE": 6.127174721654115e-13
+      },
+      "spatial/layer_2/output.npy": {
+        "MaxAE": 3.075599670410156e-05,
+        "MAE": 1.1722856943833904e-06,
+        "MSE": 2.720773580236598e-12
+      },
+      "decoder/layer_0/object_feature.npy": {
+        "MaxAE": 2.4199485778808594e-05,
+        "MAE": 7.743426911344572e-07,
+        "MSE": 1.3966825875284902e-12
+      },
+      "decoder/layer_1/object_feature.npy": {
+        "MaxAE": 5.555152893066406e-05,
+        "MAE": 9.325832277973233e-07,
+        "MSE": 2.5041600895210407e-12
+      },
+      "decoder/layer_2/object_feature.npy": {
+        "MaxAE": 9.877979755401611e-05,
+        "MAE": 1.0503037895048806e-06,
+        "MSE": 4.603876334550057e-12
+      },
+      "decoder/layer_3/object_feature.npy": {
+        "MaxAE": 0.0002053976058959961,
+        "MAE": 1.3181421804864257e-06,
+        "MSE": 8.572869957956833e-12
+      },
+      "decoder/layer_4/object_feature.npy": {
+        "MaxAE": 9.24884807318449e-05,
+        "MAE": 1.2900136595791107e-06,
+        "MSE": 5.3189597539586364e-12
+      },
+      "decoder/layer_5/object_feature.npy": {
+        "MaxAE": 5.6020915508270264e-05,
+        "MAE": 1.258194130405362e-06,
+        "MSE": 4.598021467398774e-12
+      },
+      "bev/bev_query.npy": {
+        "MaxAE": 0.0,
+        "MAE": 0.0,
+        "MSE": 0.0
+      },
+      "bev/final_bev.npy": {
+        "MaxAE": 2.0265579223632812e-05,
+        "MAE": 6.795019483991637e-07,
+        "MSE": 9.343977118484909e-13
+      },
+      "detection/cls_scores.npy": {
+        "MaxAE": 0.000316619873046875,
+        "MAE": 1.5621406060677988e-06,
+        "MSE": 1.9098286606499136e-11
+      },
+      "detection/bbox_preds.npy": {
+        "MaxAE": 9.918212890625e-05,
+        "MAE": 1.2526098238999516e-06,
+        "MSE": 1.3871354032809362e-11
+      },
+      "detection/decoded_boxes.npy": {
+        "MaxAE": 0.0001857280731201172,
+        "MAE": 1.918813453206288e-06,
+        "MSE": 6.751562738495486e-11
+      },
+      "detection/decoded_scores.npy": {
+        "MaxAE": 3.904104232788086e-06,
+        "MAE": 2.751251061757406e-07,
+        "MSE": 2.448044544856032e-13
+      },
+      "detection/decoded_labels.npy": {
+        "MaxAE": 0.0,
+        "MAE": 0.0,
+        "MSE": 0.0
+      }
+    },
+    "frame_001": {
+      "backbone/c5.npy": {
+        "MaxAE": 6.556510925292969e-06,
+        "MAE": 4.162972296153613e-08,
+        "MSE": 4.022794974833972e-14
+      },
+      "fpn/level_0.npy": {
+        "MaxAE": 2.47955322265625e-05,
+        "MAE": 1.2573201820487156e-06,
+        "MSE": 3.308817022311786e-12
+      },
+      "bev/bev_pos.npy": {
+        "MaxAE": 0.0,
+        "MAE": 0.0,
+        "MSE": 0.0
+      },
+      "temporal/layer_0/query.npy": {
+        "MaxAE": 9.5367431640625e-07,
+        "MAE": 4.292310914024711e-08,
+        "MSE": 1.1897424956027262e-14
+      },
+      "temporal/layer_0/output.npy": {
+        "MaxAE": 1.430511474609375e-05,
+        "MAE": 8.527998106728773e-07,
+        "MSE": 1.3699833178981555e-12
+      },
+      "spatial/layer_0/query.npy": {
+        "MaxAE": 7.957220077514648e-06,
+        "MAE": 4.884591839754649e-07,
+        "MSE": 4.499487245750588e-13
+      },
+      "spatial/layer_0/output.npy": {
+        "MaxAE": 2.7179718017578125e-05,
+        "MAE": 1.1620692001088174e-06,
+        "MSE": 2.5308100040871824e-12
+      },
+      "temporal/layer_1/query.npy": {
+        "MaxAE": 1.1444091796875e-05,
+        "MAE": 6.269334541683324e-07,
+        "MSE": 7.017038988290591e-13
+      },
+      "temporal/layer_1/output.npy": {
+        "MaxAE": 1.6689300537109375e-05,
+        "MAE": 1.0588459595965106e-06,
+        "MSE": 1.96040388282335e-12
+      },
+      "spatial/layer_1/query.npy": {
+        "MaxAE": 8.344650268554688e-06,
+        "MAE": 6.27612645046205e-07,
+        "MSE": 6.895314520860471e-13
+      },
+      "spatial/layer_1/output.npy": {
+        "MaxAE": 1.609325408935547e-05,
+        "MAE": 9.83649153931765e-07,
+        "MSE": 1.7631009937053373e-12
+      },
+      "temporal/layer_2/query.npy": {
+        "MaxAE": 1.3589859008789062e-05,
+        "MAE": 8.122117617361369e-07,
+        "MSE": 1.1889576501379963e-12
+      },
+      "temporal/layer_2/output.npy": {
+        "MaxAE": 1.6063451766967773e-05,
+        "MAE": 1.1404981712985318e-06,
+        "MSE": 2.303861889433184e-12
+      },
+      "spatial/layer_2/query.npy": {
+        "MaxAE": 1.1086463928222656e-05,
+        "MAE": 7.999177019698212e-07,
+        "MSE": 1.1330873121674011e-12
+      },
+      "spatial/layer_2/output.npy": {
+        "MaxAE": 4.0531158447265625e-05,
+        "MAE": 1.210559959508828e-06,
+        "MSE": 2.9035887385867035e-12
+      },
+      "decoder/layer_0/object_feature.npy": {
+        "MaxAE": 2.1457672119140625e-05,
+        "MAE": 7.66169167473802e-07,
+        "MSE": 1.4735134366588708e-12
+      },
+      "decoder/layer_1/object_feature.npy": {
+        "MaxAE": 4.7773122787475586e-05,
+        "MAE": 9.018551903949846e-07,
+        "MSE": 2.281836957942283e-12
+      },
+      "decoder/layer_2/object_feature.npy": {
+        "MaxAE": 3.075599670410156e-05,
+        "MAE": 9.652388308866043e-07,
+        "MSE": 2.580383104038229e-12
+      },
+      "decoder/layer_3/object_feature.npy": {
+        "MaxAE": 3.540515899658203e-05,
+        "MAE": 1.0967236567379265e-06,
+        "MSE": 3.1556333210946233e-12
+      },
+      "decoder/layer_4/object_feature.npy": {
+        "MaxAE": 4.506111145019531e-05,
+        "MAE": 1.0836971142877714e-06,
+        "MSE": 3.1701616372834827e-12
+      },
+      "decoder/layer_5/object_feature.npy": {
+        "MaxAE": 3.3274292945861816e-05,
+        "MAE": 1.0346658280566442e-06,
+        "MSE": 2.9891147733049574e-12
+      },
+      "bev/bev_query.npy": {
+        "MaxAE": 0.0,
+        "MAE": 0.0,
+        "MSE": 0.0
+      },
+      "bev/final_bev.npy": {
+        "MaxAE": 2.5153160095214844e-05,
+        "MAE": 7.19856277290365e-07,
+        "MSE": 1.0615376707956984e-12
+      },
+      "detection/cls_scores.npy": {
+        "MaxAE": 4.6253204345703125e-05,
+        "MAE": 1.2721176500673647e-06,
+        "MSE": 5.688951466288051e-12
+      },
+      "detection/bbox_preds.npy": {
+        "MaxAE": 8.174777030944824e-05,
+        "MAE": 1.2180898141204362e-06,
+        "MSE": 1.4004649197466253e-11
+      },
+      "detection/decoded_boxes.npy": {
+        "MaxAE": 7.843971252441406e-05,
+        "MAE": 1.3540087308717409e-06,
+        "MSE": 1.959680192556062e-11
+      },
+      "detection/decoded_scores.npy": {
+        "MaxAE": 2.652406692504883e-06,
+        "MAE": 2.586717406908671e-07,
+        "MSE": 1.6947744134003055e-13
+      },
+      "detection/decoded_labels.npy": {
+        "MaxAE": 0.0,
+        "MAE": 0.0,
+        "MSE": 0.0
+      }
+    },
+    "frame_002": {
+      "backbone/c5.npy": {
+        "MaxAE": 8.225440979003906e-06,
+        "MAE": 4.01663272833012e-08,
+        "MSE": 3.8978542022676784e-14
+      },
+      "fpn/level_0.npy": {
+        "MaxAE": 2.09808349609375e-05,
+        "MAE": 1.2338411506789271e-06,
+        "MSE": 3.15032851534158e-12
+      },
+      "bev/bev_pos.npy": {
+        "MaxAE": 0.0,
+        "MAE": 0.0,
+        "MSE": 0.0
+      },
+      "temporal/layer_0/query.npy": {
+        "MaxAE": 1.9073486328125e-06,
+        "MAE": 4.820252797799185e-08,
+        "MSE": 2.0173884038179964e-14
+      },
+      "temporal/layer_0/output.npy": {
+        "MaxAE": 1.6927719116210938e-05,
+        "MAE": 8.650909916468663e-07,
+        "MSE": 1.4469175154857232e-12
+      },
+      "spatial/layer_0/query.npy": {
+        "MaxAE": 9.357929229736328e-06,
+        "MAE": 4.745959654549159e-07,
+        "MSE": 4.342184202071583e-13
+      },
+      "spatial/layer_0/output.npy": {
+        "MaxAE": 2.288818359375e-05,
+        "MAE": 1.177257832569012e-06,
+        "MSE": 2.5721029128343037e-12
+      },
+      "temporal/layer_1/query.npy": {
+        "MaxAE": 1.1593103408813477e-05,
+        "MAE": 6.036310275622014e-07,
+        "MSE": 6.488168798758682e-13
+      },
+      "temporal/layer_1/output.npy": {
+        "MaxAE": 2.6702880859375e-05,
+        "MAE": 1.0218169279141876e-06,
+        "MSE": 1.8676326886379817e-12
+      },
+      "spatial/layer_1/query.npy": {
+        "MaxAE": 1.3113021850585938e-05,
+        "MAE": 6.118545099262463e-07,
+        "MSE": 6.663079599868537e-13
+      },
+      "spatial/layer_1/output.npy": {
+        "MaxAE": 1.609325408935547e-05,
+        "MAE": 9.60738925004989e-07,
+        "MSE": 1.6418490940026114e-12
+      },
+      "temporal/layer_2/query.npy": {
+        "MaxAE": 1.4066696166992188e-05,
+        "MAE": 7.928294906802691e-07,
+        "MSE": 1.1194008220993318e-12
+      },
+      "temporal/layer_2/output.npy": {
+        "MaxAE": 2.6106834411621094e-05,
+        "MAE": 1.145437027571461e-06,
+        "MSE": 2.365603917704875e-12
+      },
+      "spatial/layer_2/query.npy": {
+        "MaxAE": 1.755356788635254e-05,
+        "MAE": 7.894933191446185e-07,
+        "MSE": 1.1186077657451406e-12
+      },
+      "spatial/layer_2/output.npy": {
+        "MaxAE": 3.266334533691406e-05,
+        "MAE": 1.2191743541279721e-06,
+        "MSE": 2.8912027678908096e-12
+      },
+      "decoder/layer_0/object_feature.npy": {
+        "MaxAE": 1.9669532775878906e-05,
+        "MAE": 7.59945498285027e-07,
+        "MSE": 1.4549813127299912e-12
+      },
+      "decoder/layer_1/object_feature.npy": {
+        "MaxAE": 2.9981136322021484e-05,
+        "MAE": 9.982969926743597e-07,
+        "MSE": 2.706827902151061e-12
+      },
+      "decoder/layer_2/object_feature.npy": {
+        "MaxAE": 3.238767385482788e-05,
+        "MAE": 1.0804963179702105e-06,
+        "MSE": 2.9707633376477225e-12
+      },
+      "decoder/layer_3/object_feature.npy": {
+        "MaxAE": 4.112720489501953e-05,
+        "MAE": 1.119975381415925e-06,
+        "MSE": 3.416176993785478e-12
+      },
+      "decoder/layer_4/object_feature.npy": {
+        "MaxAE": 5.204975605010986e-05,
+        "MAE": 1.147420889383947e-06,
+        "MSE": 3.716573524399962e-12
+      },
+      "decoder/layer_5/object_feature.npy": {
+        "MaxAE": 3.075599670410156e-05,
+        "MAE": 1.0812122044982313e-06,
+        "MSE": 3.302625611289171e-12
+      },
+      "bev/bev_query.npy": {
+        "MaxAE": 0.0,
+        "MAE": 0.0,
+        "MSE": 0.0
+      },
+      "bev/final_bev.npy": {
+        "MaxAE": 2.390146255493164e-05,
+        "MAE": 6.89699171245195e-07,
+        "MSE": 9.758689935745985e-13
+      },
+      "detection/cls_scores.npy": {
+        "MaxAE": 7.128715515136719e-05,
+        "MAE": 1.441200574239095e-06,
+        "MSE": 7.9224388695433e-12
+      },
+      "detection/bbox_preds.npy": {
+        "MaxAE": 5.5789947509765625e-05,
+        "MAE": 1.2730688520234791e-06,
+        "MSE": 1.4838305055687765e-11
+      },
+      "detection/decoded_boxes.npy": {
+        "MaxAE": 4.57763671875e-05,
+        "MAE": 1.2454910878053246e-06,
+        "MSE": 1.4231663232656337e-11
+      },
+      "detection/decoded_scores.npy": {
+        "MaxAE": 2.9802322387695312e-06,
+        "MAE": 2.6661902666091916e-07,
+        "MSE": 2.2854843018116357e-13
+      },
+      "detection/decoded_labels.npy": {
+        "MaxAE": 0.0,
+        "MAE": 0.0,
+        "MSE": 0.0
+      }
+    }
+  }
+}
